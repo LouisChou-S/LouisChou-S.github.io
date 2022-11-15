@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            /* 讓margin往內縮 */
+            box-sizing: border-box;
+        }
+        
+        li{
+            /* 圓點消失 */
+            list-style: none;
+        }
+        .line-height-24{
+            line-height: 24px;
+        }
+        a:hover{
+            text-decoration:underline;
+        }
+        .dis-flex{
+            display: flex;
+        }
+        .jsty-con-end{
+            justify-content: end;
+        }
+        .jsty-con-sb{
+            justify-content: space-between;
+        }
+        .align-items-end{
+            align-items:flex-end;
+        }
+        .margin-x-40{
+            margin: 0 40px;
+        }
+        .margin-x-65{
+            margin: 0 65px;
+        }
+        .pd-x-8{
+            padding: 0 8px;
+        }
+        .link-no-underline{
+            text-decoration:none;
+        }
+        .logo-source{
+            background-image: url(../ITRI/itrilogo.svg);
+        }
+        .text-28{
+            font-size: 28px;
+        }
+        .MR-28{
+            margin-right: 28px;
+        }
+        .width-100{
+            width: 100%;
+        }
+        .margin-x-40{
+            margin: 0 40px;
+        }
+        .text-primary-color{
+            color: #016364;
+        }
+        .align-items-end{
+            align-items: flex-end;
+        }
+
+        .underline{
+            /* transparent讓下底線動畫出現時不要整個文字上移 */
+            border-bottom: 4px solid transparent;   
+            /* 讓hover效果變成要跑0.5秒，而不是瞬間出現，除了border也可指定all讓全部類型都延遲0.5秒 */
+            transition: border 0.5s;     
+        }
+        .underline:hover{
+            border-bottom: 4px solid #016364;
+            
+        }
+        .cursor-pointer{
+            cursor:pointer;
+        }
+        .w-100{
+            width: 100%;
+        }
+        .mb-52{
+            margin-bottom: 52px;
+        }
+        .card-container{
+            max-width: 1600px;            
+        }
+        .mx-auto{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .w-4\/12{
+            width: 33.333333%;
+        }
+        .px-16{
+            padding: 0 16px;
+        }
+        .pb-16{
+            padding-bottom: 16px;
+        }
+        .pb-20{
+            padding-bottom: 20px;
+        }
+        .text-18{
+            font-size: 18px;
+        }
+        .text-20{
+            font-size: 20px;
+        }
+        .text-bolder{
+            font-weight: bolder;
+        }
+        .card-wrapper{
+            border: 1px solid #edede9;  
+            border-radius: 20px;          
+        }
+        .card-wrapper:hover{
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); /* 陰影 */
+            transition: all .5s; 
+            transform: scale(1.03); /* 滑鼠移入就放大 */
+        }
+        .mx-16{
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+        .pl-16{
+            padding-left:16px;
+        }
+        .flex-wrap{
+            flex-wrap: wrap;
+        }
+        .p-16{
+            padding: 16px;
+        }
+        .text-wrapper{
+            /* 超過2行的字隱藏，在第二行末端用"..."表示 */
+            white-space: normal; /* 文字不換行一直往右寫到突出物件 */            
+            text-overflow: ellipsis;
+            display: -webkit-box;            
+            -webkit-line-clamp: 2;  /* 只顯示2行 */
+            -webkit-box-orient: vertical;
+            overflow: hidden; /* 可用scroll做成滾動條顯示 */
+            /* 不能用pb，要用mb遮掉第二行以後的字 */
+        }
+        .mb-16{
+            margin-bottom: 16px;
+        }
+        .align-items-end{
+            align-items: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- 放到最右邊再用Margin往左推一點 -->
+        <div class="dis-flex jsty-con-end margin-x-40">
+        <!-- 消除下底線 -->
+        <a href="#" class="pd-x-8 link-no-underline line-height-24 cursor-pointer">網站導覽</a>
+        <a href="#" class="pd-x-8 link-no-underline line-height-24 cursor-pointer">菁英招募</a>
+        <a href="#" class="pd-x-8 link-no-underline line-height-24 cursor-pointer">公告</a>
+        <a href="#" class="pd-x-8 link-no-underline line-height-24 cursor-pointer">English</a>
+        </div>
+        <div class="margin-x-65 dis-flex align-items-end" >
+            <h1 class="cursor-pointer">
+                <img src="./itrilogo.svg">
+            </h1>
+            <nav>
+                <!-- <ul class="dis-flex jsty-con-sb width-100"> -->
+                <ul class="dis-flex">
+                    <li class="text-28 margin-x-40 underline cursor-pointer">尖端科技</li>
+                    <li class="text-28 margin-x-40 underline cursor-pointer">產業服務</li>
+                    <li class="text-28 margin-x-40 underline cursor-pointer">國際合作</li>
+                    <li class="text-28 margin-x-40 underline cursor-pointer">新聞中心</li>
+                    <li class="text-28 margin-x-40 underline cursor-pointer">關於我們</li>
+                    <li class="text-28 margin-x-40 underline cursor-pointer">線上展示館</li>
+                </ul>
+            </nav>
+            <div>                
+                <img src="./Search.jpg" alt="">
+            </div>            
+        </div>
+    </header>
+        <section class="mb-52" >
+            <!-- img外再加一層，用來設定大小 -->
+            <div class="mx-auto" style="max-width: 1600px;">
+                <!-- width用%數就會依據上一層的物件顯示比例,不指定%數就會按照原本圖檔大小呈現 -->
+                <img class="w-100" src="./banner.jpg" alt="">
+            </div>
+        </section>
+        <section class="card-container mx-auto">
+            <div class="dis-flex flex-wrap">   
+                <!-- 定義為瀏覽器1/3寬度，再用p-16將Card隔開，因為有定義box-sizing: border-box;所以會內縮，沒定義就會超出1/3變成一行放不下三張Card -->
+                <div class="p-16 w-4/12">
+                    <div class="card-wrapper cursor-pointer">
+                        <div class="">
+                            <img class="w-100" src="./card.jpg" alt="">
+                        </div>
+                        <div class="text-18 pl-16 pb-16">
+                            2022-11-14
+                        </div>
+                        <div class="text-20 pl-16 mb-16 text-bolder text-primary-color text-wrapper">
+                            工研院與產學研攜手　助電動車與電網互惠共生　讓臺灣供電穩定又低碳
+                            工研院與產學研攜手　助電動車與電網互惠共生　讓臺灣供電穩定又低碳
+                            工研院與產學研攜手　助電動車與電網互惠共生　讓臺灣供電穩定又低碳
+                        </div>
+                    </div> 
+                </div>             
+                <div class="p-16 w-4/12">
+                    <div class="cursor-pointer card-wrapper">
+                        <div class="">
+                            <img class="w-100" src="./card.jpg" alt="">
+                        </div>
+                        <div class="text-18 pl-16 pb-16">
+                            2022-11-14
+                        </div>
+                        <div class="text-20 pl-16 mb-16 text-bolder text-primary-color text-wrapper">
+                            工研院與產學研攜手　助電動車與電網互惠共生　讓臺灣供電穩定又低碳
+                        </div>
+                    </div> 
+                </div>
+                <div class="p-16 w-4/12">
+                    <div class="card-wrapper cursor-pointer">
+                        <div class="">
+                            <img class="w-100" src="./card.jpg" alt="">
+                        </div>
+                        <div class="text-18 pl-16 pb-16">
+                            2022-11-14
+                        </div>
+                        <div class="text-20 pl-16 mb-16 text-bolder text-primary-color text-wrapper">
+                            工研院與產學研攜手　助電動車與電網互惠共生　讓臺灣供電穩定又低碳
+                        </div>
+                    </div> 
+                </div>
+                <div class="p-16 w-4/12">
+                    <div class="card-wrapper cursor-pointer">
+                        <div class="">
+                            <img class="w-100" src="./card.jpg" alt="">
+                        </div>
+                        <div class="text-18 pl-16 pb-16">
+                            2022-11-14
+                        </div>
+                        <div class="text-20 pl-16 mb-16 text-bolder text-primary-color text-wrapper">
+                            工研院與產學研攜手　助電動車與電網互惠共生　讓臺灣供電穩定又低碳
+                        </div>
+                    </div> 
+                </div>
+                <div class="p-16 w-4/12">
+                    <div class="card-wrapper cursor-pointer">
+                        <div class="">
+                            <img class="w-100" src="./card.jpg" alt="">
+                        </div>
+                        <div class="text-18 pl-16 pb-16">
+                            2022-11-14
+                        </div>
+                        <div class="text-20 pl-16 mb-16 text-bolder text-primary-color text-wrapper">
+                            工研院與產學研攜手　助電動車與電網互惠共生　讓臺灣供電穩定又低碳
+                        </div>
+                    </div> 
+                </div>
+                <div class="p-16 w-4/12">
+                    <div class="card-wrapper cursor-pointer">
+                        <div class="">
+                            <img class="w-100" src="./card.jpg" alt="">
+                        </div>
+                        <div class="text-18 pl-16 pb-16">
+                            2022-11-14
+                        </div>
+                        <div class="text-20 pl-16 mb-16 text-bolder text-primary-color text-wrapper">
+                            工研院與產學研攜手　助電動車與電網互惠共生　讓臺灣供電穩定又低碳
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+    <footer></footer>
+</body>
+</html>
