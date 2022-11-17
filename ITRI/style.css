@@ -1,0 +1,150 @@
+*{
+    margin:0;
+    padding: 0;
+    /* 讓margin往內縮 */
+    box-sizing: border-box;
+}
+
+li{
+    /* 圓點消失 */
+    list-style: none;
+}
+.line-height-24{
+    line-height: 24px;
+}
+a:hover{
+    text-decoration:underline;
+}
+.dis-flex{
+    display: flex;
+}
+.jsty-con-end{
+    justify-content: end;
+}
+.jsty-con-sb{
+    justify-content: space-between;
+}
+.align-items-end{
+    align-items:flex-end;
+}
+.margin-x-40{
+    margin: 0 40px;
+}
+.margin-x-65{
+    margin: 0 65px;
+}
+.pd-x-8{
+    padding: 0 8px;
+}
+.link-no-underline{
+    text-decoration:none;
+}
+.logo-source{
+    background-image: url(./itrilogo.svg);
+}
+.text-28{
+    font-size: 28px;
+}
+.MR-28{
+    margin-right: 28px;
+}
+.width-100{
+    width: 100%;
+}
+.margin-x-40{
+    margin: 0 40px;
+}
+.text-primary-color{
+    color: #016364;
+}
+.align-items-end{
+    align-items: flex-end;
+}
+
+.underline{
+    /* transparent讓下底線動畫出現時不要整個文字上移 */
+    border-bottom: 4px solid transparent;   
+    /* 讓hover效果變成要跑0.5秒，而不是瞬間出現，除了border也可指定all讓全部類型都延遲0.5秒 */
+    transition: border 0.5s;     
+}
+.underline:hover{
+    border-bottom: 4px solid #016364;
+    
+}
+.cursor-pointer{
+    cursor:pointer;
+}
+.w-100{
+    width: 100%;
+}
+.mb-52{
+    margin-bottom: 52px;
+}
+.card-container{
+    max-width: 1600px;            
+}
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+.w-4\/12{
+    width: 33.333333%;
+}
+.px-16{
+    padding: 0 16px;
+}
+.pb-16{
+    padding-bottom: 16px;
+}
+.pb-20{
+    padding-bottom: 20px;
+}
+.text-18{
+    font-size: 18px;
+}
+.text-20{
+    font-size: 20px;
+}
+.text-bolder{
+    font-weight: bolder;
+}
+.card-wrapper{
+    border: 1px solid #edede9;  
+    border-radius: 20px;          
+    overflow:hidden;
+}
+.card-wrapper:hover{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); /* 陰影 */
+    transition: all .5s; 
+    transform: scale(1.03); /* 滑鼠移入就放大 */
+    border: none;  
+}
+.mx-16{
+    margin-left: 16px;
+    margin-right: 16px;
+}
+.pl-16{
+    padding-left:16px;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.p-16{
+    padding: 16px;
+}
+.text-wrapper{
+    /* 超過2行的字隱藏，在第二行末端用"..."表示 */
+    white-space: normal; /* 文字不換行一直往右寫到突出物件 */            
+    text-overflow: ellipsis;
+    display: -webkit-box;            
+    -webkit-line-clamp: 2;  /* 只顯示2行 */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* 可用scroll做成滾動條顯示 */
+    /* 不能用pb，要用mb遮掉第二行以後的字 */
+}
+.mb-16{
+    margin-bottom: 16px;
+}
+.align-items-end{
+    align-items: flex-end;
+}

@@ -1,0 +1,90 @@
+*{
+    margin:0;
+    padding: 0;
+    /* 讓margin往內縮 */
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+li{
+    list-style: none;
+}
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.p-12{
+    padding: 12px;
+}
+.rounded{
+    border-radius: 16px;
+}
+.bg-gray-800{
+    background-color: #343A40;
+}
+.bg-white-700{
+    background-color: rgba(255,255,255,0.7);
+}
+.d-flex{
+    display: flex;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.font-weight-700{
+    font-weight: 700;
+}
+.align-items-center{
+    align-items: center;
+}
+.mr-24{
+    margin-right: 24px;
+}
+.cursor-pointer{
+   cursor: pointer; 
+}
+.banner-wrapper{
+    background-image: url("./assets/bannerImg.svg");
+    /* 圖片太小預設會在大小不足處
+    再貼一張相同圖片，可關閉來避免 */
+    background-repeat:no-repeat;
+    /* 主要用於背景圖小於所在的內容，
+    而背景圖又不適合使用repeat，
+    此時就可以採用cover的方式，
+    使背景圖放大至內容的大小，
+    但此方法容易使背景圖因放大而失真。 */
+    background-size: cover;
+    padding: 389.5px 0 0 162px;
+}
+.h-810{
+    height: 810px;
+}
+.banner-rect{
+    width: 8px;
+    height: 48px;
+    background: #F8F9FA;
+}
+.font-NotoSans{
+    font-family: 'Noto Sans';
+    font-style: normal
+}
+.fs-48{
+    font-size: 48px;
+}
+.line-h-65{
+    line-height: 65px;
+}
+.color-white{
+    color: #FFFFFF;
+}
+.ml-16{
+    margin-left: 16px;
+}
+.position-sticky{
+    position: sticky;
+}
+.top-0{
+    top: 0;
+}
+.h-500vh{
+    height: 500vh;
+}
