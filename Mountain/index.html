@@ -7,42 +7,58 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <header class="bg-gray-800">
-    <!-- <header class="position-sticky top-0"> -->
-        <div class="bg-white-700"> <!-- 為了呈現底色效果有透明度多用一層div --> <!--下滑時圖片會往上-->
-            <div class="container d-flex p-12 justify-content-between align-items-center">
-                <h1>
-                    <div>
-                        <img class="rounded" src="./assets/logo.svg" alt="">
+<body class="d-flex justify-content-center">
+    <div class="w-1440">
+        <header class="bg-gray-800">
+        <!-- <header class="position-sticky top-0"> -->
+            <div class="bg-white-700"> <!-- 為了呈現底色效果有透明度多用一層div --> <!--下滑時圖片會往上-->
+                <div class="container p-y-12 d-flex justify-content-between align-items-center">
+                    <h1>
+                        <div class="h-48">
+                            <img class="rounded" src="./assets/logo.svg" alt="">
+                        </div>
+                    </h1>
+                    <nav>
+                        <ul class="d-flex font-weight-700">
+                            <li class="mr-24 cursor-pointer">Home</li>
+                            <li class="mr-24 cursor-pointer">About</li>
+                            <li class="mr-24 cursor-pointer">Photo</li>
+                            <li class="cursor-pointer">Service</li>
+                        </ul>
+                    </nav>                
+                </div>
+            </div>
+        </header>
+        <div class="banner-wrapper h-810 font-NotoSans mb-64">
+        <!-- <div class="banner-wrapper h-810 font-NotoSans h-500vh"> --> <!--下滑時圖片會往上-->
+            <div class="d-flex align-items-center">
+                <div class="banner-rect color-white"></div>
+                <div class="ml-16 font-weight-700 fs-48 line-h-65 color-white">群山連峰，千岩萬豁</div>
+            </div>
+            
+        </div>
+        <main class="">
+            <div class="d-flex justify-content-center">
+                <div class="mb-32 font-NotoSans font-weight-700 fs-32 line-h-44 color-gary-800">
+                    關於合歡山
+                </div>
+            </div>
+            <div class="d-flex h-744 container">
+                <div class="position-relative"> 
+                    <div class="position-absolute w-558 h-744 mt--200">
+                        <img class="" src="./assets/secImg.svg" alt="">
                     </div>
-                </h1>
-                <nav>
-                    <ul class="d-flex font-weight-700">
-                        <li class="mr-24 cursor-pointer">Home</li>
-                        <li class="mr-24 cursor-pointer">About</li>
-                        <li class="mr-24 cursor-pointer">Photo</li>
-                        <li class="cursor-pointer">Service</li>
-                    </ul>
-                </nav>                
+                    <div class="mt-56 w-768 h-252 font-weight-400 fs-16 line-h-22 font-NotoSans bg-white-700 color-gray-700 position-absolute mr-348 pd-16-0-16-16">
+                        說到雪與高山,「合歡山」肯定是台灣人的首選了, 這也正是合歡山國家森林遊樂區最獨一無二的景緻｡<br>
+                        <br>
+                        合歡山國家森林遊樂區是台灣第一座國家森林遊樂區一一早在1963年,  因為特殊的景色與高山生態系而得此殊榮, 在這裡你可以看見廣大的玉山箭竹草原､體驗整整低平地18度C的凜冽氣溫､ 輕鬆登臨園區內三座百岳名山:合歡主峰､合歡東峰與石門山,並住宿松雪樓享受夜裡華麗的壯闊星海｡這裡也有許多高海拔限定的鳥兒：岩鷚､酒紅朱雀､火冠戴菊…等著你來拜訪喔!<br>
+                        <br>
+                        雪景是合歡山的一大特色,冬季皚皚白雪是亞熱帶台灣最讓人心醉的夢幻景象,而每年五月,清麗動人的森氏杜鵑花海,將翠綠的山頭綴的紅白交錯,好像又降下瑞雪一般,令人驚艷,演繹著四季都精彩的合歡山國家森林遊樂區｡
+                    </div>
+                </div>
             </div>
-        </div>
-    </header>
-    <div class="banner-wrapper h-810 font-NotoSans">
-    <!-- <div class="banner-wrapper h-810 font-NotoSans h-500vh"> --> <!--下滑時圖片會往上-->
-        <div class="d-flex align-items-center">
-            <div class="banner-rect color-white"></div>
-            <div class="ml-16 font-weight-700 fs-48 line-h-65 color-white">群山連峰，千岩萬豁</div>
-        </div>
-          
+        </main>
+        <footer></footer>
     </div>
-    <main>
-        <section class="">
-            <div class="">
-
-            </div>
-        </section>
-    </main>
-    <footer></footer>
 </body>
 </html>
