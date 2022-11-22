@@ -59,7 +59,7 @@ li{
     使背景圖放大至內容的大小，
     但此方法容易使背景圖因放大而失真。 */
     background-size: cover;
-    padding: 389.5px 0 0 162px;
+    padding: 389.5px 0 0 0px;
 }
 .h-810{
     height: 810px;
@@ -161,6 +161,13 @@ color: #343A40;
 .clip-rect-0-558-368-0{
     clip:rect(0px 558px 368px 0px);
 }
-.border-radius-5{
-    border-radius:5px
+.border-radius-8{
+    border-radius:8px
+}
+.justify-content-start{
+    justify-content: start;
+}
+.z-index-1{
+    /* 跟position-absolute放在一起，圖層上下的概念 */
+    z-index: 1;
 }
