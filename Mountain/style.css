@@ -157,9 +157,10 @@ color: #343A40;
 .overflow-hidden{
     overflow: hidden;
 }
-.mt--200{
-    clip:rect(0px 558px 368px 0px)
+/* 遮蔽下半部圖片,沒用到 */
+.clip-rect-0-558-368-0{
+    clip:rect(0px 558px 368px 0px);
 }
-.justify-content-start{
-    justify-content: start;
+.border-radius-5{
+    border-radius:5px
 }
