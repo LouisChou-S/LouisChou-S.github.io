@@ -1,58 +1,73 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     /* 讓margin往內縮 */
     box-sizing: border-box;
     font-family: sans-serif;
 }
-li{
+
+li {
     list-style: none;
 }
-.container{
+
+.container {
     max-width: 1140px;
     margin: 0 auto;
 }
-.w-1440{
+
+.w-1440 {
     width: 1440px;
 }
-.p-y-12{
+
+.p-y-12 {
     padding: 12px 0px;
 }
-.rounded{
+
+.rounded {
     border-radius: 16px;
 }
-.bg-gray-800{
+
+.bg-gray-800 {
     background-color: #343A40;
 }
-.bg-white-700{
-    background-color: rgba(255,255,255,0.7);
+
+.bg-white-700 {
+    background-color: rgba(255, 255, 255, 0.7);
 }
-.d-flex{
+
+.d-flex {
     display: flex;
 }
-.justify-content-between{
+
+.justify-content-between {
     justify-content: space-between;
 }
-.font-weight-700{
+
+.font-weight-700 {
     font-weight: 700;
 }
-.align-items-center{
+
+.align-items-center {
     align-items: center;
 }
-.mr-24{
+
+.mr-24 {
     margin-right: 24px;
 }
-.cursor-pointer{
-   cursor: pointer; 
+
+.cursor-pointer {
+    cursor: pointer;
 }
-.h-48{
+
+.h-48 {
     height: 48px;
 }
-.banner-wrapper{
+
+.banner-wrapper {
     background-image: url("./assets/bannerImg.svg");
     /* 圖片太小預設會在大小不足處
     再貼一張相同圖片，可關閉來避免 */
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     /* 主要用於背景圖小於所在的內容，
     而背景圖又不適合使用repeat，
     此時就可以採用cover的方式，
@@ -61,148 +76,283 @@ li{
     background-size: cover;
     padding: 389.5px 0 0 0px;
 }
-.h-810{
+
+.h-810 {
     height: 810px;
 }
-.banner-rect{
+
+.banner-rect {
     width: 8px;
     height: 48px;
     background: #F8F9FA;
 }
-.font-NotoSans{
+
+.font-NotoSans {
     font-family: 'Noto Sans';
     font-style: normal
 }
-.fs-48{
+
+.fs-48 {
     font-size: 48px;
 }
-.line-h-65{
+
+.line-h-65 {
     line-height: 65px;
 }
-.color-white{
+
+.color-white {
     color: #FFFFFF;
 }
-.ml-16{
+
+.ml-16 {
     margin-left: 16px;
 }
-.position-sticky{
+
+.position-sticky {
     position: sticky;
 }
-.top-0{
+
+.top-0 {
     top: 0;
 }
-.h-500vh{
+
+.h-500vh {
     height: 500vh;
 }
-.justify-content-center{
+
+.justify-content-center {
     justify-content: center;
 }
-.mb-64{
+
+.mb-64 {
     margin-bottom: 64px;
 }
-.mb-32{
+
+.mb-32 {
     margin-bottom: 32px;
 }
-.fs-32{
+
+.fs-32 {
     font-size: 32px;
 }
-.line-h-44{
+
+.line-h-44 {
     line-height: 44px;
 }
-.color-gary-800{
-color: #343A40;
+
+.color-gary-800 {
+    color: #343A40;
 }
-.mt-56{
+
+.mt-56 {
     margin-top: 56px;
 }
-.w-768{
+
+.w-768 {
     width: 768px;
 }
-.h-252{
+
+.h-252 {
     height: 252px;
 }
-.font-weight-400{
+
+.font-weight-400 {
     font-weight: 400;
 }
-.fs-16{
+
+.fs-16 {
     font-size: 16px;
 }
-.line-h-22{
+
+.line-h-22 {
     line-height: 22px;
 }
-.color-gray-700{
+
+.color-gray-700 {
     color: #495057;
 }
-.position-relative{
-    position:relative;
+
+.position-relative {
+    position: relative;
 }
-.position-absolute{
+
+.position-absolute {
     position: absolute;
 }
-.mr-348{
+
+.mr-348 {
     margin-left: 348px;
 }
-.pd-16-0-16-16{
+
+.pd-16-0-16-16 {
     padding: 16px 0 16px 16px;
 }
-.w-558{
+
+.w-558 {
     width: 558px;
 }
-.h-368{
+
+.h-368 {
     height: 360px;
 }
-.overflow-hidden{
+
+.overflow-hidden {
     overflow: hidden;
 }
+
 /* 遮蔽下半部圖片,沒用到 */
-.clip-rect-0-558-368-0{
-    clip:rect(0px 558px 368px 0px);
+.clip-rect-0-558-368-0 {
+    clip: rect(0px 558px 368px 0px);
 }
-.border-radius-8{
-    border-radius:8px
+
+.border-radius-8 {
+    border-radius: 8px
 }
-.border-radius-4{
-    border-radius:4px
+
+.border-radius-4 {
+    border-radius: 4px;
 }
-.z-1{
+
+.z-1 {
     /* 跟position-absolute放在一起，圖層上下的概念 */
     z-index: 1;
 }
-.mt-424{
+
+.mt-424 {
     margin-top: 424px;
 }
-.card-wrapper{
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.25), 2px 0px 4px rgba(0, 0, 0, 0.25);
+
+.card-wrapper {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25), 2px 0px 4px rgba(0, 0, 0, 0.25);
 
 }
-.margin-x-auto{
+
+.margin-x-auto {
     margin: 0 auto;
 }
-.top-54{
-    top:54px;
+
+.top-54 {
+    top: 54px;
 }
-.left-348{
+
+.left-348 {
     left: 348px;
 }
+
 .z-10 {
     z-index: 10;
 }
-.flex-wrap{
+
+.flex-wrap {
     flex-wrap: wrap;
 }
-.w-1\/4{
-width: 25%;
+
+.w-1\/4 {
+    width: 25%;
 }
+
 .se3-card {
+    /* 為了讓4張card的兩側貼其Container */
     margin: 0 -16px;
-  }
+}
+
 .px-16 {
+
     padding-left: 16px;
     padding-right: 16px;
-  }
-  .text-center{
+}
+
+.text-center {
     text-align: center;
-  }
-  .pb-32{
+}
+
+.pb-32 {
     padding-bottom: 32px;
+}
+
+.w-100per {
+    width: 100%;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+.bg-green{
+background-color: #198754;
+}
+.pr-16{
+    padding-right: 16px;
+}
+.se3-chip {
+    padding: 4px 8px;
+    border-radius: 99px;
   }
+.se-3-title {
+    /* 區塊太小自動縮減文字以"..."代替 */
+    text-overflow: ellipsis; 
+    /* 必須搭配以下兩個才會作用 */
+    overflow: hidden;    
+    white-space: nowrap;
+  }
+.text-white{
+    color: rgb(255, 255, 255);
+}
+.flex-shrink-0{
+    /* 字數不一樣會自動增減寬度 */
+    flex-shrink: 0;
+}
+.fs-18{
+    font-size: 18px;
+}
+.pb-8{
+    padding-bottom: 8px;
+}
+.se3-text-4row{
+    padding: 0 9px 0 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4; /*行數*/
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    margin-bottom: 12px;
+}
+.fs-14{
+    font-size: 14px;
+}
+.bg-red{
+    background-color: red;
+}
+.bg-orange{
+    background-color:orange;
+}
+.mb-44{
+    margin-bottom: 44px;
+}
+.mb-48{
+    margin-bottom: 48px;
+}
+.border-style-none{
+    border-style: none;
+    outline: none;
+}
+.input-wrapper{
+    box-sizing: Content-box;
+    border: 1px solid #CED4DA;
+    border-radius: 6px;
+    padding: 6px 12px 6px 12px;
+    
+}
+.ml-58{
+    margin-left: 58px;
+}
+.line-h-28{
+    line-height: 28px;
+}
+.w-442{
+    width: 442px;
+}
+.ml-42{
+    margin-left: 42px;
+}
+
