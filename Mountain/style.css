@@ -108,8 +108,8 @@ li {
     margin-left: 16px;
 }
 
-.position-sticky {
-    position: sticky;
+.position-fixed {
+    position: fixed;
 }
 
 .top-0 {
