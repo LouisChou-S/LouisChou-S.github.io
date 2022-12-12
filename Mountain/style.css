@@ -152,10 +152,6 @@ li {
     width: 768px;
 }
 
-.h-252 {
-    height: 252px;
-}
-
 .font-weight-400 {
     font-weight: 400;
 }
@@ -180,12 +176,17 @@ li {
     position: absolute;
 }
 
-.mr-348 {
-    margin-left: 348px;
+.se2-text-wrapper{
+    width: 768px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 16px 0 16px 16px;
+    /*  負數的Margin
+    可覆蓋在左邊物件上面，不使用Position跟transform的解法 */
+    margin-left: -186PX;
 }
 
-.pd-16-0-16-16 {
-    padding: 16px 0 16px 16px;
+.mr-348 {
+    margin-left: 348px;
 }
 
 .w-558 {
@@ -340,7 +341,7 @@ background-color: #198754;
     box-sizing: Content-box;
     border: 1px solid #CED4DA;
     border-radius: 6px;
-    padding: 6px 12px 6px 12px;
+    padding: 6px 12px;
     
 }
 .ml-58{
@@ -362,3 +363,31 @@ background-color: #198754;
     font-weight: 600;
 }
 
+.mb-20{
+    margin-bottom: 20px;
+}
+
+.select-wrapper{
+    box-sizing: Content-box;
+    border: 1px solid #CED4DA;
+    border-radius: 6px;
+    width: 180px;
+    height: 40px;
+    
+}
+.pl-26{
+    padding-left: 26px;
+}
+.ml-26{
+    margin-left: 26px;
+}
+.appearance-none{
+    appearance: none;
+    
+}
+.select-text-wrapper{
+     padding: 6px 120px 6px 12px; 
+}
+.ml-20{
+    margin-left: 20px;
+}

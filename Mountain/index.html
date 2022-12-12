@@ -29,7 +29,7 @@
             </div>
         </div>
     </header>
-    <section class="banner-wrapper h-810 font-NotoSans mb-64 top-0 position-relative">
+    <section class="banner-wrapper h-810 font-NotoSans mb-64">
         <div class="container d-flex align-items-center">
             <div class="banner-rect color-white"></div>
             <div class="ml-16 font-weight-700 fs-48 line-h-65 color-white">群山連峰，千岩萬豁</div>
@@ -43,12 +43,11 @@
             </div>
         </div>
 
-        <div class="container position-relative mb-64">
+        <div class="container position-relative mb-64 d-flex align-items-center">
             <div class="">
                 <img class="border-radius-8" src="./assets/secImg01.svg" alt="">
             </div>
-            <div
-                class="w-768 h-252 font-weight-400 fs-16 line-h-22 font-NotoSans bg-white-700 color-gray-700 position-absolute pd-16-0-16-16 top-54 left-348">
+            <div class="se2-text-wrapper font-weight-400 fs-16 line-h-22 font-NotoSans color-gray-700">
                 說到雪與高山,「合歡山」肯定是台灣人的首選了, 這也正是合歡山國家森林遊樂區最獨一無二的景緻｡<br>
                 <br>
                 合歡山國家森林遊樂區是台灣第一座國家森林遊樂區一一早在1963年, 因為特殊的景色與高山生態系而得此殊榮, 在這裡你可以看見廣大的玉山箭竹草原､體驗整整低平地18度C的凜冽氣溫､
@@ -178,27 +177,48 @@
                 </div>
             </div>
         </section>
-    </main>
-    <footer>
         <section class="container">
             <h2 class="text-center fs-32 text-center font-weight-700 mb-48">問題服務</h2>
-            <div class="d-flex">
+            <div class="d-flex mb-20">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="fs-16 font-weight-700 font-NotoSans w-80">帳號</div>
-                    <div class="input-wrapper w-442">
+                    <div class="input-wrapper w-442 line-h-28">
                         <input type="text" placeholder="test@gmail.com"
-                            class="fs-16 border-style-none line-h-28 w-100per font-weight-600">
+                            class="fs-16 border-style-none w-100per font-weight-600">
                     </div>
                     <div class="fs-16 font-weight-700 font-NotoSans ml-42 w-80">電話</div>
-                    <div class="input-wrapper w-442">
-                        <input type="text" placeholder="請輸入電話"
-                            class="fs-16 border-style-none line-h-28 w-100per font-weight-600">
+                    <div class="input-wrapper w-442  line-h-28">
+                        <input type="text" placeholder="請輸入電話" class="fs-16 border-style-none w-100per font-weight-600">
                     </div>
                 </div>
             </div>
-        </section>
-    </footer>
+            <div class="d-flex mb-20 w-100per">
+                <div class="d-flex justify-content-between align-items-center w-100per">
+                    <!-- <div class="fs-16 font-weight-700 font-NotoSans w-80">通訊地址</div> -->
+                    <div class="fs-16 font-weight-700 font-NotoSans w-80">通訊地址</div>
+                    <div class="select-wrapper line-h-28 d-flex align-items-center ml-26">
+                        <!-- w-100per讓空白處也可選到下拉選單(跟上一層一樣大) -->
+                        <select
+                            class=" fs-16 border-style-none font-weight-600 appearance-none select-text-wrapper w-100per">
+                            <option value="台北市">台北市</option>
+                            <option value="台中市">台中市</option>
+                        </select>
+                    </div>
+                    <div class="w-100per">
+                        <div class="input-wrapper ml-20">
+                            <input type="text" placeholder="test@gmail.com"
+                                class="fs-16 border-style-none line-h-28 font-weight-600 w-100per">
+                        </div>
+                    </div>
+                    
 
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 
 </html>
