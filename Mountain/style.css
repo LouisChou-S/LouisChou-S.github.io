@@ -356,8 +356,8 @@ background-color: #198754;
 .ml-42{
     margin-left: 42px;
 }
-.w-80{
-    width: 80px;
+.w-90{
+    width: 90px;
 }
 .font-weight-600{
     font-weight: 600;
@@ -390,4 +390,14 @@ background-color: #198754;
 }
 .ml-20{
     margin-left: 20px;
+}
+.w-180{
+    width: 180px;
+}
+.h-28{
+    height: 28px;
+}
+
+.pl-16{
+    padding-left: 16px;
 }
