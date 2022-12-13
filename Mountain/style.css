@@ -74,7 +74,7 @@ li {
     使背景圖放大至內容的大小，
     但此方法容易使背景圖因放大而失真。 */
     background-size: cover;
-    padding: 389.5px 0 0 0px;
+    /* padding: 389.5px 0 0 0px; */
 }
 
 .h-810 {
