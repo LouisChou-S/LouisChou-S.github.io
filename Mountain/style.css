@@ -457,3 +457,6 @@ background-color: #198754;
     font-family: 'Noto Sans';
     font-style: normal
 }
+.outline-none{
+    outline:none;
+}
