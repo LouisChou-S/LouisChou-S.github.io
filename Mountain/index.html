@@ -185,7 +185,7 @@
             <div class="d-flex justify-content-between mb-20">
                 <div class="d-flex align-items-center w-100per pr-16">
                     <!-- 沒加shrink的話會因為上一層是align-items-center而被吃掉一些 -->
-                    <div class="w-90 flex-shrink-0">
+                    <div class="w-90 flex-shrink-0 se3-text-wrapper">
                         帳號
                     </div>
                     <div class="input-wrapper w-100per">
@@ -194,7 +194,7 @@
 
                 </div>
                 <div class="d-flex align-items-center w-100per pl-16">
-                    <div class="w-90">
+                    <div class="w-90 se3-text-wrapper">
                         電話
                     </div>
                     <div class="input-wrapper w-100per">
@@ -205,7 +205,7 @@
             </div>
             <div class="d-flex mb-20">
                 <div class="d-flex align-items-center pr-16">
-                    <div class="w-90 flex-shrink-0">
+                    <div class="w-90 flex-shrink-0 se3-text-wrapper">
                         通訊地址
                     </div>
                     <div class="input-wrapper w-100per">
@@ -223,9 +223,9 @@
 
             </div>
             <div class="d-flex justify-content-between">
-                <div class="w-90 flex-shrink-0">問題內容</div>
-                <div class="text-wrapper w-100per ">
-                    <textarea class="h-120 border-none">這是問題與廢話...</textarea>
+                <div class="w-90 flex-shrink-0 se3-text-wrapper">問題內容</div>
+                <div class="text-wrapper w-100per">
+                    <textarea class="h-120 border-none w-100per">這是問題與廢話...</textarea>
                 </div>
             </div>
         </section>
@@ -237,18 +237,30 @@
                     <div class="footer-img-wrapper">
                         <img class="rounded w-100per" src="./assets/logo.svg" alt="">
                     </div>
-                    <div class="flex-col d-flex justify-content-between">
-                        <div class="">Hiker CP</div>
-                        <ul class="d-flex font-weight-700 ">
-                            <li class="mr-24 cursor-pointer">Home</li>
-                            <li class="mr-24 cursor-pointer">About</li>
-                            <li class="mr-24 cursor-pointer">Photo</li>
+                    <div class="flex-col d-flex justify-content-between ml-16 text-white font-weight-700">
+                        <div class="fs-20">Hiker CP</div>
+                        <ul class="d-flex justify-content-between w-272 fs-16">
+                            <li class="cursor-pointer">Home</li>
+                            <li class="border-white-1px"></li>
+                            <li class="cursor-pointer">About</li>
+                            <li class="border-white-1px"></li>
+                            <li class="cursor-pointer">Photo</li>
+                            <li class="border-white-1px"></li>
                             <li class="cursor-pointer">Service</li>
                         </ul>
                     </div>
                 </div>
-                <div>
-                    5
+                <!-- 用align-end置底 -->
+                <div class="d-flex w-80 justify-content-between align-end">
+                    <div class="img-wrapper">
+                        <img class="rounded w-100per" src="./assets//yt.png" alt="">
+                    </div>
+                    <div class="img-wrapper">
+                        <img class="rounded w-100per" src="./assets/fb.png" alt="">
+                    </div>
+                    <div class="img-wrapper">
+                        <img class="rounded w-100per" src="./assets/camara.png" alt="">
+                    </div>                    
                 </div>
             </div>
         </section>
