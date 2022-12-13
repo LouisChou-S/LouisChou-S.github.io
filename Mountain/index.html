@@ -12,7 +12,7 @@
 <body>
     <header class="position-fixed z-10 w-100per">
         <div class="bg-white-700">
-            <div class="container p-y-12 d-flex justify-content-between align-items-center ">
+            <div class="container p-y-12 d-flex justify-content-between align-items-center">
                 <h1>
                     <div class="h-48">
                         <img class="rounded" src="./assets/logo.svg" alt="">
@@ -177,44 +177,81 @@
                 </div>
             </div>
         </section>
-        <section class="container">
+        <section class="container mb-118">
             <h2 class="text-center fs-32 text-center font-weight-700 mb-48">
                 問題服務
             </h2>
             <!-- 利用between將(帳號+input)與(電話+input)往兩邊分到底，再用padding隔開電話前面 -->
-            <div class="d-flex justify-content-between  mb-20">
+            <div class="d-flex justify-content-between mb-20">
                 <div class="d-flex align-items-center w-100per pr-16">
                     <!-- 沒加shrink的話會因為上一層是align-items-center而被吃掉一些 -->
-                    <div class="w-90 flex-shrink-0"> 
+                    <div class="w-90 flex-shrink-0">
                         帳號
                     </div>
-                    <input class="h-28 w-100per" type="text" placeholder="test@gmail.com">
+                    <div class="input-wrapper w-100per">
+                        <input class="h-28 border-none" type="text" placeholder="test@gmail.com">
+                    </div>
+
                 </div>
                 <div class="d-flex align-items-center w-100per pl-16">
                     <div class="w-90">
                         電話
                     </div>
-                    <input class="h-28 w-100per" type="text" placeholder="請輸入電話">
+                    <div class="input-wrapper w-100per">
+                        <input class="h-28 border-none" type="text" placeholder="請輸入電話">
+                    </div>
+
                 </div>
             </div>
-            <div class="d-flex">
-
+            <div class="d-flex mb-20">
                 <div class="d-flex align-items-center pr-16">
-                    <div class="w-90">
+                    <div class="w-90 flex-shrink-0">
                         通訊地址
                     </div>
-                    <select class="w-180 h-28 w-100per" name="" id="">
-                        <option>台北市</option>
-                        <option>新北市</option>
-                    </select>                    
+                    <div class="input-wrapper w-100per">
+                        <select class="w-180 h-28 border-none" name="" id="">
+                            <option>台北市</option>
+                            <option>新北市</option>
+                        </select>
+                    </div>
+
                 </div>
                 <!-- input獨立出來，方便用width:100%變成剩餘空間的最寬 -->
-                <input class="h-28  w-100per" type="text" placeholder="中山區林森北路500號">
+                <div class="input-wrapper w-100per">
+                    <input class="h-28 border-none" type="text" placeholder="中山區林森北路500號">
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="w-90 flex-shrink-0">問題內容</div>
+                <div class="text-wrapper w-100per ">
+                    <textarea class="h-120 border-none">這是問題與廢話...</textarea>
+                </div>
             </div>
         </section>
     </main>
     <footer>
-
+        <section class="footer-wrapper d-flex align-items-center">
+            <div class="container d-flex justify-content-between">
+                <div class="d-flex h-60">
+                    <div class="footer-img-wrapper">
+                        <img class="rounded w-100per" src="./assets/logo.svg" alt="">
+                    </div>
+                    <div class="flex-col d-flex justify-content-between">
+                        <div class="">Hiker CP</div>
+                        <ul class="d-flex font-weight-700 ">
+                            <li class="mr-24 cursor-pointer">Home</li>
+                            <li class="mr-24 cursor-pointer">About</li>
+                            <li class="mr-24 cursor-pointer">Photo</li>
+                            <li class="cursor-pointer">Service</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    5
+                </div>
+            </div>
+        </section>
     </footer>
 </body>
 

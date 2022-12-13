@@ -11,7 +11,7 @@ li {
 }
 
 .container {
-    max-width: 1140px;
+    width: 1140px;
     margin: 0 auto;
 }
 
@@ -400,4 +400,37 @@ background-color: #198754;
 
 .pl-16{
     padding-left: 16px;
+}
+.h-120{
+    height: 120px;
+}
+.border-none{
+    border: none;
+}
+.text-wrapper{
+    border: 1px solid #CED4DA;
+    border-radius: 6px;
+    padding-top: 6px;
+    padding-left: 12px;
+}
+.mb-118{
+    margin-bottom: 118px;
+}
+.footer-wrapper{
+    background-color: #6C757D;
+    height: 108px;
+}
+
+.footer-img-wrapper{
+    background-size:cover;
+    width: 150px;
+}
+.h-60{
+    height: 60px;
+}
+.footer-text-wrapper{
+    flex-direction: column;
+}
+.flex-col{
+    flex-direction: column;
 }
