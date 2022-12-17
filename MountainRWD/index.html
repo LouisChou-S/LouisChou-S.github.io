@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,34 @@
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <header>
-        <div class="header-bg-white-70">
-            <div class="container">
-                <img src="./assets/logo.svg" alt="">
+    <header class="header-bg-white-70">
+        <div class="container">
+            <div class="p-x-16 d-flex justify-content-between algin-items-center">
+                <div class="p-y-12">
+                    <img class="overflow-hidden border-radius-16" src="./assets/logo.svg" alt="">
+                </div>
+                <div>
+                    <button class="nav-btn d-md-hidden">
+                        <div class="btn-line"></div>
+                        <div class="btn-line"></div>
+                        <div class="btn-line"></div>
+                    </button>
+                    <!-- width低於768px時消失，高於才讓d-none失效，因都是display屬性，none變成flex -->
+                    <ul class="d-none d-md-flex">
+                        <li class="p-x-16">Home</li>
+                        <li class="p-x-16">About</li>
+                        <li class="p-x-16">Photo</li>
+                        <li class="p-x-16">Service</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        
+
+
+
     </header>
 </body>
+
 </html>

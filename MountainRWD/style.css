@@ -1,13 +1,107 @@
-.body{
+* {
+    margin: 0;
+}
+
+.body {
     display: block;
 
 }
-/* .container{
-    width: 1440px;
-} */
-.header-bg-white-70{
-    background-color: rgba(255, 255, 255, 0.7);
+
+.header-bg-white-70 {
+    background-color: rgba(0, 255, 255, 0.7);
 }
-.d-flex{
+
+.d-flex {
     display: flex;
+}
+
+.border-radius-16 {
+    border-radius: 16px;
+}
+
+.p-y-12 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.p-x-16 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.algin-items-center {
+    align-items: center;
+}
+
+.nav-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(219, 215, 216, 0.7);
+    cursor: pointer;
+}
+/* 橫線圖示 */
+.btn-line {
+    /* color: #000; */
+    background-color: black;
+    height: 2px;
+    width: 90%;
+}
+
+.d-none {
+    display: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* 768px以上生效 */
+/* 固定不變的東西要在上面，media一定要寫在最下面 */
+@media (min-width:576px) {
+    .container {
+        max-width: 540px;
+        /* 左右自動放在最小px */
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media (min-width:768px) {
+    .d-md-hidden {
+        display: none;
+    }
+
+    .d-md-flex {
+        display: flex;
+    }
+
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 1140px;
+    }
 }
