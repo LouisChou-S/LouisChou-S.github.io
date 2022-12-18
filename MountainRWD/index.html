@@ -12,7 +12,7 @@
 <body>
     <header class="header-bg-white-70">
         <div class="container">
-            <div class="p-x-16 d-flex justify-content-between algin-items-center">
+            <div class="p-x-12 d-flex justify-content-between algin-items-center">
                 <div class="p-y-12">
                     <img class="overflow-hidden border-radius-16" src="./assets/logo.svg" alt="">
                 </div>
@@ -24,18 +24,33 @@
                     </button>
                     <!-- width低於768px時消失，高於才讓d-none失效，因都是display屬性，none變成flex -->
                     <ul class="d-none d-md-flex">
-                        <li class="p-x-16">Home</li>
-                        <li class="p-x-16">About</li>
-                        <li class="p-x-16">Photo</li>
-                        <li class="p-x-16">Service</li>
+                        <li class="p-x-16 cursor-pointer">Home</li>
+                        <li class="p-x-16 cursor-pointer">About</li>
+                        <li class="p-x-16 cursor-pointer">Photo</li>
+                        <li class="p-x-16 cursor-pointer mr--16">Service</li>
                     </ul>
                 </div>
             </div>
         </div>
-
-
-
     </header>
+    <section class="relative">
+        <div class="absolute inset-0 container d-flex algin-items-center">
+            <div class="fs-24 fs-md-48 text-white p-x-12 d-flex">
+                <div class="rect-white rect-white-md"></div>
+                <!-- 下了line-height-1就不需在rect-white指定高度，因為它會跟此層級有指定行高的物件一樣高 -->
+                <!-- 也不用在上一層指定algin-items-center，因為行高一樣=對齊 -->
+                <div class="pl-8 line-height-1">群山連峰 千岩萬壑</div>
+            </div>
+        </div>
+        <div class="">
+            <!-- 由於圖片很大所以要下width:100%，圖的大小會根據上一層變化 -->
+            <!-- 若沒下會產生橫向scroll bar，俗稱破版 -->
+            <img class="w-100" src="./assets/bannerImg.svg" alt="">
+        </div>
+    </section>
+    <main>
+        
+    </main>
 </body>
 
 </html>
