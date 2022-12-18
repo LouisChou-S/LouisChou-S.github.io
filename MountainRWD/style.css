@@ -112,6 +112,28 @@ li {
 .line-height-1{
     line-height: 1;
 }
+.mt-64{
+    margin-top: 64px;
+}
+.section-title-style{
+    font-size: 16px;
+    font-weight: 700;
+    font-style: 'Noto Sans' normal;
+    text-align: center;
+    margin-top: 32px;
+    color: #343A40;
+}
+.se2-text-wrapper{
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+    /* 加relative，文字才會出來，只下z-index沒用 */
+    position: relative;
+    padding: 16px;
+}
+.overflow-hidden{
+    overflow: hidden;
+}
+
 /* 576px以上生效 */
 /* 固定不變的東西要在上面，media一定要寫在最下面 */
 @media (min-width:576px) {
@@ -141,12 +163,31 @@ li {
     .rect-white-md{
         width: 8px;
         background-color: #FFF;
+    }   
+
+    .section-title-style-md{
+        font-size: 32px;
+        font-weight: 700;
+        font-style: 'Noto Sans' normal;
+        text-align: center;
+        margin-top: 64px;
+        color: #343A40;
     }
 }
 
 @media (min-width:992px) {
     .container {
         max-width: 960px;
+    }
+    .d-lg-flex{
+        display: flex;
+    }
+    .w-lg-1\/2{
+        width: 50%;
+    }
+    /* 繼承parent的postion設定 */
+    .position-lg-unset{
+        position: unset;
     }
 }
 
