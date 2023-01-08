@@ -1,5 +1,7 @@
 * {
     margin: 0;
+    /* 這邊沒下的話padding會變大 */
+    box-sizing:border-box;
 }
 
 .body {
@@ -35,6 +37,7 @@
 .pr-16:last-of-type {
     padding-right: 0px;
 }
+
 .position-fixed {
     position: fixed;
 }
@@ -143,24 +146,35 @@ li {
 .overflow-hidden{
     overflow: hidden;
 }
+
+.border-radius-4 {
+    border-radius: 4px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.m-n12{
+    margin: 0 -12px;
+}
+.p-12{
+    padding: 12px;
+}
+.card{
+    margin-bottom: 32px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25), 2px 0px 4px rgba(0, 0, 0, 0.25);
+}
 .card-img-icon{
     top: 11px;
     right: 13px;
  }
-.border-radius-4 {
-    border-radius: 4px;
-}
-.card-body{
+.w-1\/2{
     width: 50%;
-    margin-right: 15px;
-    margin-bottom: 32px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25), 2px 0px 4px rgba(0, 0, 0, 0.25);
-
 }
-.card-body:last-of-type{
+/* .card-body:last-of-type{
     width: 50%;
     margin-right: 0px;
-}
+} */
 .card-title{
     margin: 8px 0 4px 0;
     padding: 4px 16px;
@@ -169,7 +183,7 @@ li {
     font-family: 'Noto Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 25px;
     color: #343A40;
 }
@@ -198,6 +212,51 @@ li {
     -webkit-line-clamp: 4; /*行數*/
     -webkit-box-orient: vertical;
 }
+.border-1{
+    border: solid 1px #CED4DA;
+}
+.border-radius-6{
+    border-radius: 6px;
+}
+.ml-26{
+    margin-left: 26px;
+}
+.se4-text{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+}
+.input-text{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+    color: #212529;
+}
+.w-80{
+    width: 80px;
+}
+.border-none{
+    border: none;
+    outline-style: none;
+}
+.py-6{
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.pl-12{
+    padding-left: 12px;
+}
+.pl-16 {
+    padding-left: 16px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+
 /* test用 */
 .bg-color-black{
     background-color: black;
@@ -243,6 +302,9 @@ li {
         margin-top: 64px;
         color: #343A40;
     }
+    .w-md-1\/4{
+        width: 25%;
+    }
 }
 
 @media (min-width:992px) {
@@ -251,6 +313,12 @@ li {
     }
     .d-lg-flex{
         display: flex;
+    }
+    .pl-lg-16{
+        padding-left: 16px;
+    }
+    .pr-lg-16{
+        padding-right: 16px;
     }
     .w-lg-1\/2{
         width: 50%;
@@ -271,6 +339,14 @@ li {
     }
     .align-items-center-lg{
         align-items: center;
+    }
+    .card-title-text-lg{
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+        color: #343A40;
     }
 }
 
