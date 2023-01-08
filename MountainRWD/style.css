@@ -236,14 +236,12 @@ li {
     line-height: 28px;
     color: #212529;
 }
-
 .input-wrapper{
     box-sizing: Content-box;
     border: 1px solid #CED4DA;
     border-radius: 6px;
     padding: 6px 12px;
 }
-
 .w-80{
     width: 80px;
 }
