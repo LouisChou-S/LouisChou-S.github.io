@@ -129,6 +129,7 @@ li {
     /* 加relative，文字才會出來，只下z-index沒用 */
     position: relative;
     padding: 16px;
+    width: auto;
 }
 .overflow-hidden{
     overflow: hidden;
@@ -189,10 +190,31 @@ li {
     .position-lg-unset{
         position: unset;
     }
+    .se2-text-wrapper{
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 1;
+        /* 加relative，文字才會出來，只下z-index沒用 */
+        position: relative;
+        padding:16px;
+        margin-left: -99px;
+        width: 60%;
+    }
+    .align-items-center-lg{
+        align-items: center;
+    }
 }
 
 @media (min-width:1200px) {
     .container {
         max-width: 1140px;
+    }
+    .se2-text-wrapper{
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 1;
+        /* 加relative，文字才會出來，只下z-index沒用 */
+        position: relative;
+        padding:16px;
+        margin-left: -172px;
+        width: 744px;
     }
 }

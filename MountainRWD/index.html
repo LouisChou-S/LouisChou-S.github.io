@@ -52,14 +52,16 @@
         
         <section class="container p-x-12">
             <div class="section-title-style section-title-style-md">關於合歡山</div>
-            <div class="relative d-lg-flex">
-                <!-- 在lg時unset發揮作用，繼承parent的postion:relative，以製做文字疊在圖片上 -->
+            <div class="relative d-lg-flex align-items-center-lg">
+                <!-- absolute跟inset-0讓圖片跟文字疊在一起 -->
+                <!-- lg時讓文字不要疊在圖片上，在lg時unset發揮作用，繼承parent的postion:relative， -->
                 <!-- overflow-hidden讓圖片範圍跟文字範圍一樣大，多的截掉 -->
                 <div class="absolute inset-0 overflow-hidden position-lg-unset w-lg-1/2">
                     <!-- 下W-100文字區塊才會置中 -->
                     <img class="w-100" src="./assets/secImg01.svg">
-                </div>           
-                <div class="se2-text-wrapper w-lg-1/2">
+                </div>
+                <!-- 沒有w-lg-1/2的話文字會占滿空間，無法跟圖片等比例 -->
+                <div class="se2-text-wrapper">
                     說到雪與高山，「合歡山」肯定是台灣人的首選了，這也正是合歡山國家森林遊樂區最
                     獨一無二的景緻。<br>
                     <br>
