@@ -236,6 +236,14 @@ li {
     line-height: 28px;
     color: #212529;
 }
+
+.input-wrapper{
+    box-sizing: Content-box;
+    border: 1px solid #CED4DA;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
 .w-80{
     width: 80px;
 }
@@ -257,7 +265,31 @@ li {
     margin-bottom: 20px;
 }
 
-/* test用 */
+.w-180{
+    width: 180px;
+}
+
+.flex-shrink-0{
+    flex-shrink: 0;
+}
+
+.h-28{
+    height: 28px;
+}
+
+.h-120{
+    height: 120px;
+}
+
+.mt-7{
+    margin-top: 7px;
+}
+
+.footer-wrapper{
+    background-color: #6C757D;
+    height: 108px;
+}
+
 .bg-color-black{
     background-color: black;
 }
@@ -304,6 +336,9 @@ li {
     }
     .w-md-1\/4{
         width: 25%;
+    }
+    .w-md-180{
+        width: 100px;
     }
 }
 

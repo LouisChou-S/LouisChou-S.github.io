@@ -62,6 +62,7 @@
                 </div>
                 <!-- 沒有w-lg-1/2的話文字會占滿空間，無法跟圖片等比例 -->
                 <div class="se2-text-wrapper se2-text-wrapper-lg se2-text-wrapper-xl">
+                    <!-- <div class=""> -->
                     說到雪與高山，「合歡山」肯定是台灣人的首選了，這也正是合歡山國家森林遊樂區最
                     獨一無二的景緻。<br>
                     <br>
@@ -154,25 +155,49 @@
             </div>
         </section>
         <section class="">
-            <div class="section-title-style section-title-style-md">登山相簿</div>
+            <div class="section-title-style section-title-style-md">問題服務</div>
             <div class="container p-x-12">
                 <div class="d-lg-flex justify-content-between">
                     <div class="d-flex justify-content-between w-100 algin-items-center pr-lg-16  mb-20">
-                        <div class="se4-text w-80">帳號</div>
-                        <div class="border-1 border-radius-6 w-100 ml-26">
-                            <input class="input-text border-none py-6 pl-12" type="text" placeholder="test@gmail.com">
+                        <div class="se4-text w-80 flex-shrink-0">帳號</div>
+                        <div class="input-wrapper w-100 ml-26">
+                            <input class="input-text border-none w-100" type="text" placeholder="test@gmail.com">
                         </div>
                     </div>
                     <div class="d-flex justify-content-between w-100 algin-items-center pl-lg-16  mb-20">
-                        <div class="se4-tex w-80">電話</div>
-                        <div class="border-1 border-radius-6 w-100 ml-26">
-                            <input class="input-text border-none py-6 pl-12" type="text" placeholder="test@gmail.com">
+                        <div class="se4-tex w-80 flex-shrink-0">電話</div>
+                        <div class="input-wrapper w-100 ml-26">
+                            <input class="input-text border-none w-100" type="text" placeholder="test@gmail.com">
                         </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between algin-items-center mb-20">
+                    <div class="se4-text w-80 flex-shrink-0">通訊地址</div>
+                    <div class="input-wrapper  ml-26">
+                        <!-- 寬度下在select，下箭頭才會在右邊 -->
+                        <select class="input-text border-none w-80 w-md-180 h-28" name="" id="">
+                            <option>台北市</option>
+                            <option>新北市</option>
+                        </select>
+                    </div>
+                    <div class="input-wrapper w-100 ml-26">
+                        <input class="input-text border-none w-100" type="text" placeholder="test@gmail.com">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mb-20">
+                    <div class="se4-text w-80 flex-shrink-0 mt-7">問題內容</div>
+                    <div class="input-wrapper w-100 ml-26">
+                        <textarea class="input-text border-none w-100  h-120">這是問題與廢話...</textarea>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <footer>
+        <section class="footer-wrapper">
+            
+        </section>
+    </footer>
 </body>
 
 </html>
