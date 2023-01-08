@@ -29,9 +29,17 @@
     padding-right: 12px;
 }
 
-.p-x-16 {
-    padding-left: 16px;
+.pr-16 {
     padding-right: 16px;
+}
+.pr-16:last-of-type {
+    padding-right: 0px;
+}
+.position-fixed {
+    position: fixed;
+}
+.z-10{
+    z-index: 10;
 }
 
 .overflow-hidden {
@@ -121,6 +129,7 @@ li {
     font-style: 'Noto Sans' normal;
     text-align: center;
     margin-top: 32px;
+    margin-bottom: 32px;
     color: #343A40;
 }
 .se2-text-wrapper{
@@ -134,6 +143,66 @@ li {
 .overflow-hidden{
     overflow: hidden;
 }
+.card-img-icon{
+    top: 11px;
+    right: 13px;
+ }
+.border-radius-4 {
+    border-radius: 4px;
+}
+.card-body{
+    width: 50%;
+    margin-right: 15px;
+    margin-bottom: 32px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25), 2px 0px 4px rgba(0, 0, 0, 0.25);
+
+}
+.card-body:last-of-type{
+    width: 50%;
+    margin-right: 0px;
+}
+.card-title{
+    margin: 8px 0 4px 0;
+    padding: 4px 16px;
+}
+.card-title-text{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #343A40;
+}
+.card-title-chip{
+    
+    border-radius: 99px;
+    padding: 4px 8px;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+}
+.bg-green{
+    background-color: #198754;
+}
+.bg-grange{
+    background-color: #FFC107;
+}
+.card-desc{
+    margin: 4px 16px 12px 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4; /*行數*/
+    -webkit-box-orient: vertical;
+}
+/* test用 */
+.bg-color-black{
+    background-color: black;
+}
+
 
 /* 576px以上生效 */
 /* 固定不變的東西要在上面，media一定要寫在最下面 */
@@ -190,13 +259,14 @@ li {
     .position-lg-unset{
         position: unset;
     }
-    .se2-text-wrapper{
+    /* 開始讓字跟圖片部分重疊，要算寬度 */
+    .se2-text-wrapper-lg{
         background-color: rgba(255, 255, 255, 0.7);
         z-index: 1;
-        /* 加relative，文字才會出來，只下z-index沒用 */
         position: relative;
         padding:16px;
         margin-left: -99px;
+        /* 60%是約略算，因寬度是992px，margin往左99px */
         width: 60%;
     }
     .align-items-center-lg{
@@ -208,13 +278,13 @@ li {
     .container {
         max-width: 1140px;
     }
-    .se2-text-wrapper{
+    .se2-text-wrapper-xl{
         background-color: rgba(255, 255, 255, 0.7);
         z-index: 1;
-        /* 加relative，文字才會出來，只下z-index沒用 */
         position: relative;
-        padding:16px;
+        padding:16px;        
         margin-left: -172px;
+        /* 最大寬度已固定，所以直接指定文字區塊的寬度 */
         width: 744px;
     }
 }

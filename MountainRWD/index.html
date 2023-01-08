@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <header class="header-bg-white-70">
+    <!-- position-fixed讓Header永遠在最上面，z-10讓Header永遠在最前面 -->
+    <header class="header-bg-white-70 position-fixed z-10 w-100">
         <div class="container">
             <div class="p-x-12 d-flex justify-content-between algin-items-center">
                 <div class="p-y-12">
@@ -24,10 +25,10 @@
                     </button>
                     <!-- width低於768px時消失，高於才讓d-none失效，因都是display屬性，none變成flex -->
                     <ul class="d-none d-md-flex">
-                        <li class="p-x-16 cursor-pointer">Home</li>
-                        <li class="p-x-16 cursor-pointer">About</li>
-                        <li class="p-x-16 cursor-pointer">Photo</li>
-                        <li class="p-x-16 cursor-pointer mr--16">Service</li>
+                        <li class="pr-16 cursor-pointer">Home</li>
+                        <li class="pr-16 cursor-pointer">About</li>
+                        <li class="pr-16 cursor-pointer">Photo</li>
+                        <li class="pr-16 cursor-pointer">Service</li>
                     </ul>
                 </div>
             </div>
@@ -48,8 +49,7 @@
             <img class="w-100" src="./assets/bannerImg.svg" alt="">
         </div>
     </section>
-    <main>
-        
+    <main>        
         <section class="container p-x-12">
             <div class="section-title-style section-title-style-md">關於合歡山</div>
             <div class="relative d-lg-flex align-items-center-lg">
@@ -61,7 +61,7 @@
                     <img class="w-100" src="./assets/secImg01.svg">
                 </div>
                 <!-- 沒有w-lg-1/2的話文字會占滿空間，無法跟圖片等比例 -->
-                <div class="se2-text-wrapper">
+                <div class="se2-text-wrapper se2-text-wrapper-lg se2-text-wrapper-xl">
                     說到雪與高山，「合歡山」肯定是台灣人的首選了，這也正是合歡山國家森林遊樂區最
                     獨一無二的景緻。<br>
                     <br>
@@ -75,6 +75,57 @@
                     五月，清麗動人的森氏杜鵑花海，將翠綠的山頭綴的紅白交錯，好像又降下瑞雪一般，
                     令人驚艷，演繹著四季都精彩的合歡山國家森林遊樂區。
                 </div>                
+            </div>
+        </section>
+        <section class="container">
+            <div class="section-title-style">登山相簿</div>
+            <div class="cardArea d-flex">
+                <div class="card-body mr-15">
+                    <div class="card-imgArea-top relative overflow-hidden border-radius-4">
+                        <div class="card-img">
+                            <img class="w-100" src="./assets/sImg01.svg" alt="">
+                        </div>                            
+                        <div class="card-img-icon absolute">
+                            <img src="./assets/sun.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="card-textArea">
+                        <div class="card-title d-flex justify-content-between">
+                            <div class="card-title-text">
+                                武嶺公路
+                            </div>
+                            <div class="card-title-chip bg-green">
+                                Easy
+                            </div>
+                        </div>
+                        <div class="card-desc">
+                            屬於合歡山的武嶺海拔高度3275公尺，位在合歡山主峰與東峰之間的鞍部，是台灣公路的最高點位置。東邊有一座觀景台可眺望高低起伏的山巒與層層的雲海，無光害的環境更是夜間觀星的最佳地點。冬季時還會飄下片片白雪，營造出銀色世界，吸引許多民眾到此遊賞
+                        </div>                        
+                    </div>
+                </div>
+                <div class="card-body mr-15">
+                    <div class="card-imgArea-top relative overflow-hidden border-radius-4">
+                        <div class="card-img">
+                            <img class="w-100" src="./assets/sImg01.svg" alt="">
+                        </div>                            
+                        <div class="card-img-icon absolute">
+                            <img src="./assets/sun.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="card-textArea">
+                        <div class="card-title d-flex justify-content-between">
+                            <div class="card-title-text">
+                                合歡西峰
+                            </div>
+                            <div class="card-title-chip bg-grange">
+                                Medium
+                            </div>
+                        </div>
+                        <div class="card-desc">
+                            合歡西峰以遠的要命、一路不停上上下下，回程也好艱辛而馳名。確實，在登山口還不必踏出第一步就已經看到聳立在眼前的陡上坡，這段上坡在抵達反射板附近之後才會稍稍和緩，然後通往合歡北峰。短短2.2公里已經使人迷醉，武陵四秀、南湖中央尖、奇萊主北清晰可見，有時甚至可以看見雲海，美不勝收。
+                        </div>                        
+                    </div>
+                </div>
             </div>
         </section>
     </main>
