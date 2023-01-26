@@ -194,32 +194,38 @@
         </section>
     </main>
     <footer>
-        <section class="footer-wrapper">
-            <div class="container d-flex justify-content-between align-items-end">
-                <div class="p-y-24 d-flex ">
-                    <div class="d-flex algin-items-center">
-                        <img class="w-150 h-60 border-radius-16" src="./assets/logo.svg" alt="">
-                        <div class="h-60 pl-8 pl-md-16 d-flex flex-column justify-space-between">
-                            <div class="footer-text-1">Hiker CP</div>
-                            <ul class="d-flex footer-text-2 algin-items-center">
-                                <li class="cursor-pointer">Home</li>
-                                <li class="m-x-6 m-md-x-12 rect"></li>
-                                <li class="cursor-pointer">About</li>
-                                <li class="m-x-6 m-md-x-12 rect"></li>
-                                <li class="cursor-pointer">Photo</li>
-                                <li class="m-x-6 m-md-x-12 rect"></li>
-                                <li class="cursor-pointer">Service</li>
-                            </ul>
-                        </div>
-                    </div>       
+        <div class="footer-wrapper">
+            <div class="container p-y-24 d-md-flex">
+                <!-- md以上才出現logo -->
+                <div class="d-none d-md-block">
+                    <img class="w-150 h-100 border-radius-16" src="./assets/logo.svg" alt="">
                 </div>
-                <div class="p-y-24 d-flex algin-items-center">
-                    <img class="cursor-pointer" src="./assets/yt.png" alt="">
-                    <img class="cursor-pointer pl-8 pl-md-16" src="./assets/fb.png" alt="">
-                    <img class="cursor-pointer pl-8 pl-md-16" src="./assets/camara.png" alt="">
+                <!-- 使用flex-grow-1才能讓HOME目錄跟ICON吃到Container的最右邊 -->
+                <!-- 此部分跟logo分成兩部份是為了讓icon可以吃到最右邊，同時跟HOME目錄一起向下對齊 -->
+                <div class="pl-md-16 d-md-flex flex-grow-1">
+                    <div class="footer-text-1 d-flex flex-column justify-content-between flex-grow-1">
+                        <div>
+                            Hiker CP
+                        </div>
+                        <div class="d-md-flex align-md-items-end justify-content-between">
+                            <ul class="d-flex flex-shrink-0">
+                                <li class="footer-space-border cursor-pointer">Home</li>
+                                <li class="footer-space-border cursor-pointer">About</li>
+                                <li class="footer-space-border cursor-pointer">Photo</li>
+                                <li class="footer-space-border cursor-pointer">Service</li>
+                            </ul>
+                            <div class="d-flex align-md-items-end">
+                                <!-- icon要指定大小，才不會有原圖大小不一樣問題 -->
+                                <img class="icon-size cursor-pointer" src="./assets/yt.png" alt="">
+                                <img class="icon-size cursor-pointer ml-8 ml-md-16" src="./assets/fb.png" alt="">
+                                <img class="icon-size cursor-pointer ml-8 ml-md-16" src="./assets/camara.png" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+        </div>
     </footer>
 </body>
 

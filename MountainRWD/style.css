@@ -29,7 +29,13 @@ ul {
     padding-top: 12px;
     padding-bottom: 12px;
 }
-
+.p-y-24 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+.p-y-auto{
+    padding: auto 0;
+}
 .p-x-12 {
     padding-left: 12px;
     padding-right: 12px;
@@ -339,10 +345,6 @@ li {
     background-color: black;
 }
 
-.p-y-24 {
-    padding-top: 24px;
-    padding-bottom: 24px;
-}
 
 .w-150 {
     width: 150px;
@@ -357,7 +359,7 @@ li {
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
-    line-height: 27px;
+    line-height: 22px;
     color: #FFF;
 }
 
@@ -369,29 +371,44 @@ li {
     line-height: 22px;
     color: #FFF;
 }
-.flex-column{
+
+.flex-column {
     flex-direction: column;
 }
-.justify-space-between{
+
+.justify-space-between {
     justify-content: space-between;
 }
 
-.rect{
-    width: 2px;
-    height: 16px;
-    background-color: #FFF;
+.justify-content-start{
+    justify-content: flex-start;
 }
-.m-x-6{
-    margin-left: 6px;
+.footer-space-border {
+    padding-right: 6px;
+    border-right: solid 2px #FFF;
     margin-right: 6px;
+    line-height: 1;
 }
-.align-items-end{
-    align-items: flex-end;
+.footer-space-border:last-of-type {
+    border:none
 }
-.h-100{
+
+.flex-grow-1{
+    flex-grow: 1;
+}
+
+.h-100 {
     height: 100%;
 }
 
+.icon-size{
+    width: 16px;
+    height: 16px;
+}
+
+.ml-8{
+    margin-left: 8px;
+}
 /* 576px以上生效 */
 /* 固定不變的東西要在上面，media一定要寫在最下面 */
 @media (min-width:576px) {
@@ -441,12 +458,28 @@ li {
     .w-md-180 {
         width: 100px;
     }
-    .m-md-x-12{
-        margin-left: 12px;
+
+    .footer-space-border {
+        padding-right: 12px;
+        border-right: solid 2px #FFF;
         margin-right: 12px;
+        line-height: 1;
     }
-    .pl-md-16{
+
+    .pl-md-16 {
         padding-left: 16px;
+    }
+
+    .d-md-block {
+        display: block;
+    }
+
+    .align-md-items-end {
+        align-items: flex-end;
+    }
+
+    .ml-md-16{
+        margin-left: 16px;
     }
 }
 
