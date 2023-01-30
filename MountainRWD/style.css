@@ -1,5 +1,11 @@
 * {
     margin: 0;
+    /* 這邊沒下的話padding會變大 */
+    box-sizing: border-box;
+}
+
+ul {
+    padding: 0;
 }
 
 .body {
@@ -23,15 +29,32 @@
     padding-top: 12px;
     padding-bottom: 12px;
 }
-
+.p-y-24 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+.p-y-auto{
+    padding: auto 0;
+}
 .p-x-12 {
     padding-left: 12px;
     padding-right: 12px;
 }
 
-.p-x-16 {
-    padding-left: 16px;
+.pr-16 {
     padding-right: 16px;
+}
+
+.pr-16:last-of-type {
+    padding-right: 0px;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.z-10 {
+    z-index: 10;
 }
 
 .overflow-hidden {
@@ -58,6 +81,7 @@
     background-color: rgba(219, 215, 216, 0.7);
     cursor: pointer;
 }
+
 /* 橫線圖示 */
 .btn-line {
     /* color: #000; */
@@ -73,67 +97,318 @@
 li {
     list-style: none;
 }
-.cursor-pointer{
+
+.cursor-pointer {
     cursor: pointer;
 }
-.mr--16{
+
+.mr--16 {
     margin-right: -16px;
 }
-.w-100{
-    width: 100%;    
+
+.w-100 {
+    width: 100%;
 }
-.relative{
+
+.relative {
     position: relative;
 }
-.absolute{
+
+.absolute {
     position: absolute;
 }
-.inset-0{
+
+.inset-0 {
     inset: 0;
 }
 
-.fs-24{
+.fs-24 {
     font-size: 24px;
 }
-.text-white{
+
+.text-white {
     color: #FFF;
 }
-.rect-white{
+
+.rect-white {
     width: 4px;
     /* height: 24px; */
     background-color: #FFF;
 }
-.ml-80{
+
+.ml-80 {
     margin-left: 80px;
 }
-.pl-8{
+
+.pl-8 {
     padding-left: 8px;
 }
-.line-height-1{
+
+.line-height-1 {
     line-height: 1;
 }
-.mt-64{
+
+.mt-64 {
     margin-top: 64px;
 }
-.section-title-style{
+
+.section-title-style {
     font-size: 16px;
     font-weight: 700;
     font-style: 'Noto Sans' normal;
     text-align: center;
     margin-top: 32px;
+    margin-bottom: 32px;
     color: #343A40;
 }
-.se2-text-wrapper{
+
+.se2-text-wrapper {
     background-color: rgba(255, 255, 255, 0.7);
     z-index: 1;
     /* 加relative，文字才會出來，只下z-index沒用 */
     position: relative;
     padding: 16px;
+    width: auto;
 }
-.overflow-hidden{
+
+.overflow-hidden {
     overflow: hidden;
 }
 
+.border-radius-4 {
+    border-radius: 4px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.m-n12 {
+    margin: 0 -12px;
+}
+
+.p-12 {
+    padding: 12px;
+}
+
+.card {
+    margin-bottom: 32px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25), 2px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card-img-icon {
+    top: 11px;
+    right: 13px;
+}
+
+.w-1\/2 {
+    width: 50%;
+}
+
+/* .card-body:last-of-type{
+    width: 50%;
+    margin-right: 0px;
+} */
+.card-title {
+    margin: 8px 0 4px 0;
+    padding: 4px 16px;
+}
+
+.card-title-text {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    color: #343A40;
+}
+
+.card-title-chip {
+
+    border-radius: 99px;
+    padding: 4px 8px;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.bg-green {
+    background-color: #198754;
+}
+
+.bg-grange {
+    background-color: #FFC107;
+}
+
+.card-desc {
+    margin: 4px 16px 12px 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    /*行數*/
+    -webkit-box-orient: vertical;
+}
+
+.border-1 {
+    border: solid 1px #CED4DA;
+}
+
+.border-radius-6 {
+    border-radius: 6px;
+}
+
+.ml-26 {
+    margin-left: 26px;
+}
+
+.se4-text {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.input-text {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+    color: #212529;
+}
+
+.input-wrapper {
+    box-sizing: Content-box;
+    border: 1px solid #CED4DA;
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+.w-80 {
+    width: 80px;
+}
+
+.border-none {
+    border: none;
+    outline-style: none;
+}
+
+.py-6 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.pl-12 {
+    padding-left: 12px;
+}
+
+.pl-16 {
+    padding-left: 16px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.w-180 {
+    width: 180px;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.h-28 {
+    height: 28px;
+}
+
+.h-120 {
+    height: 120px;
+}
+
+.mt-7 {
+    margin-top: 7px;
+}
+
+.footer-wrapper {
+    background-color: #6C757D;
+    height: 108px;
+}
+
+.bg-color-black {
+    background-color: black;
+}
+
+
+.w-150 {
+    width: 150px;
+}
+
+.h-60 {
+    height: 60px;
+}
+
+.footer-text-1 {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    color: #FFF;
+}
+
+.footer-text-2 {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFF;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.justify-content-start{
+    justify-content: flex-start;
+}
+.footer-space-border {
+    padding-right: 6px;
+    border-right: solid 2px #FFF;
+    margin-right: 6px;
+    line-height: 1;
+}
+.footer-space-border:last-of-type {
+    border:none
+}
+
+.flex-grow-1{
+    flex-grow: 1;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.icon-size{
+    width: 16px;
+    height: 16px;
+}
+
+.ml-8{
+    margin-left: 8px;
+}
 /* 576px以上生效 */
 /* 固定不變的東西要在上面，media一定要寫在最下面 */
 @media (min-width:576px) {
@@ -157,15 +432,17 @@ li {
     .container {
         max-width: 720px;
     }
-    .fs-md-48{
+
+    .fs-md-48 {
         font-size: 48px;
     }
-    .rect-white-md{
+
+    .rect-white-md {
         width: 8px;
         background-color: #FFF;
-    }   
+    }
 
-    .section-title-style-md{
+    .section-title-style-md {
         font-size: 32px;
         font-weight: 700;
         font-style: 'Noto Sans' normal;
@@ -173,26 +450,102 @@ li {
         margin-top: 64px;
         color: #343A40;
     }
+
+    .w-md-1\/4 {
+        width: 25%;
+    }
+
+    .w-md-180 {
+        width: 100px;
+    }
+
+    .footer-space-border {
+        padding-right: 12px;
+        border-right: solid 2px #FFF;
+        margin-right: 12px;
+        line-height: 1;
+    }
+
+    .pl-md-16 {
+        padding-left: 16px;
+    }
+
+    .d-md-block {
+        display: block;
+    }
+
+    .align-md-items-end {
+        align-items: flex-end;
+    }
+
+    .ml-md-16{
+        margin-left: 16px;
+    }
 }
 
 @media (min-width:992px) {
     .container {
         max-width: 960px;
     }
-    .d-lg-flex{
+
+    .d-lg-flex {
         display: flex;
     }
-    .w-lg-1\/2{
+
+    .pl-lg-16 {
+        padding-left: 16px;
+    }
+
+    .pr-lg-16 {
+        padding-right: 16px;
+    }
+
+    .w-lg-1\/2 {
         width: 50%;
     }
+
     /* 繼承parent的postion設定 */
-    .position-lg-unset{
+    .position-lg-unset {
         position: unset;
+    }
+
+    /* 開始讓字跟圖片部分重疊，要算寬度 */
+    .se2-text-wrapper-lg {
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 1;
+        position: relative;
+        padding: 16px;
+        margin-left: -99px;
+        /* 60%是約略算，因寬度是992px，margin往左99px */
+        width: 60%;
+    }
+
+    .align-items-center-lg {
+        align-items: center;
+    }
+
+    .card-title-text-lg {
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+        color: #343A40;
     }
 }
 
 @media (min-width:1200px) {
     .container {
         max-width: 1140px;
+    }
+
+    .se2-text-wrapper-xl {
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: 1;
+        position: relative;
+        padding: 16px;
+        margin-left: -172px;
+        /* 最大寬度已固定，所以直接指定文字區塊的寬度 */
+        width: 744px;
     }
 }

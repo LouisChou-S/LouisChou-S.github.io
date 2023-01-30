@@ -10,9 +10,10 @@
 </head>
 
 <body>
-    <header class="header-bg-white-70">
+    <!-- position-fixed讓Header永遠在最上面，z-10讓Header永遠在最前面 -->
+    <header class="header-bg-white-70 position-fixed z-10 w-100">
         <div class="container">
-            <div class="p-x-12 d-flex justify-content-between algin-items-center">
+            <div class="d-flex justify-content-between algin-items-center">
                 <div class="p-y-12">
                     <img class="overflow-hidden border-radius-16" src="./assets/logo.svg" alt="">
                 </div>
@@ -24,10 +25,10 @@
                     </button>
                     <!-- width低於768px時消失，高於才讓d-none失效，因都是display屬性，none變成flex -->
                     <ul class="d-none d-md-flex">
-                        <li class="p-x-16 cursor-pointer">Home</li>
-                        <li class="p-x-16 cursor-pointer">About</li>
-                        <li class="p-x-16 cursor-pointer">Photo</li>
-                        <li class="p-x-16 cursor-pointer mr--16">Service</li>
+                        <li class="pr-16 cursor-pointer">Home</li>
+                        <li class="pr-16 cursor-pointer">About</li>
+                        <li class="pr-16 cursor-pointer">Photo</li>
+                        <li class="pr-16 cursor-pointer">Service</li>
                     </ul>
                 </div>
             </div>
@@ -49,17 +50,19 @@
         </div>
     </section>
     <main>
-        
         <section class="container p-x-12">
             <div class="section-title-style section-title-style-md">關於合歡山</div>
-            <div class="relative d-lg-flex">
-                <!-- 在lg時unset發揮作用，繼承parent的postion:relative，以製做文字疊在圖片上 -->
+            <div class="relative d-lg-flex align-items-center-lg">
+                <!-- absolute跟inset-0讓圖片跟文字疊在一起 -->
+                <!-- lg時讓文字不要疊在圖片上，在lg時unset發揮作用，繼承parent的postion:relative， -->
                 <!-- overflow-hidden讓圖片範圍跟文字範圍一樣大，多的截掉 -->
                 <div class="absolute inset-0 overflow-hidden position-lg-unset w-lg-1/2">
                     <!-- 下W-100文字區塊才會置中 -->
-                    <img class="w-100" src="./assets/secImg01.svg" alt="">
-                </div>           
-                <div class="se2-text-wrapper w-lg-1/2">
+                    <img class="w-100" src="./assets/secImg01.svg">
+                </div>
+                <!-- 沒有w-lg-1/2的話文字會占滿空間，無法跟圖片等比例 -->
+                <div class="se2-text-wrapper se2-text-wrapper-lg se2-text-wrapper-xl">
+                    <!-- <div class=""> -->
                     說到雪與高山，「合歡山」肯定是台灣人的首選了，這也正是合歡山國家森林遊樂區最
                     獨一無二的景緻。<br>
                     <br>
@@ -72,10 +75,158 @@
                     雪景是合歡山的一大特色，冬季皚皚白雪是亞熱帶台灣最讓人心醉的夢幻景象，而每年
                     五月，清麗動人的森氏杜鵑花海，將翠綠的山頭綴的紅白交錯，好像又降下瑞雪一般，
                     令人驚艷，演繹著四季都精彩的合歡山國家森林遊樂區。
-                </div>                
+                </div>
+            </div>
+        </section>
+        <section class="">
+            <div class="section-title-style section-title-style-md">登山相簿</div>
+            <div class="container">
+                <div class="row">
+                    <div class="w-1/2 p-12 w-md-1/4">
+                        <div class="card relative overflow-hidden border-radius-4">
+                            <div class="card-img">
+                                <img class="w-100" src="./assets/sImg01.svg" alt="">
+                            </div>
+                            <img class="card-img-icon absolute" src="./assets/sun.svg" alt="">
+                            <div class="card-textArea">
+                                <div class="card-title d-flex justify-content-between">
+                                    <div class="card-title-text card-title-text-lg">武嶺公路</div>
+                                    <div class="card-title-chip bg-green">Easy</div>
+                                </div>
+                                <div class="card-desc">
+                                    屬於合歡山的武嶺海拔高度3275公尺，位在合歡山主峰與東峰之間的鞍部，是台灣公路的最高點位置。東邊有一座觀景台可眺望高低起伏的山巒與層層的雲海，無光害的環境更是夜間觀星的最佳地點。冬季時還會飄下片片白雪，營造出銀色世界，吸引許多民眾到此遊賞
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-1/2 p-12 w-md-1/4">
+                        <div class="card relative overflow-hidden border-radius-4">
+                            <div class="card-img">
+                                <img class="w-100" src="./assets/sImg01.svg" alt="">
+                            </div>
+                            <img class="card-img-icon absolute" src="./assets/sun.svg" alt="">
+                            <div class="card-textArea">
+                                <div class="card-title d-flex justify-content-between">
+                                    <div class="card-title-text card-title-text-lg">合歡西峰</div>
+                                    <div class="card-title-chip bg-grange">Medium</div>
+                                </div>
+                                <div class="card-desc">
+                                    合歡西峰以遠的要命、一路不停上上下下，回程也好艱辛而馳名。確實，在登山口還不必踏出第一步就已經看到聳立在眼前的陡上坡，這段上坡在抵達反射板附近之後才會稍稍和緩，然後通往合歡北峰。短短2.2公里已經使人迷醉，武陵四秀、南湖中央尖、奇萊主北清晰可見，有時甚至可以看見雲海，美不勝收。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-1/2 p-12 w-md-1/4">
+                        <div class="card relative overflow-hidden border-radius-4">
+                            <div class="card-img">
+                                <img class="w-100" src="./assets/sImg01.svg" alt="">
+                            </div>
+                            <img class="card-img-icon absolute" src="./assets/sun.svg" alt="">
+                            <div class="card-textArea">
+                                <div class="card-title d-flex justify-content-between">
+                                    <div class="card-title-text card-title-text-lg">武嶺公路</div>
+                                    <div class="card-title-chip bg-green">Easy</div>
+                                </div>
+                                <div class="card-desc">
+                                    屬於合歡山的武嶺海拔高度3275公尺，位在合歡山主峰與東峰之間的鞍部，是台灣公路的最高點位置。東邊有一座觀景台可眺望高低起伏的山巒與層層的雲海，無光害的環境更是夜間觀星的最佳地點。冬季時還會飄下片片白雪，營造出銀色世界，吸引許多民眾到此遊賞
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-1/2 p-12 w-md-1/4">
+                        <div class="card relative overflow-hidden border-radius-4">
+                            <div class="card-img">
+                                <img class="w-100" src="./assets/sImg01.svg" alt="">
+                            </div>
+                            <img class="card-img-icon absolute" src="./assets/sun.svg" alt="">
+                            <div class="card-textArea">
+                                <div class="card-title d-flex justify-content-between">
+                                    <div class="card-title-text card-title-text-lg">合歡西峰</div>
+                                    <div class="card-title-chip bg-grange">Medium</div>
+                                </div>
+                                <div class="card-desc">
+                                    合歡西峰以遠的要命、一路不停上上下下，回程也好艱辛而馳名。確實，在登山口還不必踏出第一步就已經看到聳立在眼前的陡上坡，這段上坡在抵達反射板附近之後才會稍稍和緩，然後通往合歡北峰。短短2.2公里已經使人迷醉，武陵四秀、南湖中央尖、奇萊主北清晰可見，有時甚至可以看見雲海，美不勝收。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="">
+            <div class="section-title-style section-title-style-md">問題服務</div>
+            <div class="container p-x-12">
+                <div class="d-lg-flex justify-content-between">
+                    <div class="d-flex justify-content-between w-100 algin-items-center pr-lg-16  mb-20">
+                        <div class="se4-text w-80 flex-shrink-0">帳號</div>
+                        <div class="input-wrapper w-100 ml-26">
+                            <input class="input-text border-none w-100" type="text" placeholder="test@gmail.com">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between w-100 algin-items-center pl-lg-16  mb-20">
+                        <div class="se4-tex w-80 flex-shrink-0">電話</div>
+                        <div class="input-wrapper w-100 ml-26">
+                            <input class="input-text border-none w-100" type="text" placeholder="test@gmail.com">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between algin-items-center mb-20">
+                    <div class="se4-text w-80 flex-shrink-0">通訊地址</div>
+                    <div class="input-wrapper  ml-26">
+                        <!-- 寬度下在select，下箭頭才會在右邊 -->
+                        <select class="input-text border-none w-80 w-md-180 h-28" name="" id="">
+                            <option>台北市</option>
+                            <option>新北市</option>
+                        </select>
+                    </div>
+                    <div class="input-wrapper w-100 ml-26">
+                        <input class="input-text border-none w-100" type="text" placeholder="test@gmail.com">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mb-20">
+                    <div class="se4-text w-80 flex-shrink-0 mt-7">問題內容</div>
+                    <div class="input-wrapper w-100 ml-26">
+                        <textarea class="input-text border-none w-100  h-120">這是問題與廢話...</textarea>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="container p-y-24 d-md-flex">
+                <!-- md以上才出現logo -->
+                <div class="d-none d-md-block">
+                    <img class="w-150 h-100 border-radius-16" src="./assets/logo.svg" alt="">
+                </div>
+                <!-- 使用flex-grow-1才能讓HOME目錄跟ICON吃到Container的最右邊 -->
+                <!-- 此部分跟logo分成兩部份是為了讓icon可以吃到最右邊，同時跟HOME目錄一起向下對齊 -->
+                <div class="pl-md-16 d-md-flex flex-grow-1">
+                    <div class="footer-text-1 d-flex flex-column justify-content-between flex-grow-1">
+                        <div>
+                            Hiker CP
+                        </div>
+                        <div class="d-md-flex align-md-items-end justify-content-between">
+                            <ul class="d-flex flex-shrink-0">
+                                <li class="footer-space-border cursor-pointer">Home</li>
+                                <li class="footer-space-border cursor-pointer">About</li>
+                                <li class="footer-space-border cursor-pointer">Photo</li>
+                                <li class="footer-space-border cursor-pointer">Service</li>
+                            </ul>
+                            <div class="d-flex align-md-items-end">
+                                <!-- icon要指定大小，才不會有原圖大小不一樣問題 -->
+                                <img class="icon-size cursor-pointer" src="./assets/yt.png" alt="">
+                                <img class="icon-size cursor-pointer ml-8 ml-md-16" src="./assets/fb.png" alt="">
+                                <img class="icon-size cursor-pointer ml-8 ml-md-16" src="./assets/camara.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
 </body>
 
 </html>
