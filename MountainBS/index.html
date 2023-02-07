@@ -21,12 +21,20 @@
             height: 100%;
         }
 
+        ul {
+            margin: 0;
+        }
+
         body {
             height: 100%;
         }
 
         li {
             list-style: none;
+        }
+
+        .header-wrapper {
+            background-color: rgba(255, 255, 255, 0.7);
         }
 
         .header-btn {
@@ -46,55 +54,139 @@
             inset: 0;
         }
 
-        .navbar__container {
+        .navMenu__container {
             background-color: rgba(0, 0, 0, 0.5);
             /* 不能用margin會讓整塊半透明黑往下移 */
             padding-top: 90px;
         }
-        .navbar__text {
+
+        .navMenu__text {
             color: #FFF;
             font-size: 24px;
-            cursor: pointer;
             margin-top: 12px;
+        }
+
+        .header_text {
+            font-family: 'Noto Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            color: #343A40;
+            margin-right: 24px;
+        }
+
+        .header_text:hover{
+            border-bottom: solid 2px #000;
+        }
+        .header_text:last-of-type{
+            margin-right: 0;
+        }
+
+        .cursor-pointer{
+            cursor: pointer;
+        }
+
+        .banner-wrapper {
+            height: 882px;
+            background-image: url("../Mountain/assets/bannerImg.svg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .banner-rect{
+            color: #000;
+            /* width: 2px; */
+            /* line-height: 65px; */
+        }
+
+        .banner-text{
+            color: #000;
+        }
+        @media (min-width:576px) {
+            .container {
+                max-width: 540px;
+                /* 左右自動放在最小px */
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+
+        @media (min-width:768px) {
+            .d-md-hidden {
+                display: none;
+            }
+
+            .d-md-flex {
+                display: flex;
+            }
         }
     </style>
 </head>
 
 <body>
     <!-- flex-grow-1 position-relative為了讓點選btn時出現選單 -->
-    <div class="d-flex flex-column flex-grow-1 position-relative">
-        <header class="bg-success">
-            <div class="container">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div class="py-3">
-                        <img src="../Mountain/assets/logo.svg" alt="">
-                    </div>
-                    <button class="header-btn">
-                        <div class="header-btn-line"></div>
-                        <div class="header-btn-line"></div>
-                        <div class="header-btn-line"></div>
-                    </button>
+    <header class="header-wrapper d-flex flex-column flex-grow-1 position-relative position-fixed w-100">
+        <div class="container-sm container-md container-lg container-xl">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="py-3">
+                    <img src="../Mountain/assets/logo.svg" alt="">
                 </div>
+                <button class="header-btn d-md-hidden" id="navBtn">
+                    <div class="header-btn-line"></div>
+                    <div class="header-btn-line"></div>
+                    <div class="header-btn-line"></div>
+                </button>
+                <ul class="d-none d-md-flex">
+                    <li class="cursor-pointer header_text">Home</li>
+                    <li class="cursor-pointer header_text">Photo</li>
+                    <li class="cursor-pointer header_text">About</li>
+                    <li class="cursor-pointer header_text">Service</li>
+                </ul>
             </div>
-        </header>
-    </div>
+        </div>
+    </header>
     <!-- 點選btn時出現的選單 -->
-    <!-- 下d-flex才能讓下一層的flex-grow-1占滿畫面 -->
-    <div class="position-absolute inset-0 d-flex">
-        <div class="navbar__container flex-grow-1">
+    <!-- 下d-flex才能讓下一層的flex-grow-1占滿畫面(半透明黑底) -->
+    <div class="position-absolute inset-0 d-flex d-none" id="navMenu">
+        <div class="navMenu__container flex-grow-1">
             <div class="d-flex justify-content-between">
                 <ul>
-                    <li class="navbar__text">Home</li>
-                    <li class="navbar__text">About</li>
-                    <li class="navbar__text">Photo</li>
-                    <li class="navbar__text">Service</li>
+                    <li class="navMenu__text cursor-pointer">Home</li>
+                    <li class="navMenu__text cursor-pointer">About</li>
+                    <li class="navMenu__text cursor-pointer">Photo</li>
+                    <li class="navMenu__text cursor-pointer">Service</li>
                 </ul>
-                <button type="button" class="btn-close btn-close-white mt-3"></button>
+                <button type="button" class="btn-close btn-close-white mt-3 me-3" id="navMenuClose"></button>
             </div>
-           
         </div>
-        
-    </div>
+    </div>    
+        <section class="banner-wrapper d-flex align-items-center">
+            <div class="container-sm container-md container-lg container-xl d-flex">
+                <div class="banner-rect">千岩萬壑</div>
+                <div class="banner-text">群山連峰 千岩萬壑</div>
+            </div>
+            
+        </section>
+    
+    <main>
+
+    </main>
+    <script>
+        const navBtn = document.getElementById('navBtn')
+        const navMenu = document.getElementById('navMenu')
+        const navMenuClose = document.getElementById('navMenuClose')
+        // 開啟menu
+        navBtn.addEventListener('click', () => {
+            console.log('OK1')
+            navMenu.className = navMenu.className.replace('d-none', '')
+        })
+        // 關閉menu
+        navMenuClose.addEventListener('click', () => {
+            console.log('OK2')
+            navMenu.className += ' d-none'
+        })
+    </script>
 </body>
 
 </html>
