@@ -18,7 +18,10 @@
     <style>
         /* 下height: 100%才可以讓flex-grow-1覆蓋整個畫面 */
         html {
-            height: 100%;
+            /* height: 100%; */
+            box-sizing: border-box;
+            display: block;
+
         }
 
         ul {
@@ -76,33 +79,51 @@
             margin-right: 24px;
         }
 
-        .header_text:hover{
+        .header_text:hover {
             border-bottom: solid 2px #000;
         }
-        .header_text:last-of-type{
+
+        .header_text:last-of-type {
             margin-right: 0;
         }
 
-        .cursor-pointer{
+        .cursor-pointer {
             cursor: pointer;
         }
 
         .banner-wrapper {
-            height: 882px;
+            height: 100%;
             background-image: url("../Mountain/assets/bannerImg.svg");
             background-repeat: no-repeat;
             background-size: 100%;
         }
 
-        .banner-rect{
-            color: #000;
-            /* width: 2px; */
-            /* line-height: 65px; */
+        .banner-rect {
+            background-color: #FFF;
+            width: 4px;
+            height: 24px;
         }
 
-        .banner-text{
-            color: #000;
+        .banner-text {
+            color: #FFF;
+            font-family: 'Noto Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            margin-left: 16px;
         }
+
+        .z-10 {
+            z-index: 10;
+        }
+        .z-11 {
+            z-index: 11;
+        }
+        .inset-0 {
+            inset: 0;
+        }
+
         @media (min-width:576px) {
             .container {
                 max-width: 540px;
@@ -120,13 +141,46 @@
             .d-md-flex {
                 display: flex;
             }
+
+            .banner-md-wrapper {
+                height: 600px;
+                background-image: url("../Mountain/assets/bannerImg.svg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        }
+
+        @media (min-width:992px) {
+
+            .banner-lg-wrapper {
+                height: 882px;
+                background-image: url("../Mountain/assets/bannerImg.svg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+
+            .banner-lg-rect {
+                background-color: #FFF;
+                width: 8px;
+                height: 48px;
+            }
+
+            .banner-lg-text {
+                color: #FFF;
+                font-family: 'Noto Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 65px;
+                margin-left: 8px;
+            }
         }
     </style>
 </head>
 
 <body>
     <!-- flex-grow-1 position-relative為了讓點選btn時出現選單 -->
-    <header class="header-wrapper d-flex flex-column flex-grow-1 position-relative position-fixed w-100">
+    <!-- <header class="header-wrapper d-flex position-fixed w-100">
         <div class="container-sm container-md container-lg container-xl">
             <div class="d-flex align-items-center justify-content-between">
                 <div class="py-3">
@@ -145,10 +199,33 @@
                 </ul>
             </div>
         </div>
+    </header> -->
+    <header class="position-fixed z-10 w-100 header-wrapper">
+        <div class="container-sm container-md container-lg container-xl">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="py-3">
+                    <img class="overflow-hidden border-radius-16" src="../Mountain/assets/logo.svg" alt="">
+                </div>
+                <div>
+                    <button class="header-btn d-md-hidden" id="navBtn">
+                        <div class="header-btn-line"></div>
+                        <div class="header-btn-line"></div>
+                        <div class="header-btn-line"></div>
+                    </button>
+                    <!-- width低於768px時消失，高於才讓d-none失效，因都是display屬性，none變成flex -->
+                    <ul class="d-none d-md-flex">
+                        <li class="ps-4 cursor-pointer">Home</li>
+                        <li class="ps-4 cursor-pointer">About</li>
+                        <li class="ps-4 cursor-pointer">Photo</li>
+                        <li class="ps-4 cursor-pointer">Service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </header>
     <!-- 點選btn時出現的選單 -->
     <!-- 下d-flex才能讓下一層的flex-grow-1占滿畫面(半透明黑底) -->
-    <div class="position-absolute inset-0 d-flex d-none" id="navMenu">
+    <div class="position-absolute inset-0 z-11 d-flex d-none" id="navMenu">
         <div class="navMenu__container flex-grow-1">
             <div class="d-flex justify-content-between">
                 <ul>
@@ -160,17 +237,41 @@
                 <button type="button" class="btn-close btn-close-white mt-3 me-3" id="navMenuClose"></button>
             </div>
         </div>
-    </div>    
-        <section class="banner-wrapper d-flex align-items-center">
-            <div class="container-sm container-md container-lg container-xl d-flex">
-                <div class="banner-rect">千岩萬壑</div>
-                <div class="banner-text">群山連峰 千岩萬壑</div>
+    </div>
+    <section class="position-relative">
+        <div class="position-absolute inset-0 container-sm container-md container-lg container-xl d-flex align-items-center">
+            <div class="d-flex">
+                <div class="banner-rect banner-lg-rect"></div>
+                <div class="banner-text banner-lg-text">群山連峰 千岩萬壑</div>
             </div>
-            
-        </section>
-    
-    <main>
+        </div>
+        <div>
+            <img class="w-100" src="../Mountain/assets/bannerImg.svg" alt="">
+        </div>
 
+    </section>
+    <main>
+        <H1 class="text-center mt-4">關於合歡山</H1>
+        <div class="container-sm container-md container-lg container-xl d-flex align-items-center">
+            <div>
+                <img class="w-100" src="../Mountain/assets/secImg01.svg" alt="">
+            </div>
+            <div>
+                <!-- <div class=""> -->
+                    說到雪與高山，「合歡山」肯定是台灣人的首選了，這也正是合歡山國家森林遊樂區最
+                    獨一無二的景緻。<br>
+                    <br>
+                    合歡山國家森林遊樂區是台灣第一座國家森林遊樂區——早在1963年，因為特殊的景色與
+                    高山生態系而得此殊榮，在這裡你可以看見廣大的玉山箭竹草原、體驗整整低平地18度C
+                    的凜冽氣溫、輕鬆登臨園區內三座百岳名山：合歡主峰、合歡東峰與石門山，並住宿松
+                    雪樓享受夜裡華麗的壯闊星海。這裡也有許多高海拔限定的鳥兒：岩鷚、酒紅朱雀、火冠
+                    戴菊…等著你來拜訪喔！<br>
+                    <br>
+                    雪景是合歡山的一大特色，冬季皚皚白雪是亞熱帶台灣最讓人心醉的夢幻景象，而每年
+                    五月，清麗動人的森氏杜鵑花海，將翠綠的山頭綴的紅白交錯，好像又降下瑞雪一般，
+                    令人驚艷，演繹著四季都精彩的合歡山國家森林遊樂區。
+            </div>
+        </div>
     </main>
     <script>
         const navBtn = document.getElementById('navBtn')
