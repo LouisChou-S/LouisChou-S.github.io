@@ -518,6 +518,7 @@ li {
         margin-left: -99px;
         /* 60%是約略算，因寬度是992px，margin往左99px */
         width: 60%;
+        height: 100%;
     }
 
     .align-items-center-lg {
