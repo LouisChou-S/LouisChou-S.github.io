@@ -217,3 +217,44 @@ RN 目前支援android 5 以上裝置
     )
     }
     export default App;
+
+### 內部與外部檔案引用樣式Style
+
+* 新增js檔案並輸入想要的style(可以設計一種元件一個檔，像是相同類型的按鈕)
+![useState](img/styleFile.jpg)
+
+* 引入style檔案並使用
+
+        import react from 'react';
+        import {Text, View, Button, StyleSheet} from 'react-native';
+        import ExStyles from './style'
+
+        const App = () => {
+        return (
+            <View>
+            <Text style={{fontSize: 40, backgroundColor:'red', color:'#fff'}}>Style in React Native</Text>
+            <Text style={styles.textBox}>Style in React Native</Text>
+            <Text style={styles.textBox}>Style in React Native</Text>
+            <Text style={styles.textBox}>Style in React Native</Text>
+            <Text style={ExStyles.textBox}>Style in React Native</Text>
+            <Text style={[ExStyles.textBox, styles.textBox]}>Style in React Native</Text>
+            </View>
+        );
+        };
+
+        // 另一個內部引用style
+        const styles = StyleSheet.create({
+        textBox:{
+            fontSize:25,
+            backgroundColor:'blue',
+            color:'#fff',
+            height:100,
+            marginBottom:10,
+            textAlignVertical:'center',
+            textAlign:'center',
+            borderColor:'red',
+            borderWidth:3,
+            borderRadius:20
+        }
+        })
+        export default App;
