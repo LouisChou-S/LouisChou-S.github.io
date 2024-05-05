@@ -258,3 +258,111 @@ RN 目前支援android 5 以上裝置
         }
         })
         export default App;
+
+### 文字輸入TextInput
+
+    import react, { useState } from 'react';
+    import {Text, View, Button,TextInput, StyleSheet} from 'react-native';
+
+    const App = () => {
+    const [name, setName]= useState('Andy');
+    return (
+        <View>
+        <Text style={{fontSize: 40, backgroundColor:'red', color:'#fff'}}>Handle Text Input</Text>
+        <Text style={{fontSize: 40}}>Your name is : </Text>
+        <TextInput 
+            style={styles.TextInput}
+            placeholder='Enter your name'
+            value={name}  //讓Button可以清除輸入中的字
+            onChangeText={(text)=>setName(text)}  //即時更改
+        />
+        <Button title='clear textInput' onPress={()=>setName('')} />
+        </View>
+    );
+    };
+
+    const styles = StyleSheet.create({
+    TextInput:{
+        fontSize:25,
+        color:'blue',
+        borderColor:'black',
+        borderWidth:2,
+        borderRadius:20,
+        margin:10
+    }
+    })
+    export default App;
+![textInput](img/textInput.jpg)
+
+### 名稱密碼電子郵件表單Form
+    import react, { useState } from 'react';
+    import {Text, View, Button,TextInput, StyleSheet} from 'react-native';
+
+    const App = () => {
+    const [name, setName]= useState('');
+    const [pwd, setPWd]= useState('');
+    const [email, setEmail]= useState('');
+    const [display, setDisplay]= useState(false);
+    // 清除所有內容
+    const resetForm = () => {
+        setName("");
+        setPWd("");
+        setEmail("");
+        setDisplay(false);
+    }
+    return (
+        <View>
+        <Text style={{fontSize: 40, backgroundColor:'red', color:'#fff'}}>Simple Form in React Native</Text>
+        <Text style={{fontSize: 40}}>Your name is : </Text>
+        <TextInput 
+            style={styles.TextInput}
+            placeholder='Enter your name'
+            value={name}  //讓Button可以清除輸入中的字
+            onChangeText={(text)=>setName(text)}  //即時更改
+        />
+        <TextInput 
+            style={styles.TextInput}
+            placeholder='Enter your password'
+            value={pwd}  //讓Button可以清除輸入中的字
+            secureTextEntry={true}  //顯示*字元
+            onChangeText={(text)=>setPWd(text)}  //即時更改
+        />
+        <TextInput 
+            style={styles.TextInput}
+            placeholder='Enter your Email'
+            value={email}  //讓Button可以清除輸入中的字
+            onChangeText={(text)=>setEmail(text)}  //即時更改
+        />
+        {/* 做一點間隔 */}
+        <View style={{marginBottom:10}}>
+            <Button title='Get Details' color={"green"} onPress={()=>setDisplay(true)} />
+        </View>
+        <Button title='clear Details' onPress={()=>resetForm()} />
+        <View>
+            {
+            display ? //如果為true才顯示資訊
+            <View>
+                <Text style={{fontSize:20}}>{name}</Text>
+                <Text style={{fontSize:20}}>{pwd}</Text>
+                <Text style={{fontSize:20}}>{email}</Text>
+            </View>
+            :null
+            }
+        </View>
+        </View>
+    );
+    };
+
+    const styles = StyleSheet.create({
+    TextInput:{
+        fontSize:25,
+        color:'blue',
+        borderColor:'black',
+        borderWidth:2,
+        borderRadius:20,
+        margin:10
+    }
+    })
+    export default App;
+![textInput](img/sampleForm.jpg)
+
