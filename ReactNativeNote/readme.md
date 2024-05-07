@@ -366,28 +366,15 @@ RN 目前支援android 5 以上裝置
     export default App;
 ![textInput](img/sampleForm.jpg)
 
-## Listform - FlatList
+## Listform - FlatList or ScrollView + map
 
     import react, { useState } from 'react';
-    import {Text, View, StyleSheet, FlatList} from 'react-native';
+    import {Text, View, StyleSheet, FlatList, ScrollView} from 'react-native';
 
     const users = [
-    {
-        name:"Louis",
-        id:1
-    },
-    {
-        name:"Tom",
-        id:2
-    },
-    {
-        name:"Andy",
-        id:3
-    },
-    {
-        name:"Bob",
-        id:4
-    }
+    {name:"Louis",id:1},{name:"Tom",id:2},{name:"Andy",id:3},{name:"Bob",id:4},
+    {name:"Emma",id:5},{name:"Tony",id:6},{name:"Jack",id:7},{name:"Amy",id:8},
+    {name:"John",id:9},{name:"Mark",id:10},{name:"Steven",id:11},{name:"playback",id:12},
     ]
     const App = () => {
 
@@ -395,16 +382,24 @@ RN 目前支援android 5 以上裝置
         <View>
         <Text style={{fontSize: 30}}>List with Flat List Component</Text>
         <FlatList
-        // item是users的屬性
+        // FlatList本身就有滾動條；item是users的屬性
         data={users}renderItem={({item}) => <Text style={styles.listItem}>{item.name}</Text>}
-        />
+        />   
+
+        {/* <ScrollView> */}
+            {/* 使用map做清單的話沒有滾動條，要用ScrollView包起來才會有 */}
+            {
+            // users.map((item)=><Text style={styles.listItem}>{item.name}</Text>)
+            }
+        {/* </ScrollView> */}
+        
         </View>
     );
     };
 
     const styles = StyleSheet.create({
     listItem:{
-        fontSize:25,
+        fontSize:60,
         color:'#FFF',
         backgroundColor:"blue",
         borderColor:'black',
@@ -415,7 +410,7 @@ RN 目前支援android 5 以上裝置
     }
     })
     export default App;
-![FaltList](img/FaltList.jpg)
+![ListForm](img/ListForm.jpg)
 
 
 
