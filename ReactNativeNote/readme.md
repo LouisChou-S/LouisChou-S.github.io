@@ -366,3 +366,56 @@ RN 目前支援android 5 以上裝置
     export default App;
 ![textInput](img/sampleForm.jpg)
 
+## Listform - FlatList
+
+    import react, { useState } from 'react';
+    import {Text, View, StyleSheet, FlatList} from 'react-native';
+
+    const users = [
+    {
+        name:"Louis",
+        id:1
+    },
+    {
+        name:"Tom",
+        id:2
+    },
+    {
+        name:"Andy",
+        id:3
+    },
+    {
+        name:"Bob",
+        id:4
+    }
+    ]
+    const App = () => {
+
+    return (
+        <View>
+        <Text style={{fontSize: 30}}>List with Flat List Component</Text>
+        <FlatList
+        // item是users的屬性
+        data={users}renderItem={({item}) => <Text style={styles.listItem}>{item.name}</Text>}
+        />
+        </View>
+    );
+    };
+
+    const styles = StyleSheet.create({
+    listItem:{
+        fontSize:25,
+        color:'#FFF',
+        backgroundColor:"blue",
+        borderColor:'black',
+        borderWidth:1,
+        borderRadius:20,
+        margin:10,
+        padding:10
+    }
+    })
+    export default App;
+![FaltList](img/FaltList.jpg)
+
+
+
