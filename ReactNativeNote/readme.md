@@ -412,5 +412,21 @@ RN 目前支援android 5 以上裝置
     export default App;
 ![ListForm](img/ListForm.jpg)
 
+## Grid卡片
+
+    const App = () => {
+
+    return (
+        <View>
+        <Text style={{fontSize: 30}}>Grid with Dynamic Data</Text>
+        <View style={{flex:1, flexDirection:'row', flexWrap:'wrap'}}>
+        {
+            users.map((item)=><Text style={styles.item}>{item.name}</Text>)
+        }
+        </View>
+        </View>
+    );
+    };
+![grid_card](img/grid_card.jpg)
 
 
