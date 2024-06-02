@@ -429,4 +429,100 @@ RN 目前支援android 5 以上裝置
     };
 ![grid_card](img/grid_card.jpg)
 
+## 迴圈產生清單Loop with flatlist
 
+製作一個模組檔案定義好樣式，之後可隨時引用，可以統一規格相同的元件，例如按鈕樣式
+
+    //APP.tsx
+    import {Text, View, StyleSheet, FlatList} from 'react-native';
+    import UserData from './components/userData';
+
+    //users為物件陣列資料
+
+    const App = () => {
+
+    return (
+        <View>
+        <Text style={{fontSize: 30}}>Component in Loop with Flatlist</Text>
+        <FlatList
+            data={users}
+            renderItem={({item})=><UserData item={item}/>}
+        />
+        </View>
+    );
+    };
+
+    export default App;
+
+引用模組component - userData
+
+    import {StyleSheet, View, Text} from 'react-native';
+
+    export default UserData = props => {
+    const item = props.item;
+    return (
+        <View style={styles.box}>
+        <Text style={styles.item}>{item.name}</Text>
+        <Text style={styles.item}>{item.email}</Text>
+        </View>
+    );
+    };
+
+    const styles = StyleSheet.create({
+    item: {
+        fontSize: 24,
+        flex: 1,
+        color: 'orange',
+        textAlign: 'center',
+        textAlignVertical: 'center',
+    },
+    box: {
+        flexDirection: 'row',
+        borderColor: 'orange',
+        borderWidth: 2,
+        marginBottom: 10,
+    },
+    });
+
+結果
+
+![grid_card](img/LoopWithFlatlist.jpg)
+
+## SectionList with array 
+
+每個KEY可以不同樣式
+![SectionList01](img/SectionList01.jpg)
+
+## Class component類別組件
+
+可以反覆使用
+![ClassComponent01](img/ClassComponent01.jpg)
+![ClassComponent02](img/ClassComponent02.jpg)
+
+
+## 使用參數Props帶入類別模組
+
+模組化使用
+![ClassComponent03](img/ClassComponent03.jpg)
+![ClassComponent04](img/ClassComponent04.jpg)
+
+## Life cycle生命週期
+
+## useEffect hook
+
+React 16.8之後才有hook，不必寫class 就能使用state 以及其他React 的功能
+
+![useEffectHook01](img/useEffectHook01.jpg)
+![useEffectHook02](img/useEffectHook02.jpg)
+![useEffectHook03](img/useEffectHook03.jpg)
+將useEffect hook使用在類別元件中
+![useEffectHook04](img/useEffectHook04.jpg)
+![useEffectHook05](img/useEffectHook05.jpg)
+簡化類別的Props參數名稱
+![useEffectHook06](img/useEffectHook06.jpg)
+
+## Hide and toggle隱藏與顯示
+![HideOrToggle](img/HideOrToggle.jpg)
+
+
+隱藏時也要將hook分離避免更新
