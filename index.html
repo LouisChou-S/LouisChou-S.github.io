@@ -52,6 +52,16 @@
             transition: all 0.3s;
         }
         .grid-card h3 { color: var(--primary-cyan); margin-top: 10px; }
+        /* 強制 <p> 文字最少要有 3 行的高度 */
+        .grid-card p { 
+            margin: 0; 
+            color: #8892b0; 
+            line-height: 1.6; /* 設定行高 */
+            min-height: calc(1.6em * 3); /* 確保最小高度剛好為 3 行 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .grid-card:hover {
             box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
             border-color: var(--primary-cyan);
