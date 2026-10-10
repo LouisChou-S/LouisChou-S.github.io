@@ -44,6 +44,16 @@ nav {
 .hero h1, h1 { color: #0f172a; font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; }
 .hero p { max-width: 800px; margin: 20px auto; line-height: 1.8; color: var(--text-sub); font-size: 1.1rem; }
 
+/* 子網頁獨立標題置中 */
+h1 { 
+    color: #0f172a; 
+    font-size: 2.5rem; 
+    font-weight: 700; 
+    text-align: center; /* 讓子網頁標題置中 */
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
 /* 子網頁內容容器 */
 .content { 
     max-width: 800px; 
@@ -88,6 +98,11 @@ footer { text-align: center; padding: 40px 20px; background: #ffffff; border-top
     display: inline-block; margin: 10px; padding: 12px 28px; border: 1px solid var(--primary-blue); 
     border-radius: 50px; cursor: pointer; color: var(--primary-blue); background: #f0f7ff; 
     font-weight: 600; text-decoration: none; transition: all 0.3s; 
+}
+/* 讓返回按鈕本身可以置中顯示 */
+.back-btn-container {
+    text-align: center;
+    margin-top: 30px;
 }
 .contact-box:hover, .back-btn:hover { 
     background: var(--primary-blue); color: #ffffff; 
