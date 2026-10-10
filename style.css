@@ -1,0 +1,108 @@
+:root { 
+    --primary-blue: #0066cc; 
+    --primary-hover: #0052a3;
+    --light-bg: #f4f7fa; 
+    --card-bg: #ffffff;
+    --text-main: #1e293b; 
+    --text-sub: #475569;
+    --border-color: #cbd5e1;
+}
+
+body { 
+    margin: 0; 
+    font-family: 'Segoe UI', sans-serif; 
+    background-color: var(--light-bg); 
+    color: var(--text-main); 
+    background-image: 
+        linear-gradient(rgba(0, 102, 204, 0.04) 1px, transparent 1px), 
+        linear-gradient(90deg, rgba(0, 102, 204, 0.04) 1px, transparent 1px); 
+    background-size: 30px 30px; 
+    padding-bottom: 50px;
+}
+
+/* 共用導覽列 (首頁用) */
+nav {
+    position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+    background: rgba(255, 255, 255, 0.9); 
+    border-bottom: 1px solid var(--border-color);
+    display: flex; justify-content: center; align-items: center; z-index: 1000;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.nav-item {
+    position: absolute; width: 100%; text-align: center;
+    font-size: 1.5rem; font-weight: bold; color: var(--primary-blue);
+    text-decoration: none; letter-spacing: 1px;
+    opacity: 0; transition: opacity 0.5s ease-in-out, transform 0.3s;
+    pointer-events: none;
+}
+.nav-item.active { opacity: 1; pointer-events: auto; }
+.nav-item:hover { color: var(--primary-hover); transform: scale(1.02); }
+
+/* 共用標題與內容區塊 */
+.hero { margin-top: 110px; text-align: center; padding: 40px 20px; }
+.hero h1, h1 { color: #0f172a; font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; }
+.hero p { max-width: 800px; margin: 20px auto; line-height: 1.8; color: var(--text-sub); font-size: 1.1rem; }
+
+/* 子網頁內容容器 */
+.content { 
+    max-width: 800px; 
+    margin: 40px auto 0 auto; 
+    text-align: left; 
+    line-height: 1.8; 
+    font-size: 1.05rem; 
+    background: var(--card-bg); 
+    padding: 40px; 
+    border-radius: 12px; 
+    border: 1px solid var(--border-color); 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    color: var(--text-sub);
+}
+.content p { margin-top: 0; }
+.content ul { padding-left: 20px; margin-bottom: 0; }
+.content li { margin-bottom: 12px; }
+.content strong { color: var(--primary-blue); }
+
+/* 首頁網格卡片 */
+.solutions-grid { 
+    display: grid; gap: 24px; max-width: 1000px; margin: 0 auto 40px; padding: 0 20px; 
+}
+.grid-card { 
+    border: 1px solid var(--border-color); padding: 24px; text-align: left; border-radius: 12px; 
+    background: var(--card-bg); text-decoration: none; color: var(--text-main); display: block;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); transition: all 0.3s ease;
+}
+.grid-card h3 { color: var(--primary-blue); margin-top: 0; margin-bottom: 10px; font-size: 1.25rem; }
+.grid-card p { 
+    margin: 0; color: var(--text-sub); line-height: 1.6; min-height: calc(1.6em * 3); 
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.grid-card:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 102, 204, 0.15);
+    border-color: var(--primary-blue); transform: translateY(-4px);
+}
+
+/* 共用按鈕與 Footer */
+footer { text-align: center; padding: 40px 20px; background: #ffffff; border-top: 1px solid var(--border-color); margin-top: 60px; }
+.contact-box, .back-btn { 
+    display: inline-block; margin: 10px; padding: 12px 28px; border: 1px solid var(--primary-blue); 
+    border-radius: 50px; cursor: pointer; color: var(--primary-blue); background: #f0f7ff; 
+    font-weight: 600; text-decoration: none; transition: all 0.3s; 
+}
+.contact-box:hover, .back-btn:hover { 
+    background: var(--primary-blue); color: #ffffff; 
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25); transform: translateY(-2px);
+}
+
+/* Toast 提示框 */
+#toast { 
+    visibility: hidden; background-color: #0f172a; color: #ffffff; text-align: center; 
+    padding: 16px 24px; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); 
+    border-radius: 8px; font-weight: 600; opacity: 0; transition: 0.3s; 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2); z-index: 1001;
+}
+#toast.show { visibility: visible; opacity: 1; }
+
+@media (max-width: 768px) {
+    .solutions-grid { grid-template-columns: 1fr !important; }
+}
