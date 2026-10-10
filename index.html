@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="IFIX, 圖控軟體, 圖控系統, SCADA, FMCS系統, 配方管理, 電力分析, 報表">
+    <title>監控軟體服務 與 IFIX圖控系統整合 | 智慧廠務系統</title>
+    <style>
+        :root { 
+            --primary-blue: #0066cc; 
+            --primary-hover: #0052a3;
+            --light-bg: #f4f7fa; 
+            --card-bg: #ffffff;
+            --text-main: #1e293b; 
+            --text-sub: #64748b;
+            --border-color: #cbd5e1;
+        }
+        
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', sans-serif; 
+            background-color: var(--light-bg); 
+            color: var(--text-main); 
+            /* 更明亮的科技感網格背景 */
+            background-image: 
+                linear-gradient(rgba(0, 102, 204, 0.04) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(0, 102, 204, 0.04) 1px, transparent 1px); 
+            background-size: 30px 30px; 
+        }
+        
+        /* 佔滿全寬的動態輪播 NAV (明亮玻璃擬態風格) */
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+            background: rgba(255, 255, 255, 0.9); 
+            border-bottom: 1px solid var(--border-color);
+            display: flex; justify-content: center; align-items: center; z-index: 1000;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .nav-item {
+            position: absolute; width: 100%; text-align: center;
+            font-size: 1.5rem; font-weight: bold; color: var(--primary-blue);
+            text-decoration: none; letter-spacing: 1px;
+            opacity: 0; transition: opacity 0.5s ease-in-out, transform 0.3s;
+            pointer-events: none; /* 隱藏時不可點擊 */
+        }
+        .nav-item.active { opacity: 1; pointer-events: auto; }
+        .nav-item:hover { color: var(--primary-hover); transform: scale(1.02); }
+
+        /* 首頁內容區塊 */
+        .hero { margin-top: 110px; text-align: center; padding: 40px 20px; }
+        .hero h1 { font-size: 2.5rem; color: #0f172a; font-weight: 700; }
+        .hero p { max-width: 800px; margin: 20px auto; line-height: 1.8; color: var(--text-sub); font-size: 1.1rem; }
+        
+        /* 解決方案網格 Grid */
+        .solutions-grid { 
+            display: grid; 
+            gap: 24px; 
+            max-width: 1000px; 
+            margin: 0 auto 60px; 
+            padding: 0 20px; 
+        }
+        
+        /* 卡片設計：純白質感 + 俐落陰影 */
+        .grid-card { 
+            border: 1px solid var(--border-color); 
+            padding: 24px; 
+            text-align: left; 
+            border-radius: 12px; 
+            background: var(--card-bg); 
+            text-decoration: none; 
+            color: var(--text-main);
+            display: block;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+        }
+        .grid-card h3 { color: var(--primary-blue); margin-top: 0; margin-bottom: 10px; font-size: 1.25rem; }
+        
+        /* 強制 <p> 文字靠左，且最少要有 3 行的高度 */
+        .grid-card p { 
+            margin: 0; 
+            color: var(--text-sub); 
+            line-height: 1.6; 
+            min-height: calc(1.6em * 3); 
+            text-align: left; 
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .grid-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 102, 204, 0.15), 0 8px 10px -6px rgba(0, 102, 204, 0.15);
+            border-color: var(--primary-blue);
+            transform: translateY(-4px);
+        }
+
+        /* 手機版防呆 */
+        @media (max-width: 768px) {
+            .solutions-grid { grid-template-columns: 1fr !important; }
+        }
+        
+        footer { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: #ffffff;
+            border-top: 1px solid var(--border-color); 
+        }
+        .contact-box { 
+            display: inline-block; 
+            margin: 10px; 
+            padding: 14px 28px; 
+            border: 1px solid var(--primary-blue); 
+            border-radius: 50px; 
+            cursor: pointer; 
+            color: var(--primary-blue); 
+            background: #f0f7ff; 
+            font-weight: 600;
+            transition: all 0.3s; 
+        }
+        .contact-box:hover { 
+            background: var(--primary-blue); 
+            color: #ffffff; 
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+        }
+        
+        #toast { 
+            visibility: hidden; 
+            background-color: #0f172a; 
+            color: #ffffff; 
+            text-align: center; 
+            padding: 16px 24px; 
+            position: fixed; 
+            bottom: 30px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            border-radius: 8px; 
+            font-weight: 600; 
+            opacity: 0; 
+            transition: 0.3s; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+        }
+        #toast.show { visibility: visible; opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- 全螢幕輪播 NAV -->
+    <nav id="dynamic-nav">
+        <a href="fmcs.html" class="nav-item active">探索解決方案：FMCS 系統圖控設計 ➔</a>
+        <a href="recipe.html" class="nav-item">探索解決方案：配方功能 ➔</a>
+        <a href="power.html" class="nav-item">探索解決方案：電力分析看板 ➔</a>
+        <a href="report.html" class="nav-item">探索解決方案：報表管理 ➔</a>
+    </nav>
+
+    <div class="hero">
+        <h1>專注於 SCADA 架構設計與 IFIX 圖控軟體開發</h1>
+        <p>在工業自動化的時代，系統的穩定性決定了企業的競爭力。我們不僅提供軟體層面的 IFIX 圖控開發與 SCADA 建置，更具備為大型廠房建立高可用性監控核心的深厚實力。</p>
+    </div>
+
+    <!-- 解決方案網格 -->
+    <div class="solutions-grid" id="solutionsGrid">
+        <a href="fmcs.html" class="grid-card">
+            <h3>FMCS系統圖控設計</h3>
+            <p>廠務設施無縫整合，提供高穩定度與即時監控畫面，確保廠區 24/7 高效運轉。</p>
+        </a>
+        <a href="recipe.html" class="grid-card">
+            <h3>配方功能</h3>
+            <p>支援多版本參數快速切換，具備嚴格防呆與稽核軌跡，確保產線製程精確無誤。</p>
+        </a>
+        <a href="power.html" class="grid-card">
+            <h3>電力分析看板</h3>
+            <p>即時監控廠區高低壓需量與電力品質，視覺化能耗數據以協助推動企業 ESG 節能減碳。</p>
+        </a>        
+        <a href="report.html" class="grid-card">
+            <h3>報表管理</h3>
+            <p>手自動生成符合法規與內部稽核的各類營運報表，結合資料庫提供海量歷史趨勢追溯。</p>
+        </a>
+    </div>
+
+    <footer>
+        <div class="contact-box" onclick="copyToClipboard('Andy.Chou445566@gmail.com', 'Email')">複製 Email：Andy.Chou445566@gmail.com</div>
+    </footer>
+    <div id="toast">已複製到剪貼簿！</div>
+
+    <script>
+        // 1. 動態計算方案數量，單數排3個，雙數排2個
+        const gridContainer = document.getElementById('solutionsGrid');
+        const gridCards = gridContainer.querySelectorAll('.grid-card');
+        
+        if (gridCards.length % 2 === 0) {
+            gridContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+        } else {
+            gridContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
+        }
+
+        // 2. NAV 每 3 秒輪播邏輯
+        const navItems = document.querySelectorAll('.nav-item');
+        let currentNav = 0;
+        setInterval(() => {
+            navItems[currentNav].classList.remove('active');
+            currentNav = (currentNav + 1) % navItems.length;
+            navItems[currentNav].classList.add('active');
+        }, 3000);
+
+        // 3. 複製到剪貼簿功能
+        function copyToClipboard(text, type) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById("toast");
+                toast.innerText = type + " 已成功複製！";
+                toast.className = "show";
+                setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
