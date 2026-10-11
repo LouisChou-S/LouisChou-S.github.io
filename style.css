@@ -108,7 +108,29 @@ footer { text-align: center; padding: 40px 20px; background: #ffffff; border-top
     background: var(--primary-blue); color: #ffffff; 
     box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25); transform: translateY(-2px);
 }
-
+/* LINE 條碼區塊樣式 */
+.line-qr-section {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.line-qr-section p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    font-weight: 600;
+}
+.line-qr-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    padding: 6px;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
 /* Toast 提示框 */
 #toast { 
     visibility: hidden; background-color: #0f172a; color: #ffffff; text-align: center; 
