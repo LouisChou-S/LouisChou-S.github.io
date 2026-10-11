@@ -44,7 +44,25 @@
     </div>
 
     <footer>
-        <div class="contact-box" onclick="copyToClipboard('MinEnSystem@gmail.com', 'Email')">Email：MinEnSystem@gmail.com</div>
+        <div class="footer-container">
+            <div class="contact-info-group">
+                <!-- 點擊複製電話 -->
+                <div class="contact-box" onclick="copyToClipboard('0905-534-922', '電話號碼')">
+                    📞 複製電話：0905-534-922
+                </div>
+                <!-- 點擊複製 Email -->
+                <div class="contact-box" onclick="copyToClipboard('MinEnSystem@gmail.com', 'Email')">
+                    ✉️ 複製 Email：MinEnSystem@gmail.com
+                </div>
+            </div>
+
+            <!-- LINE 加入好友 QR Code -->
+            <div class="line-qr-section">
+                <p>掃描 QR Code 或加 LINE 好友諮詢</p>
+                <!-- 請確保 line-qr.png 已上傳至 GitHub 根目錄 -->
+                <img src="minen.png" alt="LINE 加好友條碼" class="line-qr-img">
+            </div>
+        </div>
     </footer>
     <div id="toast">已複製到剪貼簿！</div>
 
