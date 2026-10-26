@@ -84,39 +84,65 @@ nav {
 }
 .dropdown:hover .dropdown-content { display: block; }
 
-/* --- 橫幅輪播區塊 (高質感明亮科技感) --- */
-.carousel-banner {
-    margin-top: 75px; 
-    position: relative; 
-    width: 100%; 
-    height: 420px; /* 提高橫幅高度以容納豐富的科技大圖 */
-    background: #f8fafc; /* 與整體明亮風格呼應 */
+/* --- 使用 6 宮格合圖自動分割顯示 (CSS Sprites) --- */
+.sprite-img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 維持正方形比例，完整顯示單張卡片 */
+    background-image: url('solutions-grid-all.jpg');
+    background-size: 318% 216%; /* 放大畫布以對準 3x2 網格並自動裁去外圍多餘白邊 */
+    background-repeat: no-repeat;
     border-bottom: 1px solid var(--border-color);
-    display: flex; 
-    align-items: center; 
-    overflow: hidden;
-    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.02);
+    transition: transform 0.4s ease;
 }
 
-/* 建立由右至左不間斷滾動的長畫布 */
+/* 精準對應 6 個卡片的座標位置 */
+.pos-fmcs   { background-position: 3.5% 4.5%; }   /* 左上：廠務與智慧建築 */
+.pos-esg    { background-position: 50% 4.5%; }    /* 中上：能源與 ESG 碳排計算 */
+.pos-recipe { background-position: 96.5% 4.5%; }  /* 右上：設備參數與配方管理 */
+.pos-alarm  { background-position: 3.5% 95.5%; }  /* 左下：GSM 簡訊與行動告警 */
+.pos-pm     { background-position: 50% 95.5%; }   /* 中下：設備預防保養 (PM) */
+.pos-data   { background-position: 96.5% 95.5%; } /* 右下：異質系統資料介接 */
+
+/* 頂端橫幅：由右至左無限滑動輪播 6 張卡片 */
+.carousel-banner {
+    margin-top: 75px;
+    width: 100%;
+    background: linear-gradient(90deg, #eef5fc 0%, #ffffff 50%, #eef5fc 100%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 25px 0;
+    overflow: hidden;
+    position: relative;
+}
+
 .carousel-track {
     display: flex;
-    width: 200%; /* 兩倍寬度以實現無縫連接 */
-    animation: scrollLeft 35s linear infinite; /* 35秒循環一次，時間越小速度越快 */
+    gap: 24px;
+    width: max-content;
+    animation: scrollRightToLeft 28s linear infinite;
 }
-
-/* 讓圖片跟著畫布由右至左移動 */
 .carousel-track:hover {
-    animation-play-state: paused; /* 當滑鼠懸停時自動暫停，方便客戶點擊，體驗極佳 */
+    animation-play-state: paused; /* 滑鼠移上去時暫停輪播 */
 }
 
-.carousel-image-slide {
-    width: 50%; /* 每一份大圖佔用 50% 寬度（也就是 100% 螢幕寬） */
-    height: 420px;
-    background-image: url('image_8.png'); /* 請將產生的圖片上傳至 GitHub，並在這裡引用 */
-    background-size: cover;
-    background-position: center;
+.carousel-card {
+    width: 280px;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.08);
     flex-shrink: 0;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+.carousel-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+}
+
+@keyframes scrollRightToLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 /* 輪播用到的由右至左滾動動畫 (Keyframes) */
