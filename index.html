@@ -12,37 +12,39 @@
 <body>
     <!-- 頂部企業級導覽列 -->
     <nav>
-        <a href="index.html" class="nav-brand">
-            <div class="nav-logo-icon">Minen</div>
-            <span class="nav-company-name">SCADA & iFIX 系統整合專家</span>
-        </a>
-        
-        <!-- 新增：手機版三條橫線漢堡按鈕 -->
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">
+                <div class="nav-logo-icon">Minen</div>
+                <span class="nav-company-name">SCADA & iFIX 系統整合專家</span>
+            </a>
+            
+            <!-- 手機版三條橫線漢堡按鈕 -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
-        <ul class="nav-menu" id="navMenu">
-            <li class="dropdown">
-                <a href="#solutionsGrid" class="dropbtn">解決方案模組 ▾</a>
-                <div class="dropdown-content">
-                    <a href="fmcs.html">廠務與智慧建築監控 (FMCS)</a>
-                    <a href="power.html">能源視覺化與 ESG 碳排計算</a>
-                    <a href="recipe.html">設備參數上傳與下載管理</a>
-                    <a href="alarm.html">GSM 簡訊與行動告警系統</a>
-                    <a href="maintenance.html">設備預防保養管理 (PM)</a>
-                    <a href="report.html">異質系統資料介接與報表</a>
-                </div>
-            </li>
-            <li><a href="#arch-section">系統架構</a></li>
-            <li><a href="service-flow.html">服務流程</a></li>
-            <li><a href="about.html">關於我們</a></li>
-        </ul>
+            <ul class="nav-menu" id="navMenu">
+                <li class="dropdown">
+                    <a href="#solutionsGrid" class="dropbtn">解決方案模組 ▾</a>
+                    <div class="dropdown-content">
+                        <a href="fmcs.html">廠務與智慧建築監控 (FMCS)</a>
+                        <a href="power.html">能源視覺化與 ESG 碳排計算</a>
+                        <a href="recipe.html">設備參數上傳與下載管理</a>
+                        <a href="alarm.html">GSM 簡訊與行動告警系統</a>
+                        <a href="maintenance.html">設備預防保養管理 (PM)</a>
+                        <a href="report.html">異質系統資料介接與報表</a>
+                    </div>
+                </li>
+                <li><a href="#arch-section">系統架構</a></li>
+                <li><a href="service-flow.html">服務流程</a></li>
+                <li><a href="about.html">關於我們</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- 頂端輪播橫幅 (使用獨立圖片) -->
+    <!-- 導覽列下方的自動輪播橫幅 (橫幅保持滿版 100% 寬度) -->
     <div class="carousel-banner">
         <div class="carousel-track">
             <a href="fmcs.html" class="carousel-card"><img src="solution-fmcs.png" alt="廠務與智慧建築"></a>
@@ -51,7 +53,7 @@
             <a href="alarm.html" class="carousel-card"><img src="solution-alarm.png" alt="GSM告警"></a>
             <a href="maintenance.html" class="carousel-card"><img src="solution-pm.png" alt="預防保養"></a>
             <a href="report.html" class="carousel-card"><img src="solution-data.png" alt="資料介接"></a>
-            <!-- 重複一次以達成無限無縫滾動 -->
+            <!-- 重複第二組以實現無限滾動 -->
             <a href="fmcs.html" class="carousel-card"><img src="solution-fmcs.png" alt="廠務與智慧建築"></a>
             <a href="power.html" class="carousel-card"><img src="solution-esg.png" alt="能源與ESG"></a>
             <a href="recipe.html" class="carousel-card"><img src="solution-recipe.png" alt="設備參數"></a>
@@ -62,134 +64,134 @@
     </div>
 
     
-    <!-- 公司核心能力介紹 -->
-    <div class="hero">
-        <h1>全方位 SCADA 系統整合與數據視覺化專家</h1>
-        <p>我們專注於透過先進的<strong>圖控軟體 (iFIX / SCADA)</strong> 收集底層設備資訊，將龐雜的工業數據轉化為直覺的<strong>視覺化看板</strong>。協助企業精準掌握能源消耗狀況、即時追蹤設備警報，從廠務監控、預防保養到 ESG 碳排計算，打造最可靠的智慧工廠與智慧建築中樞。</p>
-    </div>
+    <!-- 用 site-container 包覆主體內容，讓左右兩側產生舒適的留白 -->
+    <div class="site-container">
 
-    <!-- 六大核心功能模組網格 (雙數自動排成 2 列) -->
-    <div class="section-title">
-        <h2>六大核心功能模組</h2>
-        <p>點擊下方各功能模組，深入了解我們的技術解決方案</p>
-    </div>
+        <!-- 公司核心能力介紹 -->
+        <div class="hero">
+            <h1>全方位 SCADA 系統整合與數據視覺化專家</h1>
+            <p>我們專注於透過先進的<strong>圖控軟體 (iFIX / SCADA)</strong> 收集底層設備資訊，將龐雜的工業數據轉化為直覺的<strong>視覺化看板</strong>。協助企業精準掌握能源消耗狀況、即時追蹤設備警報，從廠務監控、預防保養到 ESG 碳排計算，打造最可靠的智慧工廠與智慧建築中樞。</p>
+        </div>
 
-    <!-- 六大核心功能模組網格 (一列 3 個) -->
-    <div class="solutions-grid" id="solutionsGrid">
-        <a href="fmcs.html" class="grid-card">
-            <div class="card-img-container"><img src="solution-fmcs.png" alt="廠務系統整合"></div>
-            <div class="grid-card-body">
-                <h3>廠務系統整合與智慧建築監控</h3>
-                <p>無縫整合空調、機電、水氣化與照明等廠務及大樓設備。透過集中式圖控介面即時監控運轉狀態，實現跨系統連動控制與高可用性管理。</p>
-            </div>
-        </a>
-
-        <a href="power.html" class="grid-card">
-            <div class="card-img-container"><img src="solution-esg.png" alt="能源視覺化"></div>
-            <div class="grid-card-body">
-                <h3>能源視覺化與碳排放 ESG 計算</h3>
-                <p>即時收集各迴路電錶與流體計數據，將能源消耗狀況視覺化。內建碳排係數換算邏輯，自動產出符合 ESG 規範的碳盤查數據與能耗分析看板。</p>
-            </div>
-        </a>
-
-        <a href="recipe.html" class="grid-card">
-            <div class="card-img-container"><img src="solution-recipe.png" alt="設備參數管理"></div>
-            <div class="grid-card-body">
-                <h3>設備參數上傳與下載管理</h3>
-                <p>解決產線頻繁換線痛點，提供集中化的配方與參數管理平台。支援一鍵將標準參數安全下載至機台 PLC，並可隨時上傳備份現場設備參數，防呆防錯。</p>
-            </div>
-        </a>
-
-        <a href="alarm.html" class="grid-card">
-            <div class="card-img-container"><img src="solution-alarm.png" alt="GSM簡訊告警"></div>
-            <div class="grid-card-body">
-                <h3>警報分析、GSM 簡訊與行動告警</h3>
-                <p>提供多維度歷史警報狀況分析，找出異常瓶頸。當關鍵設備發生異常時，系統即時觸發 GSM 簡訊告警、LINE 或 Email 行動推播，確保人員第一時間搶修。</p>
-            </div>
-        </a>
-
-        <a href="maintenance.html" class="grid-card">
-            <div class="card-img-container"><img src="solution-pm.png" alt="預防保養管理"></div>
-            <div class="grid-card-body">
-                <h3>設備預防保養管理 (PM)</h3>
-                <p>告別傳統紙本紀錄，系統自動累計設備運轉時數與動作次數。達到保養週期時主動發出預警通知，協助廠務人員落實預防保養，大幅降低無預警停機風險。</p>
-            </div>
-        </a>
-
-        <a href="report.html" class="grid-card">
-            <div class="card-img-container"><img src="solution-data.png" alt="異質資料介接"></div>
-            <div class="grid-card-body">
-                <h3>異質資料介接與自動化報表</h3>
-                <p>具備強大的通訊與軟體資料介接能力（OPC、Modbus、BACnet、SQL、RESTful API），打通 OT 設備與上層 IT 系統（MES/ERP），並定時自動生成稽核報表。</p>
-            </div>
-        </a>
-    </div>
-
-    <!-- iFIX 架構整合之 FMCS 系統展示區 -->
-    <section class="arch-section" id="arch-section">
+        <!-- 六大核心功能模組網格 -->
         <div class="section-title">
-            <h2>iFIX 架構整合之 FMCS 廠務監控系統</h2>
-            <p>採用工業級高可靠度架構，整合現場控制器、SCADA 圖控伺服器、獨立資料庫電腦與多元告警機制</p>
+            <h2>六大核心功能模組</h2>
+            <p>點擊下方各功能模組，深入了解我們的技術解決方案</p>
         </div>
 
-        <!-- 系統架構視覺圖 (支援替換為實體圖片，同時內建高質感向量架構圖) -->
-        <div class="arch-diagram-wrapper">
-            <!-- 若您未來有自己的架構圖檔，可取消下方 img 註解並放上圖檔 -->
-            <!-- <img src="ifix-fmcs-architecture.png" alt="iFIX FMCS 系統架構圖" class="custom-arch-img"> -->
-
-            <div class="arch-tier">
-                <div class="tier-label">管理與應用層 (警報 / 行動監控 / 報表)</div>
-                <div class="tier-nodes">
-                    <div class="arch-node">📱 GSM 簡訊 / 行動告警模組</div>
-                    <div class="arch-node">🖥️ iFIX Client 監控工作站</div>
-                    <div class="arch-node">📊 ESG 碳排與自動報表中心</div>
+        <div class="solutions-grid" id="solutionsGrid">
+            <a href="fmcs.html" class="grid-card">
+                <div class="card-img-container"><img src="solution-fmcs.png" alt="廠務系統整合"></div>
+                <div class="grid-card-body">
+                    <h3>廠務系統整合與智慧建築監控</h3>
+                    <p>無縫整合空調、機電、水氣化與照明等廠務及大樓設備。透過集中式圖控介面即時監控運轉狀態，實現跨系統連動控制與高可用性管理。</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="arch-arrow">▲ 區域網路 TCP/IP ‧ 資料分析與雙向派送 ▼</div>
-
-            <div class="arch-tier highlight-tier">
-                <div class="tier-label">核心中樞層 (SCADA 圖控與資料庫電腦)</div>
-                <div class="tier-nodes">
-                    <div class="arch-node core-node">
-                        <strong>⚙️ iFIX SCADA 圖控伺服器</strong>
-                        <span>即時資料收集 / 視覺化畫面 / 設備參數上下傳</span>
-                    </div>
-                    <div class="arch-node db-node">
-                        <strong>🗄️ 專用資料庫電腦 (Database PC)</strong>
-                        <span>SQL Server / Historian 歷史數據、能耗與警報儲存</span>
-                    </div>
+            <a href="power.html" class="grid-card">
+                <div class="card-img-container"><img src="solution-esg.png" alt="能源視覺化"></div>
+                <div class="grid-card-body">
+                    <h3>能源視覺化與碳排放 ESG 計算</h3>
+                    <p>即時收集各迴路電錶與流體計數據，將能源消耗狀況視覺化。內建碳排係數換算邏輯，自動產出符合 ESG 規範的碳盤查數據與能耗分析看板。</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="arch-arrow">▲ 工業通訊協定 (OPC UA / Modbus / BACnet / PLC I/O) ▼</div>
-
-            <div class="arch-tier">
-                <div class="tier-label">現場設備層 (廠務系統與智慧建築設備整合)</div>
-                <div class="tier-nodes">
-                    <div class="arch-node">❄️ 空調冰水與無塵室</div>
-                    <div class="arch-node">⚡ 高低壓電力與智慧電錶</div>
-                    <div class="arch-node">💧 水處理與氣體供應</div>
-                    <div class="arch-node">🏢 智慧建築照明與消防</div>
+            <a href="recipe.html" class="grid-card">
+                <div class="card-img-container"><img src="solution-recipe.png" alt="設備參數管理"></div>
+                <div class="grid-card-body">
+                    <h3>設備參數上傳與下載管理</h3>
+                    <p>解決產線頻繁換線痛點，提供集中化的配方與參數管理平台。支援一鍵將標準參數安全下載至機台 PLC，並可隨時上傳備份現場設備參數，防呆防錯。</p>
                 </div>
-            </div>
+            </a>
+
+            <a href="alarm.html" class="grid-card">
+                <div class="card-img-container"><img src="solution-alarm.png" alt="GSM簡訊告警"></div>
+                <div class="grid-card-body">
+                    <h3>警報分析、GSM 簡訊與行動告警</h3>
+                    <p>提供多維度歷史警報狀況分析，找出異常瓶頸。當關鍵設備發生異常時，系統即時觸發 GSM 簡訊告警、LINE 或 Email 行動推播，確保人員第一時間搶修。</p>
+                </div>
+            </a>
+
+            <a href="maintenance.html" class="grid-card">
+                <div class="card-img-container"><img src="solution-pm.png" alt="預防保養管理"></div>
+                <div class="grid-card-body">
+                    <h3>設備預防保養管理 (PM)</h3>
+                    <p>告別傳統紙本紀錄，系統自動累計設備運轉時數與動作次數。達到保養週期時主動發出預警通知，協助廠務人員落實預防保養，大幅降低無預警停機風險。</p>
+                </div>
+            </a>
+
+            <a href="report.html" class="grid-card">
+                <div class="card-img-container"><img src="solution-data.png" alt="異質資料介接"></div>
+                <div class="grid-card-body">
+                    <h3>異質資料介接與自動化報表</h3>
+                    <p>具備強大的通訊與軟體資料介接能力（OPC、Modbus、BACnet、SQL、RESTful API），打通 OT 設備與上層 IT 系統（MES/ERP），並定時自動生成稽核報表。</p>
+                </div>
+            </a>
         </div>
-    </section>
 
-    <!-- 頁尾聯絡資訊 -->
+        <!-- iFIX 架構整合之 FMCS 系統展示區 -->
+        <section class="arch-section" id="arch-section">
+            <div class="section-title">
+                <h2>iFIX 架構整合之 FMCS 廠務監控系統</h2>
+                <p>採用工業級高可靠度架構，整合現場控制器、SCADA 圖控伺服器、獨立資料庫電腦與多元告警機制</p>
+            </div>
+
+            <div class="arch-diagram-wrapper">
+                <div class="arch-tier">
+                    <div class="tier-label">管理與應用層 (警報 / 行動監控 / 報表)</div>
+                    <div class="tier-nodes">
+                        <div class="arch-node">📱 GSM 簡訊 / 行動告警模組</div>
+                        <div class="arch-node">🖥️ iFIX Client 監控工作站</div>
+                        <div class="arch-node">📊 ESG 碳排與自動報表中心</div>
+                    </div>
+                </div>
+
+                <div class="arch-arrow">▲ 區域網路 TCP/IP ‧ 資料分析與雙向派送 ▼</div>
+
+                <div class="arch-tier highlight-tier">
+                    <div class="tier-label">核心中樞層 (SCADA 圖控與資料庫電腦)</div>
+                    <div class="tier-nodes">
+                        <div class="arch-node core-node">
+                            <strong>⚙️ GE iFIX SCADA 圖控伺服器</strong>
+                            <span>即時資料收集 / 視覺化畫面 / 設備參數上下傳</span>
+                        </div>
+                        <div class="arch-node db-node">
+                            <strong>🗄️ 專用資料庫電腦 (Database PC)</strong>
+                            <span>SQL Server / Historian 歷史數據、能耗與警報儲存</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-arrow">▲ 工業通訊協定 (OPC UA / Modbus / BACnet / PLC I/O) ▼</div>
+
+                <div class="arch-tier">
+                    <div class="tier-label">現場設備層 (廠務系統與智慧建築設備整合)</div>
+                    <div class="tier-nodes">
+                        <div class="arch-node">❄️ 空調冰水與無塵室</div>
+                        <div class="arch-node">⚡ 高低壓電力與智慧電錶</div>
+                        <div class="arch-node">💧 水處理與氣體供應</div>
+                        <div class="arch-node">🏢 智慧建築照明與消防</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- .site-container 結束 -->
+
+    <!-- 頁尾聯絡資訊 (Footer 保持滿版背景，內部內容置中) -->
     <footer>
         <div class="footer-container">
             <div class="contact-info-group">
                 <div class="contact-box" onclick="copyToClipboard('0905-534-922', '電話號碼')">
                     📞 複製電話：0905-534-922
                 </div>
-                <div class="contact-box" onclick="copyToClipboard('Andy.Chou445566@gmail.com', 'Email')">
+                <div class="contact-box" onclick="copyToClipboard('MinenSystem@gmail.com', 'Email')">
                     ✉️ 複製 Email：MinenSystem@gmail.com
                 </div>
             </div>
             <div class="line-qr-section">
                 <p>掃描 QR Code 加 LINE 諮詢</p>
-                <img src="minen.png" alt="LINE 加好友條碼" class="minen.png">
+                <img src="line-qr.png" alt="LINE 加好友條碼" class="line-qr-img">
             </div>
         </div>
     </footer>
