@@ -324,8 +324,56 @@ footer {
     display: block;
 }
 
-/* 手機版適應：螢幕較小時改為上下置中堆疊 */
+/* --- RWD 響應式手機與平板適應 --- */
 @media (max-width: 768px) {
+    /* 1. 頂端導覽列：改為上下堆疊或簡化間距，避免擠壓 */
+    nav {
+        padding: 0 15px;
+        height: auto;
+        min-height: 70px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .nav-brand {
+        margin-bottom: 2px;
+    }
+    .nav-menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-menu a {
+        font-size: 0.85rem;
+        padding: 4px 0;
+    }
+    .dropdown-content {
+        position: relative;
+        box-shadow: none;
+        border: none;
+        background: #f8fafc;
+        padding-left: 15px;
+    }
+
+    /* 2. 調整頂端輪播橫幅間距，配合導覽列高度 */
+    .carousel-banner {
+        margin-top: 110px; /* 預留手機導覽列展開後的高度 */
+        height: 180px;
+    }
+
+    /* 3. 解決方案網格：手機上強制改為一欄 (1 列 1 個)，確保圖片與文字不變形 */
+    .solutions-grid { 
+        grid-template-columns: 1fr !important; 
+        gap: 20px;
+        padding: 0 15px;
+    }
+    .grid-card-body p {
+        min-height: auto; /* 解除固定高度限制，適應手機閱讀 */
+    }
+
+    /* 4. Footer 聯絡資訊改為上下置中堆疊 */
     .footer-container { 
         flex-direction: column; 
         gap: 25px; 
@@ -337,5 +385,14 @@ footer {
     .contact-box {
         width: 90%;
         text-align: center;
+    }
+
+    /* 5. 調整右下角回到頂端按鈕位置 */
+    #backToTop { 
+        bottom: 20px; 
+        right: 20px; 
+        width: 42px; 
+        height: 42px; 
+        font-size: 1.1rem;
     }
 }
