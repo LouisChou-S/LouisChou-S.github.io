@@ -17,3 +17,14 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+// 3. 手機版漢堡選單點擊展開/收合互動
+document.addEventListener("DOMContentLoaded", function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('navMenu');
+
+    if (mobileMenu && navMenu) {
+        mobileMenu.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    }
+});
