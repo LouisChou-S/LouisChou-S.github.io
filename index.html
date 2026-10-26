@@ -44,25 +44,22 @@
         </div>
     </nav>
 
-    <!-- 導覽列下方的自動輪播橫幅 (橫幅保持滿版 100% 寬度) -->
-    <div class="carousel-banner">
-        <div class="carousel-track">
-            <a href="fmcs.html" class="carousel-card"><img src="solution-fmcs.png" alt="廠務與智慧建築"></a>
-            <a href="power.html" class="carousel-card"><img src="solution-esg.png" alt="能源與ESG"></a>
-            <a href="recipe.html" class="carousel-card"><img src="solution-recipe.png" alt="設備參數"></a>
-            <a href="alarm.html" class="carousel-card"><img src="solution-alarm.png" alt="GSM告警"></a>
-            <a href="maintenance.html" class="carousel-card"><img src="solution-pm.png" alt="預防保養"></a>
-            <a href="report.html" class="carousel-card"><img src="solution-data.png" alt="資料介接"></a>
-            <!-- 重複第二組以實現無限滾動 -->
-            <a href="fmcs.html" class="carousel-card"><img src="solution-fmcs.png" alt="廠務與智慧建築"></a>
-            <a href="power.html" class="carousel-card"><img src="solution-esg.png" alt="能源與ESG"></a>
-            <a href="recipe.html" class="carousel-card"><img src="solution-recipe.png" alt="設備參數"></a>
-            <a href="alarm.html" class="carousel-card"><img src="solution-alarm.png" alt="GSM告警"></a>
-            <a href="maintenance.html" class="carousel-card"><img src="solution-pm.png" alt="預防保養"></a>
-            <a href="report.html" class="carousel-card"><img src="solution-data.png" alt="資料介接"></a>
+    <!-- 導覽列下方的固定式輪播 Banner (支援 5 秒自動切換與左右半透明箭頭) -->
+    <div class="carousel-banner" id="carouselBanner">
+        <!-- 左右半透明切換箭頭 -->
+        <div class="carousel-arrow carousel-arrow-left" onclick="changeSlide(-1)">⟨</div>
+        <div class="carousel-arrow carousel-arrow-right" onclick="changeSlide(1)">⟩</div>
+        
+        <!-- 6 張輪播投影片 (預設第一張顯示 .active) -->
+        <div class="carousel-track-static">
+            <a href="fmcs.html" class="carousel-slide active"><img src="solution-fmcs.png" alt="廠務與智慧建築"></a>
+            <a href="power.html" class="carousel-slide"><img src="solution-esg.png" alt="能源與ESG"></a>
+            <a href="recipe.html" class="carousel-slide"><img src="solution-recipe.png" alt="設備參數"></a>
+            <a href="alarm.html" class="carousel-slide"><img src="solution-alarm.png" alt="GSM告警"></a>
+            <a href="maintenance.html" class="carousel-slide"><img src="solution-pm.png" alt="預防保養"></a>
+            <a href="report.html" class="carousel-slide"><img src="solution-data.png" alt="資料介接"></a>
         </div>
     </div>
-
     
     <!-- 用 site-container 包覆主體內容，讓左右兩側產生舒適的留白 -->
     <div class="site-container">
