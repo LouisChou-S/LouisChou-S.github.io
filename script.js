@@ -10,7 +10,15 @@ function copyToClipboard(text, type) {
     });
 }
 
-// 2. 自動計算網格排版 (單數排3個，雙數排2個) 與 橫幅輪播
+// 2. 右下角按鈕：平滑滾動回到網頁最上方
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// 3. 自動計算網格排版 (單數排3個，雙數排2個) 與 橫幅輪播
 document.addEventListener("DOMContentLoaded", function() {
     const gridContainer = document.getElementById('solutionsGrid');
     if (gridContainer) {
