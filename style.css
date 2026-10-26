@@ -24,7 +24,15 @@ body {
     padding-bottom: 50px;
 }
 
-/* 頂部企業級導覽列 */
+/* --- 全局容器：負責讓網站左右兩側有舒適的留白與置中 --- */
+.site-container {
+    max-width: 1200px;  /* 限制網頁最大寬度 */
+    margin: 0 auto;     /* 左右自動置中，製造兩側留白 */
+    padding: 0 25px;    /* 確保在窄螢幕時左右不會貼死邊緣 */
+    box-sizing: border-box;
+}
+
+/* 頂部導覽列調整：讓內部內容也遵循 1200px 留白規範 */
 nav {
     position: fixed; top: 0; left: 0; width: 100%; height: 75px;
     background: rgba(255, 255, 255, 0.95); 
@@ -33,6 +41,16 @@ nav {
     padding: 0 40px; box-sizing: border-box; z-index: 1000;
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* 讓導覽列內部最大寬度與下方保持一致 */
+.nav-inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-brand {
