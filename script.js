@@ -39,7 +39,7 @@ function changeSlide(direction) {
 function startTimer() {
     slideInterval = setInterval(() => {
         showSlide(currentSlide + 1);
-    }, 5000); // 每 5 秒自動切換
+    }, 10000); // 每 5 秒自動切換
 }
 
 function resetTimer() {
