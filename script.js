@@ -10,7 +10,7 @@ function copyToClipboard(text, type) {
     });
 }
 
-// 2. 首頁專屬：自動計算網格排版 (單數排3個，雙數排2個) 與 NAV 輪播
+// 2. 自動計算網格排版 (單數排3個，雙數排2個) 與 橫幅輪播
 document.addEventListener("DOMContentLoaded", function() {
     const gridContainer = document.getElementById('solutionsGrid');
     if (gridContainer) {
@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    const navItems = document.querySelectorAll('.nav-item');
-    if (navItems.length > 0) {
-        let currentNav = 0;
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    if (carouselItems.length > 0) {
+        let currentCarousel = 0;
         setInterval(() => {
-            navItems[currentNav].classList.remove('active');
-            currentNav = (currentNav + 1) % navItems.length;
-            navItems[currentNav].classList.add('active');
+            carouselItems[currentCarousel].classList.remove('active');
+            currentCarousel = (currentCarousel + 1) % carouselItems.length;
+            carouselItems[currentCarousel].classList.add('active');
         }, 3000);
     }
 });
