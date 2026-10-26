@@ -354,9 +354,9 @@ footer {
     #backToTop { bottom: 20px; right: 20px; width: 44px; height: 44px; }
 }
 /* 平板與手機版防呆：螢幕變窄時自動改為一列 2 個或 1 個 */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .solutions-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
-@media (max-width: 640px) {
+@media (max-width: 480px) {
     .solutions-grid { grid-template-columns: 1fr !important; }
 }
