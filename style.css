@@ -84,19 +84,79 @@ nav {
 }
 .dropdown:hover .dropdown-content { display: block; }
 
-/* 導覽列下方的輪播橫幅 */
+/* --- 橫幅輪播區塊 (高質感明亮科技感) --- */
 .carousel-banner {
-    margin-top: 75px; position: relative; width: 100%; height: 100px;
-    background: #0f172a; border-bottom: 1px solid var(--border-color);
-    display: flex; align-items: center; justify-content: center; overflow: hidden;
+    margin-top: 75px; 
+    position: relative; 
+    width: 100%; 
+    height: 420px; /* 提高橫幅高度以容納豐富的科技大圖 */
+    background: #f8fafc; /* 與整體明亮風格呼應 */
+    border-bottom: 1px solid var(--border-color);
+    display: flex; 
+    align-items: center; 
+    overflow: hidden;
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.02);
 }
-.carousel-item {
-    position: absolute; width: 100%; text-align: center; font-size: 1.35rem;
-    font-weight: bold; color: #00f3ff; text-decoration: none; letter-spacing: 1px;
-    opacity: 0; transition: opacity 0.5s ease-in-out, transform 0.3s; pointer-events: none;
+
+/* 建立由右至左不間斷滾動的長畫布 */
+.carousel-track {
+    display: flex;
+    width: 200%; /* 兩倍寬度以實現無縫連接 */
+    animation: scrollLeft 35s linear infinite; /* 35秒循環一次，時間越小速度越快 */
 }
-.carousel-item.active { opacity: 1; pointer-events: auto; }
-.carousel-item:hover { text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); transform: scale(1.01); }
+
+/* 讓圖片跟著畫布由右至左移動 */
+.carousel-track:hover {
+    animation-play-state: paused; /* 當滑鼠懸停時自動暫停，方便客戶點擊，體驗極佳 */
+}
+
+.carousel-image-slide {
+    width: 50%; /* 每一份大圖佔用 50% 寬度（也就是 100% 螢幕寬） */
+    height: 420px;
+    background-image: url('image_8.png'); /* 請將產生的圖片上傳至 GitHub，並在這裡引用 */
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+/* 輪播用到的由右至左滾動動畫 (Keyframes) */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* 滾動到一半（即第一張圖剛好播完）時瞬間回到 0%，達到無縫視覺 */
+    }
+}
+
+/* 左右切換的半透明箭頭裝飾 */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s;
+    user-select: none;
+}
+.carousel-arrow-left { left: 20px; }
+.carousel-arrow-right { right: 20px; }
+.carousel-arrow:hover {
+    background: var(--primary-blue);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+}
 
 /* 主體內容與區塊標題 */
 .hero { margin-top: 30px; text-align: center; padding: 20px; }
