@@ -243,3 +243,99 @@ h1 { color: #0f172a; font-size: 2.4rem; font-weight: 700; text-align: center; ma
 .content p { margin-top: 0; }
 .content ul { padding-left: 20px; margin-bottom: 0; }
 .content li { margin-bottom: 1
+
+/* Footer 聯絡專區：整體置中並排設計 */
+footer { 
+    text-align: center; 
+    padding: 40px 20px; 
+    background: #ffffff; 
+    border-top: 1px solid var(--border-color); 
+    margin-top: 60px; 
+}
+
+.footer-container {
+    max-width: 700px; 
+    margin: 0 auto; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; /* 讓內部元素整體置中 */
+    align-items: center;     /* 垂直方向置中對齊 */
+    gap: 35px;               /* 聯絡按鈕群與 QR Code 之間的間距 */
+}
+
+/* 左側：電話與 Email 按鈕群組 */
+.contact-info-group {
+    display: flex; 
+    flex-direction: column; 
+    gap: 14px; 
+    align-items: flex-start; /* 按鈕本身靠左對齊，保持整齊 */
+}
+
+.contact-box, .back-btn { 
+    display: inline-block; 
+    margin: 0; 
+    padding: 12px 24px; 
+    border: 1px solid var(--primary-blue); 
+    border-radius: 50px; 
+    cursor: pointer; 
+    color: var(--primary-blue); 
+    background: #f0f7ff; 
+    font-weight: 600; 
+    text-decoration: none; 
+    transition: all 0.3s; 
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+.contact-box:hover, .back-btn:hover { 
+    background: var(--primary-blue); 
+    color: #ffffff; 
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25); 
+    transform: translateY(-2px);
+}
+
+/* 右側：LINE 條碼區塊（將大小控制得與按鈕高度相配、略大一點點） */
+.line-qr-section {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 6px; 
+    background: #f8fafc; 
+    padding: 12px 16px; 
+    border-radius: 12px; 
+    border: 1px solid var(--border-color);
+}
+
+.line-qr-section p { 
+    margin: 0; 
+    font-size: 0.85rem; 
+    color: var(--text-sub); 
+    font-weight: 600; 
+}
+
+/* 關鍵：將 QR Code 圖片大小縮小至 110px，與電話/Email 區塊完美協調 */
+.line-qr-img {
+    width: 110px; 
+    height: 110px; 
+    border-radius: 6px; 
+    background: #ffffff; 
+    padding: 4px; 
+    border: 1px solid var(--border-color);
+    display: block;
+}
+
+/* 手機版適應：螢幕較小時改為上下置中堆疊 */
+@media (max-width: 768px) {
+    .footer-container { 
+        flex-direction: column; 
+        gap: 25px; 
+    }
+    .contact-info-group { 
+        align-items: center; 
+        width: 100%; 
+    }
+    .contact-box {
+        width: 90%;
+        text-align: center;
+    }
+}
