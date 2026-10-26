@@ -34,14 +34,17 @@
         </ul>
     </nav>
 
-    <!-- 導覽列下方的自動輪播橫幅 -->
+    <!-- 導覽列下方的 NAV 輪播橫幅 (已改為無縫、自動由右至左滑動) -->
     <div class="carousel-banner">
-        <a href="fmcs.html" class="carousel-item active">核心方案：廠務系統設備整合與智慧建築監控 ➔</a>
-        <a href="power.html" class="carousel-item">核心方案：能源消耗視覺化與 ESG 碳排放計算 ➔</a>
-        <a href="recipe.html" class="carousel-item">核心方案：設備參數上傳與下載管理 (Recipe) ➔</a>
-        <a href="alarm.html" class="carousel-item">核心方案：即時警報分析、GSM 簡訊與行動告警 ➔</a>
-        <a href="maintenance.html" class="carousel-item">核心方案：智慧化設備預防保養管理 ➔</a>
-        <a href="report.html" class="carousel-item">核心方案：跨平台資料介接與自動化報表 ➔</a>
+        <!-- 左右裝飾箭頭 -->
+        <div class="carousel-arrow carousel-arrow-left">⟨</div>
+        <div class="carousel-arrow carousel-arrow-right">⟩</div>
+        
+        <!-- 滾動畫布：包含兩張一模一樣的圖片以實現「無縫接軌」 -->
+        <div class="carousel-track">
+            <a href="#solutionsGrid" class="carousel-image-slide"></a>
+            <a href="#solutionsGrid" class="carousel-image-slide"></a>
+        </div>
     </div>
 
     <!-- 公司核心能力介紹 -->
