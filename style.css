@@ -84,7 +84,7 @@ nav {
 }
 .dropdown:hover .dropdown-content { display: block; }
 
-/* --- 獨立圖片容器與圓角樣式（一勞永逸解決位移與裁切問題） --- */
+/* 獨立圖片容器與圓角樣式 */
 .card-img-container {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -242,7 +242,8 @@ h1 { color: #0f172a; font-size: 2.4rem; font-weight: 700; text-align: center; ma
 }
 .content p { margin-top: 0; }
 .content ul { padding-left: 20px; margin-bottom: 0; }
-.content li { margin-bottom: 1
+.content li { margin-bottom: 12px; }
+.content strong { color: var(--primary-blue); }
 
 /* Footer 聯絡專區：整體置中並排設計 */
 footer { 
@@ -258,9 +259,9 @@ footer {
     margin: 0 auto; 
     display: flex; 
     flex-wrap: wrap; 
-    justify-content: center; /* 讓內部元素整體置中 */
-    align-items: center;     /* 垂直方向置中對齊 */
-    gap: 35px;               /* 聯絡按鈕群與 QR Code 之間的間距 */
+    justify-content: center; 
+    align-items: center; 
+    gap: 35px; 
 }
 
 /* 左側：電話與 Email 按鈕群組 */
@@ -268,7 +269,7 @@ footer {
     display: flex; 
     flex-direction: column; 
     gap: 14px; 
-    align-items: flex-start; /* 按鈕本身靠左對齊，保持整齊 */
+    align-items: flex-start; 
 }
 
 .contact-box, .back-btn { 
@@ -294,7 +295,7 @@ footer {
     transform: translateY(-2px);
 }
 
-/* 右側：LINE 條碼區塊（將大小控制得與按鈕高度相配、略大一點點） */
+/* 右側：LINE 條碼區塊 */
 .line-qr-section {
     display: flex; 
     flex-direction: column; 
@@ -313,7 +314,6 @@ footer {
     font-weight: 600; 
 }
 
-/* 關鍵：將 QR Code 圖片大小縮小至 110px，與電話/Email 區塊完美協調 */
 .line-qr-img {
     width: 110px; 
     height: 110px; 
@@ -324,9 +324,42 @@ footer {
     display: block;
 }
 
+/* 右下角回到最上方按鈕 */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+#backToTop:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.5);
+}
+
+/* Toast 提示框 */
+#toast { 
+    visibility: hidden; background-color: #0f172a; color: #ffffff; text-align: center; 
+    padding: 16px 24px; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); 
+    border-radius: 8px; font-weight: 600; opacity: 0; transition: 0.3s; z-index: 1001;
+}
+#toast.show { visibility: visible; opacity: 1; }
+
 /* --- RWD 響應式手機與平板適應 --- */
 @media (max-width: 768px) {
-    /* 1. 頂端導覽列：改為上下堆疊或簡化間距，避免擠壓 */
     nav {
         padding: 0 15px;
         height: auto;
@@ -357,23 +390,20 @@ footer {
         padding-left: 15px;
     }
 
-    /* 2. 調整頂端輪播橫幅間距，配合導覽列高度 */
     .carousel-banner {
-        margin-top: 110px; /* 預留手機導覽列展開後的高度 */
+        margin-top: 110px;
         height: 180px;
     }
 
-    /* 3. 解決方案網格：手機上強制改為一欄 (1 列 1 個)，確保圖片與文字不變形 */
     .solutions-grid { 
         grid-template-columns: 1fr !important; 
         gap: 20px;
         padding: 0 15px;
     }
     .grid-card-body p {
-        min-height: auto; /* 解除固定高度限制，適應手機閱讀 */
+        min-height: auto; 
     }
 
-    /* 4. Footer 聯絡資訊改為上下置中堆疊 */
     .footer-container { 
         flex-direction: column; 
         gap: 25px; 
@@ -386,13 +416,3 @@ footer {
         width: 90%;
         text-align: center;
     }
-
-    /* 5. 調整右下角回到頂端按鈕位置 */
-    #backToTop { 
-        bottom: 20px; 
-        right: 20px; 
-        width: 42px; 
-        height: 42px; 
-        font-size: 1.1rem;
-    }
-}
