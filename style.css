@@ -393,10 +393,12 @@ footer {
     font-weight: 600; 
 }
 
-/* 關鍵：將 QR Code 圖片大小縮小至 90px，精巧不佔空間 */
+/* 將 QR Code 圖片大小強制縮小至 90px，精巧不佔空間 */
 .line-qr-img {
-    width: 90px; 
-    height: 90px; 
+    width: 90px !important;  /* 強制覆蓋任何預設寬度 */
+    height: 90px !important; /* 強制覆蓋任何預設高度 */
+    max-width: none;         /* 防止被父容器限制 */
+    object-fit: contain;     /* 確保圖片內容完整縮放不變形 */
     border-radius: 6px; 
     background: #ffffff; 
     padding: 4px; 
