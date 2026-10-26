@@ -35,7 +35,7 @@ body {
 
 /* 全局容器：負責讓網站左右兩側有舒適的留白與置中 */
 .site-container {
-    max-width: 1200px;  
+    max-width: 1400px;  
     margin: 0 auto;     
     padding: 0 25px;    
     box-sizing: border-box;
