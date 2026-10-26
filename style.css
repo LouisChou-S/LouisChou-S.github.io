@@ -96,12 +96,12 @@ nav {
 }
 
 /* 精準對應 6 個卡片的座標位置 */
-.pos-fmcs   { background-position: 3.5% 4.5%; }   /* 左上：廠務與智慧建築 */
-.pos-esg    { background-position: 50% 4.5%; }    /* 中上：能源與 ESG 碳排計算 */
-.pos-recipe { background-position: 96.5% 4.5%; }  /* 右上：設備參數與配方管理 */
-.pos-alarm  { background-position: 3.5% 95.5%; }  /* 左下：GSM 簡訊與行動告警 */
-.pos-pm     { background-position: 50% 95.5%; }   /* 中下：設備預防保養 (PM) */
-.pos-data   { background-position: 96.5% 95.5%; } /* 右下：異質系統資料介接 */
+.pos-fmcs   { background-position: 6.2% 8.5%; }   /* 左上：廠務與智慧建築 */
+.pos-esg    { background-position: 50.0% 8.5%; }  /* 中上：能源與 ESG 碳排計算 */
+.pos-recipe { background-position: 93.8% 8.5%; }  /* 右上：設備參數與配方管理 */
+.pos-alarm  { background-position: 6.2% 91.5%; }  /* 左下：GSM 簡訊與行動告警 */
+.pos-pm     { background-position: 50.0% 91.5%; } /* 中下：設備預防保養 (PM) */
+.pos-data   { background-position: 93.8% 91.5%; } /* 右下：異質系統資料介接 */
 
 /* 頂端橫幅：由右至左無限滑動輪播 6 張卡片 */
 .carousel-banner {
@@ -194,8 +194,25 @@ nav {
 .section-title p { color: var(--text-sub); margin: 0; font-size: 1rem; }
 
 /* 解決方案網格卡片 */
+/* 1. 解決方案網格 Grid：固定改為一列 3 個 */
 .solutions-grid { 
-    display: grid; gap: 24px; max-width: 1050px; margin: 0 auto 50px; padding: 0 20px; 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* 強制一列顯示 3 個 */
+    gap: 28px; 
+    max-width: 1100px; 
+    margin: 0 auto 50px; 
+    padding: 0 20px; 
+}
+
+/* 2. 修正 6 宮格合圖裁切：放大倍率以完全切掉原本圖上的灰邊與陰影 */
+.sprite-img {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    background-image: url('solutions-grid-all.jpg');
+    background-size: 352% 236%; /* 加大縮放比例，只擷取卡片內部乾淨畫面 */
+    background-repeat: no-repeat;
+    border-bottom: 1px solid var(--border-color);
+    transition: transform 0.4s ease;
 }
 .grid-card { 
     border: 1px solid var(--border-color); padding: 26px; text-align: left; border-radius: 12px; 
@@ -330,10 +347,16 @@ footer {
 #toast.show { visibility: visible; opacity: 1; }
 
 @media (max-width: 768px) {
-    .solutions-grid { grid-template-columns: 1fr !important; }
     .footer-container { flex-direction: column; gap: 25px; }
     .contact-info-group { align-items: center; width: 100%; }
     nav { padding: 0 15px; }
     .nav-menu { gap: 14px; }
     #backToTop { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+}
+/* 平板與手機版防呆：螢幕變窄時自動改為一列 2 個或 1 個 */
+@media (max-width: 992px) {
+    .solutions-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 640px) {
+    .solutions-grid { grid-template-columns: 1fr !important; }
 }
