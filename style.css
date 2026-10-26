@@ -334,13 +334,13 @@ footer {
 
 /* 關鍵：使用 flex 將聯絡按鈕群與 QR Code 區塊左右並排並置中 */
 .footer-container {
-    max-width: 700px; 
-    margin: 0 auto; 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; /* 水平置中 */
+    max-width: 900px;        /* 將最大寬度從 700px 調大，提供足夠的並排空間 */
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;       /* 強制不自動換行，讓它們乖乖並排 */
+    justify-content: center; /* 置中對齊 */
     align-items: center;     /* 垂直置中對齊 */
-    gap: 40px;               /* 兩者之間的間距 */
+    gap: 50px;               /* 左右區塊之間的間距 */
 }
 
 /* 左側：電話與 Email 按鈕群組 */
