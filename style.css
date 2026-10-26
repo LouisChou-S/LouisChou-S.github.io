@@ -146,13 +146,17 @@ nav {
     transition: transform 0.4s ease;
 }
 
-/* --- 滿版寬幅 Banner 樣式 --- */
+/* --- 滿版寬幅 Banner 樣式（等比例完整顯示，不裁切任何文字） --- */
 .carousel-banner {
     margin-top: 75px;
     width: 100%;
-    height: 440px; /* Banner 的固定高度 */
-    background: #f1f5f9;
+    max-width: 1200px; /* 與網站內容區齊寬，若想全螢幕滿版可刪除此行 */
+    margin-left: auto;
+    margin-right: auto;
+    aspect-ratio: 21 / 9; /* 關鍵：鎖定與圖片完全相同的長寬比例，取消死板的固定高度 */
+    background: #eaf3fb;  /* 採用與圖片底色一致的柔和科技淺藍，無縫融合 */
     border-bottom: 1px solid var(--border-color);
+    border-radius: 12px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -160,7 +164,6 @@ nav {
     justify-content: center;
 }
 
-/* 讓輪播容器寬度吃滿 100%，實現圖片完全佈滿 Banner */
 .carousel-track-static {
     position: relative;
     width: 100%;
@@ -176,7 +179,7 @@ nav {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.6s ease-in-out, visibility 0.6s;
-    background: #ffffff;
+    background: #eaf3fb;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -190,34 +193,33 @@ nav {
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 讓圖片完美滿版填滿整個 Banner 且不變形 */
+    object-fit: contain; /* 關鍵：改為 contain，保證圖片 100% 完整呈現，絕不裁切底部文字 */
     display: block;
 }
 
-/* 左右切換箭頭：取消圓框與底色，改為純淨極簡風 */
+/* 左右切換箭頭：純淨無框與深色陰影，確保在淺色背景上清晰可見 */
 .carousel-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: transparent; /* 取消底色 */
-    border: none;            /* 取消圓框 */
-    font-size: 3rem;         /* 放大箭頭尺寸 */
-    color: rgba(255, 255, 255, 0.85); /* 預設半透明白，在圖片上方清晰可見 */
+    background: transparent;
+    border: none;
+    font-size: 3.2rem;
+    color: var(--primary-blue); /* 改用深科技藍，在淺藍背景上更醒目 */
+    opacity: 0.6;
     cursor: pointer;
     z-index: 10;
     transition: all 0.3s ease;
     user-select: none;
     padding: 20px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* 加上文字陰影確保在任何圖片背景上都清晰 */
 }
 
-.carousel-arrow-left { left: 15px; }
-.carousel-arrow-right { right: 15px; }
+.carousel-arrow-left { left: 10px; }
+.carousel-arrow-right { right: 10px; }
 
 .carousel-arrow:hover {
-    color: #ffffff;
-    transform: translateY(-50%) scale(1.1); /* 滑鼠移入時稍微放大 */
-    text-shadow: 0 0 12px var(--primary-blue);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.15);
 }
 
 @keyframes scrollRightToLeft {
