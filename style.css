@@ -1,7 +1,7 @@
 :root { 
     --primary-blue: #0066cc; 
     --primary-hover: #0052a3;
-    --light-bg: #f4f7fa; 
+    --light-bg: #f8fafc; /* 更具科技感的極致淺灰藍底色 */
     --card-bg: #ffffff;
     --text-main: #1e293b; 
     --text-sub: #475569;
@@ -17,22 +17,24 @@ body {
     font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; 
     background-color: var(--light-bg); 
     color: var(--text-main); 
+    /* 升級版淺色科技網格圖案背景 (細緻的工程經緯格線) */
     background-image: 
-        linear-gradient(rgba(0, 102, 204, 0.04) 1px, transparent 1px), 
-        linear-gradient(90deg, rgba(0, 102, 204, 0.04) 1px, transparent 1px); 
-    background-size: 30px 30px; 
+        linear-gradient(rgba(0, 102, 204, 0.05) 1px, transparent 1px), 
+        linear-gradient(90deg, rgba(0, 102, 204, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 50% 0%, rgba(0, 102, 204, 0.08) 0%, transparent 60%); 
+    background-size: 40px 40px, 40px 40px, 100% 100%; 
     padding-bottom: 50px;
 }
 
-/* --- 全局容器：負責讓網站左右兩側有舒適的留白與置中 --- */
+/* 全局容器：負責讓網站左右兩側有舒適的留白與置中 */
 .site-container {
-    max-width: 1200px;  /* 限制網頁最大寬度 */
-    margin: 0 auto;     /* 左右自動置中，製造兩側留白 */
-    padding: 0 25px;    /* 確保在窄螢幕時左右不會貼死邊緣 */
+    max-width: 1200px;  
+    margin: 0 auto;     
+    padding: 0 25px;    
     box-sizing: border-box;
 }
 
-/* 頂部導覽列調整：讓內部內容也遵循 1200px 留白規範 */
+/* 頂部企業級導覽列 */
 nav {
     position: fixed; top: 0; left: 0; width: 100%; height: 75px;
     background: rgba(255, 255, 255, 0.95); 
@@ -43,7 +45,6 @@ nav {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-/* 讓導覽列內部最大寬度與下方保持一致 */
 .nav-inner {
     max-width: 1200px;
     width: 100%;
@@ -75,13 +76,14 @@ nav {
     font-size: 1.15rem; font-weight: 700; color: #0f172a; letter-spacing: 0.5px;
 }
 
-/* 右側目錄與下拉選單 */
+/* 右側目錄與下拉選單：文字放大 4pt */
 .nav-menu {
     display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; align-items: center;
 }
 .nav-menu li { position: relative; }
 .nav-menu a {
-    text-decoration: none; color: var(--text-sub); font-weight: 600; font-size: 0.95rem;
+    text-decoration: none; color: var(--text-sub); font-weight: 600; 
+    font-size: 1.2rem; /* 比原本放大約 4pt (0.95rem 提升至 1.2rem) */
     transition: color 0.3s; padding: 10px 0;
 }
 .nav-menu a:hover { color: var(--primary-blue); }
@@ -95,14 +97,15 @@ nav {
     padding: 8px 0; z-index: 1001;
 }
 .dropdown-content a {
-    color: var(--text-main); padding: 10px 20px; display: block; font-size: 0.9rem;
+    color: var(--text-main); padding: 10px 20px; display: block; 
+    font-size: 1.05rem; /* 下拉選項同步稍微調大以維持一致性 */
 }
 .dropdown-content a:hover {
     background-color: #f0f7ff; color: var(--primary-blue);
 }
 .dropdown:hover .dropdown-content { display: block; }
 
-/* --- 漢堡按鈕樣式（預設電腦版隱藏） --- */
+/* 漢堡按鈕樣式（預設電腦版隱藏） */
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -280,7 +283,7 @@ h1 { color: #0f172a; font-size: 2.4rem; font-weight: 700; text-align: center; ma
 .content li { margin-bottom: 12px; }
 .content strong { color: var(--primary-blue); }
 
-/* Footer 聯絡專區：整體置中並排設計 */
+/* Footer 聯絡專區 */
 footer { 
     text-align: center; 
     padding: 40px 20px; 
@@ -289,18 +292,16 @@ footer {
     margin-top: 60px; 
 }
 
-/* 關鍵：使用 flex 將聯絡按鈕群與 QR Code 區塊左右並排並置中 */
 .footer-container {
     max-width: 700px; 
     margin: 0 auto; 
     display: flex; 
     flex-wrap: wrap; 
-    justify-content: center; /* 水平置中 */
-    align-items: center;     /* 垂直置中對齊 */
-    gap: 40px;               /* 兩者之間的間距 */
+    justify-content: center; 
+    align-items: center; 
+    gap: 40px; 
 }
 
-/* 左側：電話與 Email 按鈕群組 */
 .contact-info-group {
     display: flex; 
     flex-direction: column; 
@@ -331,7 +332,6 @@ footer {
     transform: translateY(-2px);
 }
 
-/* 右側：LINE 條碼區塊 */
 .line-qr-section {
     display: flex; 
     flex-direction: column; 
@@ -350,7 +350,6 @@ footer {
     font-weight: 600; 
 }
 
-/* 關鍵：將 QR Code 圖片大小縮小至 90px，精巧不佔空間 */
 .line-qr-img {
     width: 90px; 
     height: 90px; 
@@ -395,6 +394,7 @@ footer {
 }
 #toast.show { visibility: visible; opacity: 1; }
 
+/* --- RWD 響應式手機與平板適應 --- */
 @media (max-width: 768px) {
     nav {
         padding: 0 20px;
@@ -402,12 +402,10 @@ footer {
         justify-content: space-between;
     }
     
-    /* 顯示三條橫線漢堡按鈕 */
     .menu-toggle {
         display: flex;
     }
 
-    /* 手機版導覽選單預設隱藏，透過 .active 展開 */
     .nav-menu {
         position: absolute;
         top: 75px;
@@ -425,7 +423,7 @@ footer {
     }
 
     .nav-menu.active {
-        max-height: 400px; /* 展開時的最大高度 */
+        max-height: 400px; 
         padding: 10px 0 20px 0;
     }
 
@@ -439,11 +437,10 @@ footer {
         display: block;
         width: 100%;
         box-sizing: border-box;
-        font-size: 1rem;
+        font-size: 1.15rem; /* 手機選單文字同樣保持舒適的大字體 */
         border-bottom: 1px solid #f1f5f9;
     }
 
-    /* 手機版下拉選單調整 */
     .dropdown-content {
         position: relative;
         box-shadow: none;
@@ -454,7 +451,7 @@ footer {
     }
 
     .carousel-banner {
-        margin-top: 75px; /* 貼齊固定導覽列 */
+        margin-top: 75px;
         height: 160px;
     }
 
