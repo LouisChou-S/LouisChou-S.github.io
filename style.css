@@ -41,7 +41,7 @@ nav {
 .nav-logo-icon {
     min-width: 38px;
     height: 38px;
-    padding: 0 10px; /* 增加左右邊距，讓文字有空間呼吸 */
+    padding: 0 10px;
     background: var(--primary-blue);
     color: #ffffff;
     font-weight: bold;
@@ -49,9 +49,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem; /* 稍微調降一點字體大小以適應長字元 */
+    font-size: 1rem;
     box-shadow: 0 2px 5px rgba(0, 102, 204, 0.3);
-    white-space: nowrap; /* 防止文字換行 */
+    white-space: nowrap;
 }
 .nav-company-name {
     font-size: 1.15rem; font-weight: 700; color: #0f172a; letter-spacing: 0.5px;
@@ -84,26 +84,24 @@ nav {
 }
 .dropdown:hover .dropdown-content { display: block; }
 
-/* --- 使用 6 宮格合圖自動分割顯示 (CSS Sprites) --- */
-.sprite-img {
+/* --- 獨立圖片容器與圓角樣式（一勞永逸解決位移與裁切問題） --- */
+.card-img-container {
     width: 100%;
-    aspect-ratio: 1 / 1; /* 維持正方形比例，完整顯示單張卡片 */
-    background-image: url('solutions-grid-all.jpg');
-    background-size: 318% 216%; /* 放大畫布以對準 3x2 網格並自動裁去外圍多餘白邊 */
-    background-repeat: no-repeat;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #ffffff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     border-bottom: 1px solid var(--border-color);
+}
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.4s ease;
 }
 
-/* 精準對應 6 個卡片的座標位置 */
-.pos-fmcs   { background-position: 6.2% 8.5%; }   /* 左上：廠務與智慧建築 */
-.pos-esg    { background-position: 50.0% 8.5%; }  /* 中上：能源與 ESG 碳排計算 */
-.pos-recipe { background-position: 93.8% 8.5%; }  /* 右上：設備參數與配方管理 */
-.pos-alarm  { background-position: 6.2% 91.5%; }  /* 左下：GSM 簡訊與行動告警 */
-.pos-pm     { background-position: 50.0% 91.5%; } /* 中下：設備預防保養 (PM) */
-.pos-data   { background-position: 93.8% 91.5%; } /* 右下：異質系統資料介接 */
-
-/* 頂端橫幅：由右至左無限滑動輪播 6 張卡片 */
+/* 頂端橫幅：由右至左無限滑動輪播獨立卡片 */
 .carousel-banner {
     margin-top: 75px;
     width: 100%;
@@ -121,11 +119,11 @@ nav {
     animation: scrollRightToLeft 28s linear infinite;
 }
 .carousel-track:hover {
-    animation-play-state: paused; /* 滑鼠移上去時暫停輪播 */
+    animation-play-state: paused;
 }
 
 .carousel-card {
-    width: 280px;
+    width: 260px;
     background: #ffffff;
     border: 1px solid var(--border-color);
     border-radius: 12px;
@@ -134,6 +132,12 @@ nav {
     flex-shrink: 0;
     text-decoration: none;
     transition: transform 0.3s;
+}
+.carousel-card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    display: block;
 }
 .carousel-card:hover {
     transform: translateY(-5px);
@@ -145,45 +149,6 @@ nav {
     100% { transform: translateX(-50%); }
 }
 
-/* 輪播用到的由右至左滾動動畫 (Keyframes) */
-@keyframes scrollLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%); /* 滾動到一半（即第一張圖剛好播完）時瞬間回到 0%，達到無縫視覺 */
-    }
-}
-
-/* 左右切換的半透明箭頭裝飾 */
-.carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    color: var(--primary-blue);
-    cursor: pointer;
-    z-index: 10;
-    backdrop-filter: blur(4px);
-    transition: all 0.3s;
-    user-select: none;
-}
-.carousel-arrow-left { left: 20px; }
-.carousel-arrow-right { right: 20px; }
-.carousel-arrow:hover {
-    background: var(--primary-blue);
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
-}
-
 /* 主體內容與區塊標題 */
 .hero { margin-top: 30px; text-align: center; padding: 20px; }
 .hero h1 { color: #0f172a; font-size: 2.3rem; font-weight: 700; margin-bottom: 15px; }
@@ -193,44 +158,43 @@ nav {
 .section-title h2 { color: #0f172a; font-size: 1.8rem; margin-bottom: 8px; }
 .section-title p { color: var(--text-sub); margin: 0; font-size: 1rem; }
 
-/* 解決方案網格卡片 */
-/* 1. 解決方案網格 Grid：固定改為一列 3 個 */
+/* 解決方案網格 Grid：強制固定一列 3 個 */
 .solutions-grid { 
     display: grid; 
-    grid-template-columns: repeat(3, 1fr); /* 強制一列顯示 3 個 */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 28px; 
     max-width: 1100px; 
     margin: 0 auto 50px; 
     padding: 0 20px; 
 }
-
-/* 2. 修正 6 宮格合圖裁切：放大倍率以完全切掉原本圖上的灰邊與陰影 */
-.sprite-img {
-    width: 100%;
-    aspect-ratio: 1 / 1; 
-    background-image: url('solutions-grid-all.jpg');
-    background-size: 352% 236%; /* 加大縮放比例，只擷取卡片內部乾淨畫面 */
-    background-repeat: no-repeat;
-    border-bottom: 1px solid var(--border-color);
-    transition: transform 0.4s ease;
-}
 .grid-card { 
-    border: 1px solid var(--border-color); padding: 26px; text-align: left; border-radius: 12px; 
-    background: var(--card-bg); text-decoration: none; color: var(--text-main); display: block;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); transition: all 0.3s ease;
+    border: 1px solid var(--border-color); 
+    text-align: left; 
+    border-radius: 12px; 
+    background: var(--card-bg); 
+    text-decoration: none; 
+    color: var(--text-main); 
+    display: block;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); 
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
-.card-tag {
-    display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--primary-blue);
-    background: #e0f2fe; padding: 4px 10px; border-radius: 4px; margin-bottom: 10px;
+.grid-card-body {
+    padding: 24px;
 }
-.grid-card h3 { color: var(--primary-blue); margin: 0 0 10px 0; font-size: 1.3rem; }
+.grid-card h3 { color: var(--primary-blue); margin: 0 0 10px 0; font-size: 1.25rem; }
 .grid-card p { 
-    margin: 0; color: var(--text-sub); line-height: 1.6; min-height: calc(1.6em * 3); 
+    margin: 0; color: var(--text-sub); line-height: 1.6; font-size: 0.95rem;
+    min-height: calc(1.6em * 3); 
     text-align: left;
 }
 .grid-card:hover {
     box-shadow: 0 10px 25px -5px rgba(0, 102, 204, 0.15);
-    border-color: var(--primary-blue); transform: translateY(-4px);
+    border-color: var(--primary-blue); 
+    transform: translateY(-4px);
+}
+.grid-card:hover .card-img-container img {
+    transform: scale(1.05);
 }
 
 /* iFIX FMCS 系統架構圖區塊 */
@@ -278,85 +242,4 @@ h1 { color: #0f172a; font-size: 2.4rem; font-weight: 700; text-align: center; ma
 }
 .content p { margin-top: 0; }
 .content ul { padding-left: 20px; margin-bottom: 0; }
-.content li { margin-bottom: 12px; }
-.content strong { color: var(--primary-blue); }
-
-/* Footer 與聯絡資訊 */
-footer { 
-    text-align: center; padding: 40px 20px; background: #ffffff; 
-    border-top: 1px solid var(--border-color); margin-top: 60px; 
-}
-.footer-container {
-    max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; 
-    justify-content: center; align-items: center; gap: 40px;
-}
-.contact-info-group { display: flex; flex-direction: column; gap: 15px; align-items: flex-start; }
-.contact-box, .back-btn { 
-    display: inline-block; margin: 0; padding: 12px 28px; border: 1px solid var(--primary-blue); 
-    border-radius: 50px; cursor: pointer; color: var(--primary-blue); background: #f0f7ff; 
-    font-weight: 600; text-decoration: none; transition: all 0.3s; white-space: nowrap;
-}
-.contact-box:hover, .back-btn:hover { 
-    background: var(--primary-blue); color: #ffffff; 
-    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25); transform: translateY(-2px);
-}
-.back-btn-container { text-align: center; margin-top: 30px; }
-
-.line-qr-section {
-    display: flex; flex-direction: column; align-items: center; gap: 6px; 
-    background: #f8fafc; padding: 15px 20px; border-radius: 12px; border: 1px solid var(--border-color);
-}
-.line-qr-section p { margin: 0; font-size: 0.9rem; color: var(--text-sub); font-weight: 600; }
-.line-qr-img {
-    width: 110px; height: 110px; border-radius: 6px; background: #ffffff; 
-    padding: 4px; border: 1px solid var(--border-color);
-}
-
-/* 右下角永遠浮動的「回到最上方」箭頭按鈕 */
-#backToTop {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--primary-blue);
-    color: #ffffff;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.3rem;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-#backToTop:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.5);
-}
-
-/* Toast 提示框 */
-#toast { 
-    visibility: hidden; background-color: #0f172a; color: #ffffff; text-align: center; 
-    padding: 16px 24px; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); 
-    border-radius: 8px; font-weight: 600; opacity: 0; transition: 0.3s; z-index: 1001;
-}
-#toast.show { visibility: visible; opacity: 1; }
-
-@media (max-width: 768px) {
-    .footer-container { flex-direction: column; gap: 25px; }
-    .contact-info-group { align-items: center; width: 100%; }
-    nav { padding: 0 15px; }
-    .nav-menu { gap: 14px; }
-    #backToTop { bottom: 20px; right: 20px; width: 44px; height: 44px; }
-}
-/* 平板與手機版防呆：螢幕變窄時自動改為一列 2 個或 1 個 */
-@media (max-width: 768px) {
-    .solutions-grid { grid-template-columns: repeat(2, 1fr) !important; }
-}
-@media (max-width: 480px) {
-    .solutions-grid { grid-template-columns: 1fr !important; }
-}
+.content li { margin-bottom: 1
