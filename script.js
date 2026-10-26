@@ -17,26 +17,3 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
-
-// 3. 自動計算網格排版 (單數排3個，雙數排2個) 與 橫幅輪播
-document.addEventListener("DOMContentLoaded", function() {
-    const gridContainer = document.getElementById('solutionsGrid');
-    if (gridContainer) {
-        const gridCards = gridContainer.querySelectorAll('.grid-card');
-        if (gridCards.length % 2 === 0) {
-            gridContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
-        } else {
-            gridContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
-        }
-    }
-
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    if (carouselItems.length > 0) {
-        let currentCarousel = 0;
-        setInterval(() => {
-            carouselItems[currentCarousel].classList.remove('active');
-            currentCarousel = (currentCarousel + 1) % carouselItems.length;
-            carouselItems[currentCarousel].classList.add('active');
-        }, 3000);
-    }
-});
