@@ -271,14 +271,15 @@ footer {
     margin-top: 60px; 
 }
 
+/* 關鍵：使用 flex 將聯絡按鈕群與 QR Code 區塊左右並排並置中 */
 .footer-container {
     max-width: 700px; 
     margin: 0 auto; 
     display: flex; 
     flex-wrap: wrap; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 35px; 
+    justify-content: center; /* 水平置中 */
+    align-items: center;     /* 垂直置中對齊 */
+    gap: 40px;               /* 兩者之間的間距 */
 }
 
 /* 左側：電話與 Email 按鈕群組 */
@@ -331,9 +332,10 @@ footer {
     font-weight: 600; 
 }
 
+/* 關鍵：將 QR Code 圖片大小縮小至 90px，精巧不佔空間 */
 .line-qr-img {
-    width: 110px; 
-    height: 110px; 
+    width: 90px; 
+    height: 90px; 
     border-radius: 6px; 
     background: #ffffff; 
     padding: 4px; 
