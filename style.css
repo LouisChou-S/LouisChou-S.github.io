@@ -8,9 +8,13 @@
     --border-color: #cbd5e1;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body { 
     margin: 0; 
-    font-family: 'Segoe UI', sans-serif; 
+    font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; 
     background-color: var(--light-bg); 
     color: var(--text-main); 
     background-image: 
@@ -20,7 +24,7 @@ body {
     padding-bottom: 50px;
 }
 
-/* 頂部企業級導覽列 (左側 Logo，右側選單) */
+/* 頂部企業級導覽列 */
 nav {
     position: fixed; top: 0; left: 0; width: 100%; height: 75px;
     background: rgba(255, 255, 255, 0.95); 
@@ -31,96 +35,131 @@ nav {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-/* 左側公司 Logo 與名稱 */
 .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
 }
 .nav-logo-icon {
-    width: 38px;
-    height: 38px;
-    background: var(--primary-blue);
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    box-shadow: 0 2px 5px rgba(0, 102, 204, 0.3);
+    width: 38px; height: 38px; background: var(--primary-blue); color: #ffffff;
+    font-weight: bold; border-radius: 8px; display: flex; align-items: center;
+    justify-content: center; font-size: 1.1rem; box-shadow: 0 2px 5px rgba(0, 102, 204, 0.3);
 }
 .nav-company-name {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #0f172a;
-    letter-spacing: 0.5px;
+    font-size: 1.15rem; font-weight: 700; color: #0f172a; letter-spacing: 0.5px;
 }
 
-/* 右側目錄按鈕群組 */
+/* 右側目錄與下拉選單 */
 .nav-menu {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
+    display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; align-items: center;
 }
+.nav-menu li { position: relative; }
 .nav-menu a {
-    text-decoration: none;
-    color: var(--text-sub);
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: color 0.3s;
+    text-decoration: none; color: var(--text-sub); font-weight: 600; font-size: 0.95rem;
+    transition: color 0.3s; padding: 10px 0;
 }
-.nav-menu a:hover {
-    color: var(--primary-blue);
-}
+.nav-menu a:hover { color: var(--primary-blue); }
 
-/* 導覽列下方的 NAV 輪播橫幅區塊 */
+/* 下拉選單內容 */
+.dropdown-content {
+    display: none; position: absolute; top: 100%; left: 0;
+    background-color: #ffffff; min-width: 240px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color); border-radius: 8px;
+    padding: 8px 0; z-index: 1001;
+}
+.dropdown-content a {
+    color: var(--text-main); padding: 10px 20px; display: block; font-size: 0.9rem;
+}
+.dropdown-content a:hover {
+    background-color: #f0f7ff; color: var(--primary-blue);
+}
+.dropdown:hover .dropdown-content { display: block; }
+
+/* 導覽列下方的輪播橫幅 */
 .carousel-banner {
-    margin-top: 75px; /* 剛好接在固定導覽列下方 */
-    position: relative;
-    width: 100%;
-    height: 120px;
-    background: #0f172a;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    margin-top: 75px; position: relative; width: 100%; height: 100px;
+    background: #0f172a; border-bottom: 1px solid var(--border-color);
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
 }
 .carousel-item {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #00f3ff;
-    text-decoration: none;
-    letter-spacing: 1px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, transform 0.3s;
-    pointer-events: none;
+    position: absolute; width: 100%; text-align: center; font-size: 1.35rem;
+    font-weight: bold; color: #00f3ff; text-decoration: none; letter-spacing: 1px;
+    opacity: 0; transition: opacity 0.5s ease-in-out, transform 0.3s; pointer-events: none;
 }
 .carousel-item.active { opacity: 1; pointer-events: auto; }
 .carousel-item:hover { text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); transform: scale(1.01); }
 
-/* 主體內容與 Hero 區塊 */
-.hero { margin-top: 40px; text-align: center; padding: 20px; }
+/* 主體內容與區塊標題 */
+.hero { margin-top: 30px; text-align: center; padding: 20px; }
 .hero h1 { color: #0f172a; font-size: 2.3rem; font-weight: 700; margin-bottom: 15px; }
-.hero p { max-width: 800px; margin: 0 auto 30px auto; line-height: 1.8; color: var(--text-sub); font-size: 1.1rem; }
+.hero p { max-width: 850px; margin: 0 auto 20px auto; line-height: 1.8; color: var(--text-sub); font-size: 1.1rem; }
 
-/* 子網頁獨立標題置中 */
-h1 { 
-    color: #0f172a; font-size: 2.5rem; font-weight: 700; text-align: center; 
-    margin-top: 100px; margin-bottom: 20px;
+.section-title { text-align: center; margin: 30px 0 25px 0; padding: 0 20px; }
+.section-title h2 { color: #0f172a; font-size: 1.8rem; margin-bottom: 8px; }
+.section-title p { color: var(--text-sub); margin: 0; font-size: 1rem; }
+
+/* 解決方案網格卡片 */
+.solutions-grid { 
+    display: grid; gap: 24px; max-width: 1050px; margin: 0 auto 50px; padding: 0 20px; 
+}
+.grid-card { 
+    border: 1px solid var(--border-color); padding: 26px; text-align: left; border-radius: 12px; 
+    background: var(--card-bg); text-decoration: none; color: var(--text-main); display: block;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); transition: all 0.3s ease;
+}
+.card-tag {
+    display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--primary-blue);
+    background: #e0f2fe; padding: 4px 10px; border-radius: 4px; margin-bottom: 10px;
+}
+.grid-card h3 { color: var(--primary-blue); margin: 0 0 10px 0; font-size: 1.3rem; }
+.grid-card p { 
+    margin: 0; color: var(--text-sub); line-height: 1.6; min-height: calc(1.6em * 3); 
+    text-align: left;
+}
+.grid-card:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 102, 204, 0.15);
+    border-color: var(--primary-blue); transform: translateY(-4px);
 }
 
-/* 子網頁內容容器 */
+/* iFIX FMCS 系統架構圖區塊 */
+.arch-section {
+    max-width: 1050px; margin: 0 auto 60px auto; padding: 0 20px;
+}
+.arch-diagram-wrapper {
+    background: #ffffff; border: 1px solid var(--border-color); border-radius: 16px;
+    padding: 35px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); text-align: center;
+}
+.custom-arch-img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px; }
+.arch-tier {
+    border: 1px dashed #94a3b8; border-radius: 12px; padding: 20px; background: #f8fafc;
+}
+.highlight-tier {
+    border: 2px solid var(--primary-blue); background: #f0f7ff;
+}
+.tier-label {
+    font-weight: 700; color: #0f172a; margin-bottom: 15px; font-size: 1.05rem;
+}
+.tier-nodes {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;
+}
+.arch-node {
+    background: #ffffff; border: 1px solid var(--border-color); border-radius: 8px;
+    padding: 14px 20px; font-weight: 600; color: var(--text-main);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02); flex: 1; min-width: 200px;
+}
+.core-node, .db-node {
+    display: flex; flex-direction: column; gap: 6px; padding: 18px;
+    border-color: var(--primary-blue);
+}
+.core-node strong, .db-node strong { color: var(--primary-blue); font-size: 1.1rem; }
+.core-node span, .db-node span { font-size: 0.88rem; color: var(--text-sub); font-weight: normal; }
+.arch-arrow {
+    padding: 12px 0; font-weight: 700; color: var(--primary-blue); font-size: 0.95rem;
+}
+
+/* 子網頁獨立標題與內容容器 */
+h1 { color: #0f172a; font-size: 2.4rem; font-weight: 700; text-align: center; margin-top: 110px; margin-bottom: 20px; }
 .content { 
-    max-width: 800px; margin: 40px auto 0 auto; text-align: left; line-height: 1.8; 
+    max-width: 800px; margin: 30px auto 0 auto; text-align: left; line-height: 1.8; 
     font-size: 1.05rem; background: var(--card-bg); padding: 40px; border-radius: 12px; 
     border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); color: var(--text-sub);
 }
@@ -129,26 +168,7 @@ h1 {
 .content li { margin-bottom: 12px; }
 .content strong { color: var(--primary-blue); }
 
-/* 首頁網格卡片 */
-.solutions-grid { 
-    display: grid; gap: 24px; max-width: 1000px; margin: 0 auto 40px; padding: 0 20px; 
-}
-.grid-card { 
-    border: 1px solid var(--border-color); padding: 24px; text-align: left; border-radius: 12px; 
-    background: var(--card-bg); text-decoration: none; color: var(--text-main); display: block;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02); transition: all 0.3s ease;
-}
-.grid-card h3 { color: var(--primary-blue); margin-top: 0; margin-bottom: 10px; font-size: 1.25rem; }
-.grid-card p { 
-    margin: 0; color: var(--text-sub); line-height: 1.6; min-height: calc(1.6em * 3); 
-    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-}
-.grid-card:hover {
-    box-shadow: 0 10px 25px -5px rgba(0, 102, 204, 0.15);
-    border-color: var(--primary-blue); transform: translateY(-4px);
-}
-
-/* Footer 與聯絡資訊並排設計 */
+/* Footer 與聯絡資訊 */
 footer { 
     text-align: center; padding: 40px 20px; background: #ffffff; 
     border-top: 1px solid var(--border-color); margin-top: 60px; 
@@ -157,9 +177,7 @@ footer {
     max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; 
     justify-content: center; align-items: center; gap: 40px;
 }
-.contact-info-group {
-    display: flex; flex-direction: column; gap: 15px; align-items: flex-start;
-}
+.contact-info-group { display: flex; flex-direction: column; gap: 15px; align-items: flex-start; }
 .contact-box, .back-btn { 
     display: inline-block; margin: 0; padding: 12px 28px; border: 1px solid var(--primary-blue); 
     border-radius: 50px; cursor: pointer; color: var(--primary-blue); background: #f0f7ff; 
@@ -171,7 +189,6 @@ footer {
 }
 .back-btn-container { text-align: center; margin-top: 30px; }
 
-/* LINE 條碼區塊 */
 .line-qr-section {
     display: flex; flex-direction: column; align-items: center; gap: 6px; 
     background: #f8fafc; padding: 15px 20px; border-radius: 12px; border: 1px solid var(--border-color);
@@ -179,15 +196,40 @@ footer {
 .line-qr-section p { margin: 0; font-size: 0.9rem; color: var(--text-sub); font-weight: 600; }
 .line-qr-img {
     width: 110px; height: 110px; border-radius: 6px; background: #ffffff; 
-    padding: 4px; border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 4px; border: 1px solid var(--border-color);
+}
+
+/* 右下角永遠浮動的「回到最上方」箭頭按鈕 */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+#backToTop:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.5);
 }
 
 /* Toast 提示框 */
 #toast { 
     visibility: hidden; background-color: #0f172a; color: #ffffff; text-align: center; 
     padding: 16px 24px; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); 
-    border-radius: 8px; font-weight: 600; opacity: 0; transition: 0.3s; 
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2); z-index: 1001;
+    border-radius: 8px; font-weight: 600; opacity: 0; transition: 0.3s; z-index: 1001;
 }
 #toast.show { visibility: visible; opacity: 1; }
 
@@ -196,6 +238,6 @@ footer {
     .footer-container { flex-direction: column; gap: 25px; }
     .contact-info-group { align-items: center; width: 100%; }
     nav { padding: 0 15px; }
-    .nav-menu { gap: 12px; }
-    .nav-menu a { font-size: 0.85rem; }
+    .nav-menu { gap: 14px; }
+    #backToTop { bottom: 20px; right: 20px; width: 44px; height: 44px; }
 }
