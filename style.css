@@ -1,7 +1,7 @@
 :root { 
     --primary-blue: #0066cc; 
     --primary-hover: #0052a3;
-    --light-bg: #f8fafc; /* 更具科技感的極致淺灰藍底色 */
+    --light-bg: #fbfbfa; /* 改為溫潤高質感的象牙白 */
     --card-bg: #ffffff;
     --text-main: #1e293b; 
     --text-sub: #475569;
@@ -17,12 +17,19 @@ body {
     font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; 
     background-color: var(--light-bg); 
     color: var(--text-main); 
-    /* 升級版淺色科技網格圖案背景 (細緻的工程經緯格線) */
+    
+    /* 現代高科技「微光點陣 (Dot Matrix)」與頂部「科技光暈」背景 */
     background-image: 
-        linear-gradient(rgba(0, 102, 204, 0.05) 1px, transparent 1px), 
-        linear-gradient(90deg, rgba(0, 102, 204, 0.05) 1px, transparent 1px),
-        radial-gradient(circle at 50% 0%, rgba(0, 102, 204, 0.08) 0%, transparent 60%); 
-    background-size: 40px 40px, 40px 40px, 100% 100%; 
+        /* 1. 細緻的科技矩陣圓點 (取代死板的格線) */
+        radial-gradient(rgba(0, 102, 204, 0.15) 1.5px, transparent 1.5px),
+        /* 2. 頂部大面積的高科技藍色漸層光暈，營造未來感 */
+        radial-gradient(circle at 50% -20%, rgba(0, 102, 204, 0.12) 0%, rgba(248, 250, 252, 0) 70%);
+        
+    /* 點陣的間距為 28px，光暈填滿整張畫布 */
+    background-size: 28px 28px, 100% 100%; 
+    background-position: 0 0, 0 0;
+    background-repeat: repeat, no-repeat;
+    
     padding-bottom: 50px;
 }
 
@@ -283,7 +290,7 @@ h1 { color: #0f172a; font-size: 2.4rem; font-weight: 700; text-align: center; ma
 .content li { margin-bottom: 12px; }
 .content strong { color: var(--primary-blue); }
 
-/* Footer 聯絡專區 */
+/* Footer 聯絡專區：整體置中並排設計 */
 footer { 
     text-align: center; 
     padding: 40px 20px; 
@@ -292,16 +299,18 @@ footer {
     margin-top: 60px; 
 }
 
+/* 關鍵：使用 flex 將聯絡按鈕群與 QR Code 區塊左右並排並置中 */
 .footer-container {
     max-width: 700px; 
     margin: 0 auto; 
     display: flex; 
     flex-wrap: wrap; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 40px; 
+    justify-content: center; /* 水平置中 */
+    align-items: center;     /* 垂直置中對齊 */
+    gap: 40px;               /* 兩者之間的間距 */
 }
 
+/* 左側：電話與 Email 按鈕群組 */
 .contact-info-group {
     display: flex; 
     flex-direction: column; 
@@ -332,6 +341,7 @@ footer {
     transform: translateY(-2px);
 }
 
+/* 右側：LINE 條碼區塊 */
 .line-qr-section {
     display: flex; 
     flex-direction: column; 
@@ -350,6 +360,7 @@ footer {
     font-weight: 600; 
 }
 
+/* 關鍵：將 QR Code 圖片大小縮小至 90px，精巧不佔空間 */
 .line-qr-img {
     width: 90px; 
     height: 90px; 
