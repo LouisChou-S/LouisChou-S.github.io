@@ -146,11 +146,11 @@ nav {
     transition: transform 0.4s ease;
 }
 
-/* --- 固定式輪播 Banner 樣式 --- */
+/* --- 寬幅橫向滿版 Banner 樣式 --- */
 .carousel-banner {
     margin-top: 75px;
     width: 100%;
-    height: 380px; /* 固定的橫幅高度 */
+    height: 440px; /* 加大 Banner 高度 */
     background: #f1f5f9;
     border-bottom: 1px solid var(--border-color);
     position: relative;
@@ -162,8 +162,8 @@ nav {
 
 .carousel-track-static {
     position: relative;
-    width: 420px; /* 固定橫幅內的圖片顯示大小 */
-    height: 320px;
+    width: 850px; /* 將寬度大幅拉寬，適應橫幅大圖比例 */
+    height: 380px;
 }
 
 .carousel-slide {
@@ -177,8 +177,8 @@ nav {
     transition: opacity 0.6s ease-in-out, visibility 0.6s;
     background: #ffffff;
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.1);
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 102, 204, 0.12);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -193,40 +193,40 @@ nav {
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* 讓圖片完美填滿橫向寬幅且不變形 */
     display: block;
 }
 
-/* 半透明左右切換箭頭 */
+/* 半透明左右切換箭頭（對齊寬幅兩側） */
 .carousel-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
-    background: rgba(255, 255, 255, 0.65); /* 半透明背景 */
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.8);
     border: 1px solid var(--border-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--primary-blue);
     cursor: pointer;
     z-index: 10;
     backdrop-filter: blur(4px);
     transition: all 0.3s;
     user-select: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.carousel-arrow-left { left: 30px; }
-.carousel-arrow-right { right: 30px; }
+.carousel-arrow-left { left: 60px; }
+.carousel-arrow-right { right: 60px; }
 
 .carousel-arrow:hover {
     background: var(--primary-blue);
     color: #ffffff;
-    box-shadow: 0 6px 15px rgba(0, 102, 204, 0.3);
+    box-shadow: 0 6px 18px rgba(0, 102, 204, 0.35);
 }
 
 @keyframes scrollRightToLeft {
@@ -445,7 +445,7 @@ footer {
 }
 #toast.show { visibility: visible; opacity: 1; }
 
-/* --- RWD 響應式手機與平板適應 --- */
+/* --- RWD 響應式手機與平板適應 (完整整合版) --- */
 @media (max-width: 768px) {
     nav {
         padding: 0 20px;
@@ -501,8 +501,19 @@ footer {
         min-width: 100%;
     }
 
-    .carousel-banner { height: 280px; }
-    .carousel-track-static { width: 280px; height: 220px; }
+    /* 寬幅 Banner 在手機版上的縮放適應 (取代原本的小尺寸) */
+    .carousel-banner { 
+        height: 280px; 
+    }
+    .carousel-track-static { 
+        width: 92%; 
+        height: 220px; 
+    }
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
     .carousel-arrow-left { left: 10px; }
     .carousel-arrow-right { right: 10px; }
 
