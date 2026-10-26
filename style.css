@@ -146,47 +146,87 @@ nav {
     transition: transform 0.4s ease;
 }
 
-/* 頂端橫幅：由右至左無限滑動輪播獨立卡片 */
+/* --- 固定式輪播 Banner 樣式 --- */
 .carousel-banner {
     margin-top: 75px;
     width: 100%;
-    background: linear-gradient(90deg, #eef5fc 0%, #ffffff 50%, #eef5fc 100%);
+    height: 380px; /* 固定的橫幅高度 */
+    background: #f1f5f9;
     border-bottom: 1px solid var(--border-color);
-    padding: 25px 0;
-    overflow: hidden;
     position: relative;
-}
-
-.carousel-track {
+    overflow: hidden;
     display: flex;
-    gap: 24px;
-    width: max-content;
-    animation: scrollRightToLeft 28s linear infinite;
-}
-.carousel-track:hover {
-    animation-play-state: paused;
+    align-items: center;
+    justify-content: center;
 }
 
-.carousel-card {
-    width: 260px;
+.carousel-track-static {
+    position: relative;
+    width: 420px; /* 固定橫幅內的圖片顯示大小 */
+    height: 320px;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s;
     background: #ffffff;
     border: 1px solid var(--border-color);
     border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.1);
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.08);
-    flex-shrink: 0;
-    text-decoration: none;
-    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.carousel-card img {
+
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.carousel-slide img {
     width: 100%;
-    aspect-ratio: 1/1;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
-.carousel-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-blue);
+
+/* 半透明左右切換箭頭 */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.65); /* 半透明背景 */
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--primary-blue);
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s;
+    user-select: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.carousel-arrow-left { left: 30px; }
+.carousel-arrow-right { right: 30px; }
+
+.carousel-arrow:hover {
+    background: var(--primary-blue);
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 102, 204, 0.3);
 }
 
 @keyframes scrollRightToLeft {
@@ -461,10 +501,10 @@ footer {
         min-width: 100%;
     }
 
-    .carousel-banner {
-        margin-top: 75px;
-        height: 160px;
-    }
+    .carousel-banner { height: 280px; }
+    .carousel-track-static { width: 280px; height: 220px; }
+    .carousel-arrow-left { left: 10px; }
+    .carousel-arrow-right { right: 10px; }
 
     .solutions-grid { 
         grid-template-columns: 1fr !important; 
